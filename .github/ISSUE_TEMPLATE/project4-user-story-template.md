@@ -10,3 +10,7 @@ assignees: ''
 EPIC:<epic>
 
 As a **role** I can **capability** so that **benefits**
+
+**Acceptance Criteria**
+
+**Tasks**
