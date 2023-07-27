@@ -65,14 +65,14 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 |                         | As a Site User, I can click on a recipe post so that I can read full recipe details | 
 |                      | As a Site User/Admin, I can view the number of likes on each post so that I can see which is the most popular |
 |              | As a Site User/Admin, I can view comments on an individual recipe so that I can read the conversation |
-|           | As a Site User I can like or unlike recipe so that I can interact with the content|
-|           | As a Site User I can leave comments on a recipe so that I can be involved in the conversation|
-|           | As a Site User I can bookmark recipe so that I can save it in my profile|
-|    RECIPE MANAGEMENT    | As a Site User I can bookmark recipe so that I can save it in my profile|
-|           | As a Site User I can bookmark recipe so that I can save it in my profile|
-|           | As a Site User I can bookmark recipe so that I can save it in my profile|
-|           | As a Site User I can bookmark recipe so that I can save it in my profile|
-|           | As a Site User I can bookmark recipe so that I can save it in my profile|
+|           | As a Site User, I can like or unlike recipe so that I can interact with the content|
+|           | As a Site User, I can leave comments on a recipe so that I can be involved in the conversation|
+|           | As a Site User, I can bookmark recipe so that I can save it in my profile|
+|    RECIPE MANAGEMENT    | As a Site User, I can add my own recipe so that I can share it with other users|
+|           | As a Site Admin, I can create, read, update and delete recipes so that I can manage my site content and share recipes with other users|
+|           | As a Site User, I can sort my bookmarked recipes in my profile so that I can find the most favourite one easily|
+|     SITE MANAGEMENT      | As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments|
+
 
 [Back to top](<#contents>)
 
@@ -93,10 +93,13 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 ## Logic
 
 ### Flowcharts 
-This is the flowchart diagram for the quiz that represent the game process step by step. The charts were generated using [Lucidchart](https://lucid.app/) <br>
-![Flowcharts](assets/documentation/FlowChart_Quiz_Game.png)<br>
+This is the flowchart diagram for my website, represent how the system work step by step. The charts were generated using [Lucidchart](https://lucid.app/) <br>
+
+![Flowcharts](documentation/readme_images/flowchart-pp4.png)<br>
 
 ### Database Design
+
+![ER Diagram](documentation/readme_images/ER-pp4.png)<br>
 
 
 [Back to top](<#contents>)
