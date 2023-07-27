@@ -1,108 +1,330 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Yummy - Cooking Recipes Website
 
-Welcome USER_NAME,
+Responsive image here
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## CONTENTS
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* [Introduction](#introduction)
+* [User Experience UX](#user-experience-ux)
+    * [User Stories](#user-stories)
+    * [Design](#design)
+        * [Colours](#colours)
+        * [Fonts](#fonts)
+        * [Wireframes](#wireframes)
 
-## Gitpod Reminders
+* [Logic](#logic)
+     * [Flowcharts](#flowcharts)
+     * [Database Design](#database-design)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [Game Features](#Game-Features)
+    * [Introduction Message](#Introroduction-Message) 
+    * [Ask Player Name](#Ask-Player-Name)
+    * [Empty Input for Name](#Empty-Input-for-Name)
+    * [Welcome Message](#Welcome-Message)
+    * [Quiz Questions](#Quiz-Questions) 
+    * [Correct Answer](#Correct-Answer)
+    * [Incorrect Answer](#Incorrect-Answer)
+    * [Invalid Data](#Invalid-Data)
+    * [Final Score](#Final-Score)
+    * [Play Again](#Play-Again)
+* [Testing](#testing)
+    * [PEP 8 Online](#PEP-8-Online)
+    * [Lighthouse](#Lighthouse)
+    * [Full Testing](#full-festing)
+    * [Bugs](#Bugs)
+* [Technologies Used](#technologies-used)
+* [Deployment](#deployment)
+    * [Forking this Project](#forking-this-project)
+    * [Cloning this Project](#cloning-this-project)
+* [Credits](#credits)
+    * [Contents](#contents)
+    * [Information Sources / Resources](#Information-Sources-Resources)
+* [Acknowledgements](#Acknowledgements)
 
-`python3 -m http.server`
+## Introduction
 
-A blue button should appear to click: _Make Public_,
+Yummy website is a website which designed and developed to offer free cooking recipes for different categories (dinner, sweets and coctailes). The website targets users who are interested in cooking and others who want to apply a specific recipe with clear and understandable steps. Users are givin the ability also to publish their own recipes, saving recipes on their own profile page as well as like and comments on others recipes. 
 
-Another blue button should appear to click: _Open Browser_.
+The fully deployed project can be accessed at [Here](https://portfolio-proj3.herokuapp.com/)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+## User Experience - UX
 
-Another blue button should appear to click: _Open Browser_.
+### User Stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+|     EPIC        | User Story |
+|     ---         |     ---    |
+|  USER PROFILE   | As a Site User, I can register an account so that I can comment and like |
+|                 | As a Site user I can see my status if I logged in or out so that I can interact with contents by leaving comments , like and bookmark recipes|
+|                 | As a Site User, I can log in/ out so that I keep my account secure |
+|                 | As a Logged-in User I can view my bookmarked recipes in my profile so that I can find them easily each time I need them
+|                 | As a Site User, I can view my published recipes so that I can manage all my added recipes from my profile |
+|  USER NAVIGATION       | As a Site User, I can navigate easily around site contents so that I know if it meets my neeeds |
+|                 | As a Site User, I can view paginated list of reciepes so that I can easily select one to view |
+|  RECIPE INTERACTION     | As a Site User, I can view a list of recipes so that I can select one to read |
+|                         | As a Site User, I can click on a recipe post so that I can read full recipe details | 
+|                      | As a Site User/Admin, I can view the number of likes on each post so that I can see which is the most popular |
+|              | As a Site User/Admin, I can view comments on an individual recipe so that I can read the conversation |
+|           | As a Site User I can like or unlike recipe so that I can interact with the content|
+|           | As a Site User I can leave comments on a recipe so that I can be involved in the conversation|
+|           | As a Site User I can bookmark recipe so that I can save it in my profile|
+|    RECIPE MANAGEMENT    | As a Site User I can bookmark recipe so that I can save it in my profile|
+|           | As a Site User I can bookmark recipe so that I can save it in my profile|
+|           | As a Site User I can bookmark recipe so that I can save it in my profile|
+|           | As a Site User I can bookmark recipe so that I can save it in my profile|
+|           | As a Site User I can bookmark recipe so that I can save it in my profile|
 
-To log into the Heroku toolbelt CLI:
+[Back to top](<#contents>)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Design
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Colours
+* The colours in the game are supplied by the Python Colorama Model
 
-------
+#### Fonts
+* hgfuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
 
-## Release History
+#### Wireframes
+* fxjdxjf
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+[Back to top](<#contents>)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Logic
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Flowcharts 
+This is the flowchart diagram for the quiz that represent the game process step by step. The charts were generated using [Lucidchart](https://lucid.app/) <br>
+![Flowcharts](assets/documentation/FlowChart_Quiz_Game.png)<br>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Database Design
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Back to top](<#contents>)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Game Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Introduction Message
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* When the users open the website, introduction message with quiz details are displayed here.<br>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Introduction Message](assets/documentation/introduction_msg.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Back to top](<#contents>)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Ask Player Name
+* After the player sees the introduction message for a few seconds, the user will be asked to input his name.<br>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Ask Player Name](assets/documentation/ask_name.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[Back to top](<#contents>)
 
-------
+#### Empty Input for Name
+* If the player does not input their name and city, this alert will appear.<br>
 
-## FAQ about the uptime script
+![Empty Input for Name](assets/documentation/empty_name.png)
 
-**Why have you added this script?**
+[Back to top](<#contents>)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### Welcome Message
+ * After the player enters their desired username, a short welcome message is displayed and the user asked to press Enter key to start the quiz.<br>
 
-**How will this affect me?**
+![Welcome Message](assets/documentation/welcome_msg.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+[Back to top](<#contents>)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+#### Quiz Questions
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+ * Then player is presented with the first quiz question.
 
-**So….?**
+ * Each question appear with 4 possible answers. Only one is correct.
+ 
+ * The questions will be randomize every time the user choose to play again.
+ 
+ * Instructions to enter a number between 1-4 is displayed. This allows the user to answer the quiz question via choosing one of these digits: '1', '2', '3', or '4'.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+ * This will repeate until the 15th question is answered.
 
-**Can I opt out?**
+![Quiz Questions](assets/documentation/quiz_ques.png)<br><br>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+[Back to top](<#contents>)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### Correct Answer
 
-**Anything more?**
+ * If the player answers the quiz question correctly, a simple message with: "Good! Your answer is correct :) ⭐" and more details about this question will be displayed.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+ * The players score will increase by 1 at the same time a correct answer is guessed. 
 
----
+![Correct Answer](assets/documentation/correct_answer.png)<br>
 
-Happy coding!
+[Back to top](<#contents>)
+
+#### Incorrect Answer
+
+ * If the player answers the quiz question incorrectly, a simple message with: "Your answer is incorrect :(. The correct answer is {correct_answer}."
+
+![Incorrect Answer](assets/documentation/incorrect_answer.png)<br>
+
+[Back to top](<#contents>)
+
+#### Invalid Data
+
+ * If the player enter any data rather than '1','2','3' and '4', a message with: "Invalid data: please try again"
+
+![Invalid data](assets/documentation/invalid_data.png)<br>
+
+[Back to top](<#contents>)
+
+#### Final Score
+ * If the user finish the quiz, the final score out of 15 will be shown. And a "⭐⭐Congratulations!⭐⭐" message will be displyed if the total scores were equal or more than 13.
+
+![Final Score](assets/documentation/final_score.png)<br>
+
+![Perfect Score](assets/documentation/perfec_score.png)<br>
+
+[Back to top](<#contents>)
+
+#### Play Again
+
+ * After the user answered all 15 questions and get the score, he will asked to play again by enter 'y' for yes or 'n' for no.
+
+ * If the user enter anything rather than 'y' or 'n', this message will be displayed: "Invalid input: please enter 'y' to continue or 'n' to  exit.".
+
+![Play Again1](assets/documentation/paly_again1.png)<br>
+
+[Back to top](<#contents>)
+
+* If the user enter 'y', The quiz questions will start again.
+
+* If the user enter 'n', The quiz ends and a message with: "Thanks for you time:)" will be displayed.
+
+![Play Again3](assets/documentation/play_again3.png)<br>
+
+[Back to top](<#contents>)
+
+## Testing
+
+### PEP 8 Online
+
+The [PEP8](http://pep8online.com/) Validator Service was used to validate the Python file in the project to ensure there is no syntax errors in the project.
+
+* No errors or warnings were found during the testing of the code in PEP8
+
+![PEP8](assets/documentation/PEP8.png)<br>
+
+[Back to top](<#contents>)
+
+### Lighthouse 
+
+* Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on the Desktop.
+
+![Lighthouse Result](assets/documentation/lighthouse.png)<br>
+
+[Back to top](<#contents>)
+
+### Full Testing 
+
+| Test     | Expected  Outcome   | Pass/Fail    | 
+| :----     |    :----   |  :---- | 
+| Run run.py | Loads run.py, username prompt appears | Pass |
+| Insert username | Welcome message with entered username will displayed | Pass |
+| Press Enter without insert name | Try again message will displayed | Pass |
+| Press Enter to start | Prepering quiz messaege will appear, Page Clear function executes and the first question will displayed | Pass |
+| Enter answer in digits (1-4) + Enter | Loads correct/incorrect Output and provides correct answer, loads next question | Pass |
+| Press Enter With No Input/ Enter any other didgits | Invalid data message will be displayed, prompts user to try again and enter digits 1-4 | pass |
+| Press Enter on Final Quiz question | Loads Final Score Output, Loads Game Over message and Try Again option | Pass |
+| User gets score >= 13 | A congratulations message will displayed with the final score result score/15 | Pass |
+| Press Enter or any enteries rather than 'y'/'n' | Loads Invalid Data message, prompts the user to try again and enter 'y' or 'n'. | Pass |
+| Press Y on Try Again prompt |  Clears the page and runs quiz again, scores counter return back to 0 | Pass |
+| Press N on Try Again Prompt | Loads Thankfull message to player, system exit command executed | Pass |
+
+[Back to top](<#contents>)
+
+## Bugs 
+### Resolved
+
+* Through testing, I had indentation warnings which fixed direct.
+* Infinit loop occurred after adding exception part on play again function when the user enter anything rather than 'y' or 'n'. It was fixed by adding a 'break' statement at the end of IF statement on try block.
+
+[Back to top](<#contents>)
+
+## Technologies Used
+
+ * Python is the programming language used to produce this quiz game.
+  
+ * [GitHub](https://www.github.com) was used to hold the game repository files.
+
+ * [Gitpod](https://www.gitpod.io) and [CodeAnywere](https://app.codeanywhere.com/) were used for the coding environment.
+
+ * [Heroku](https://www.heroku.com) was used for deplyment.
+
+## Deployment
+
+* This site was deployed by completing the following steps:
+
+1. Log in to [Heroku](https://id.heroku.com) or create an account
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App
+3. You must enter a unique app name
+4. Next select your region
+5. Click on the Create App button
+6. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
+7. Click Reveal Config Vars and enter POSRT into the Key box and 8000 into the Value box and click the Add button
+8. If there are credentiels click Reveal Config Vars again and enter CREDS into the Key box and the Google credentials into the Value box
+9. Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
+10. Repeat step 8 to add node.js. o Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order
+11. Scroll to the top of the page and choose the Deploy tab
+12. Select Github as the deployment method
+13. Confirm you want to connect to GitHub
+14. Search for the repository name and click the connect button
+15. Scroll to the bottom of the deploy page and select the preferred deployment type
+16. Click Enable Automatic Deploys for automatic deployment when you push updates to Github
+
+## Forking This Project
+
+* Fork this project by following the steps:
+
+1. Open [GitHub](https://github.com/)
+2. Click on the project to be forked
+3. Find the Fork button at the top right of the page
+4. Once you click the button the fork will be in your repository
+
+## Cloning This Project
+
+* Clone this project by following the steps:
+  
+1. Open [GitHub](https://github.com/)
+2. Click on the project to be cloned
+3. You will be provided with three options to choose from, HTTPS, SSH, or GitHub CLI, click the clipboard icon in order to copy the URL
+4. Once you click the button the fork will be in your repository
+5. Open a new terminal
+6. Change the current working directory to the location that you want the cloned directory
+7. Type git clone and paste the URL copied in step 3
+8. Press Enter and the project is cloned
+
+[Back to top](<#contents>)
+
+## Credits
+
+### Content
+
+* All quiz questions have been taken from [Britannica](https://www.britannica.com/quiz/facts-you-should-know-the-periodic-table-quiz).
+
+* The Python code functionality help is from the following: [Real Python Tutorials](https://realpython.com/python-quiz-application/#step-1-ask-questions) and from this repository [GitHub](https://github.com/KrystalCoding/plant-quiz/blob/main/README.md).
+
+* Indentation warnings were solved by helping from [Flake8rules](https://www.flake8rules.com/).
+
+* Readme file following templates from these repositories on GitHub : [plant-quiz](https://github.com/KrystalCoding/plant-quiz/blob/main/README.md) and [portfolio_project_3](https://github.com/PedroCristo/portfolio_project_3#Ask-Player-Name-and-City). 
+
+
+
+### Information Sources / Resources
+
+* [Code Institute](https://learn.codeinstitute.net/dashboard)
+* [W3Schools - Python](https://www.w3schools.com/python/)
+* [Stack Overflow](https://stackoverflow.com/)
+
+[Back to top](<#contents>)
+
+## Acknowledgements
+This App was completed as a Portfolio Project 3 for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, tutor support. And all at the Code Institute for their help.
+
+[Back to top](<#contents>)
