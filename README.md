@@ -52,25 +52,25 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 
 ### User Stories
 
-|     EPIC        | User Story |
-|     ---         |     ---    |
-|  USER PROFILE   | As a Site User, I can register an account so that I can comment and like |
-|                 | As a Site user I can see my status if I logged in or out so that I can interact with contents by leaving comments , like and bookmark recipes|
-|                 | As a Site User, I can log in/ out so that I keep my account secure |
-|                 | As a Logged-in User I can view my bookmarked recipes in my profile so that I can find them easily each time I need them
-|                 | As a Site User, I can view my published recipes so that I can manage all my added recipes from my profile |
+|     EPIC               | User Story |
+|     ---                |     ---    |
+|  USER PROFILE          | As a Site User, I can register an account so that I can comment and like |
+|                        | As a Site user I can see my status if I logged in or out so that I can interact with contents by leaving comments , like and bookmark recipes|
+|                        | As a Site User, I can log in/ out so that I keep my account secure |
+|                        | As a Logged-in User I can view my bookmarked recipes in my profile so that I can find them easily each time I need them
+|                        | As a Site User, I can view my published recipes so that I can manage all my added recipes from my profile |
 |  USER NAVIGATION       | As a Site User, I can navigate easily around site contents so that I know if it meets my neeeds |
-|                 | As a Site User, I can view paginated list of reciepes so that I can easily select one to view |
+|                        | As a Site User, I can view paginated list of reciepes so that I can easily select one to view |
 |  RECIPE INTERACTION     | As a Site User, I can view a list of recipes so that I can select one to read |
 |                         | As a Site User, I can click on a recipe post so that I can read full recipe details | 
-|                      | As a Site User/Admin, I can view the number of likes on each post so that I can see which is the most popular |
-|              | As a Site User/Admin, I can view comments on an individual recipe so that I can read the conversation |
-|           | As a Site User, I can like or unlike recipe so that I can interact with the content|
-|           | As a Site User, I can leave comments on a recipe so that I can be involved in the conversation|
-|           | As a Site User, I can bookmark recipe so that I can save it in my profile|
-|    RECIPE MANAGEMENT    | As a Site User, I can add my own recipe so that I can share it with other users|
-|           | As a Site Admin, I can create, read, update and delete recipes so that I can manage my site content and share recipes with other users|
-|           | As a Site User, I can sort my bookmarked recipes in my profile so that I can find the most favourite one easily|
+|                         | As a Site User/Admin, I can view the number of likes on each post so that I can see which is the most popular |
+|                          | As a Site User/Admin, I can view comments on an individual recipe so that I can read the conversation |
+|                          | As a Site User, I can like or unlike recipe so that I can interact with the content|
+|                          | As a Site User, I can leave comments on a recipe so that I can be involved in the conversation|
+|                          | As a Site User, I can bookmark recipe so that I can save it in my profile|
+|    RECIPE MANAGEMENT     | As a Site User, I can add my own recipe so that I can share it with other users|
+|                          | As a Site Admin, I can create, read, update and delete recipes so that I can manage my site content and share recipes with other users|
+|                          | As a Site User, I can sort my bookmarked recipes in my profile so that I can find the most favourite one easily|
 |     SITE MANAGEMENT      | As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments|
 
 
