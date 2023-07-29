@@ -3,9 +3,11 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
+CATEGORY((0, "Dinner"), (1, "Sweets"), (2, "Coctailes"))
 
 
 class Recipe(models.Model):
+    category = models.IntegerField(choices=CATEGORY, default=0)
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -28,7 +30,7 @@ class Recipe(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def number_of_likes(self):
         return self.likes.count()
