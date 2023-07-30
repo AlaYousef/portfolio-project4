@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
-CATEGORY((0, "Dinner"), (1, "Sweets"), (2, "Coctailes"))
+CATEGORY = ((0, "Dinner"), (1, "Sweets"), (2, "Coctailes"))
 
 
 class Recipe(models.Model):
