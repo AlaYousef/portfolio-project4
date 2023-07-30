@@ -9,7 +9,7 @@ class RecipeAdmin(SummernoteModelAdmin):
     """Allows admin to manage recipes via the admin panel"""
     list_display = ('name', 'slug', 'status', 'created_on')
     search_fields = ['name', 'description']
-    list_filter = ('status', 'created_on')
+    list_filter = ('status', 'created_on', 'category')
     prepopulated_fields = {'slug': ('name',)}
     summernote_fields = ('description', 'ingredients', 'steps')
 
