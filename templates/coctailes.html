@@ -10,31 +10,37 @@
     </div>
     <hr class="home-break">
     <br>
-    <!-- Recipe Cards -->
-    <div class="row card-deck">
+
+    <div class="row mb-5">
         {% for recipe in recipe_list %}
-        <div class="col-md-4 mb-4 col-lg-3 px-1 d-flex align-items-stretch">
-            
-                <div class="card card-detail recipe-card shadow-sm mx-auto mx-sm-2 border border-0"" style="width: 40rem;">
-                    {% if "placeholder" in recipe.featured_image.url %}
+        <div class="col-4 mb-5">
+            <div class="card mb-5 card-detail recipe-card border border-0 rounded" style="width: 18rem;">
+                {% if "placeholder" in recipe.featured_image.url %}
                     <img src="https://res.cloudinary.com/aliokeeffe/image/upload/v1656016833/placeholder_image_prqssg.jpg"
                         class="card-img-top" alt="placeholder image">
                     {% else %}
-                    <img src=" {{ recipe.featured_image.url }}" alt="recipe image" class="card-img-top">
+                    <img src=" {{ recipe.featured_image.url }}" alt="recipe image" >
                     {% endif %}
-                    <div class="card-body pb-1">
+                    <div class="card-body">
                         <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
                         <p class="card-text">
                             <span><i class="far fa-clock pr-2"></i></span>
                             <span>Preparation Time: {{ recipe.cook_time }}</span>
+                            <span>Author: {{ recipe.author }}</span>
                         </p>
                         
                     </div>
-                </div>
-            
+              </div>
         </div>
-        {% endfor %}
+        {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="row">
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
+   
+   
 </div>
 
 
