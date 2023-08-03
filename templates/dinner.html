@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-           <h1 id="recipe-list-title" class="text-center decorated"><span> Coctailes Recipes </span></h1>
+           <h1 id="recipe-list-title" class="text-center decorated"><span> Dinner Recipes </span></h1>
         </div>
     </div>
    
@@ -14,18 +14,18 @@
     <div class="row card-deck mb-5 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 align-items-stretch">
         {% for recipe in recipe_list %}
         <div class="col-4 mb-5">
-            <div class="card mb-5  mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
+            <div class="card mb-5 mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
-                    <img src="https://res.cloudinary.com/aliokeeffe/image/upload/v1656016833/placeholder_image_prqssg.jpg"
-                        class="card-img-top" alt="placeholder image">
+                    <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074070/pexels-cottonbro-studio-6811340_d2bjoa.jpg"
+                        class="card-img-top" alt="recipe image" height="auto">
                     {% else %}
-                    <img src=" {{ recipe.featured_image.url }}" alt="recipe image" >
+                    <img src=" {{ recipe.featured_image.url }}" alt="recipe image" height="auto">
                     {% endif %}
                     <div class="card-body">
-                        <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
+                        <h2 class="card-title recipe-detail-title">{{ recipe.name }}</h2>
                         <p class="card-text">
                             <span><i class="far fa-clock pr-2"></i></span>
-                            <span>Preparation Time: {{ recipe.cook_time }}</span>
+                            <span>Cooking Time: {{ recipe.cook_time }}</span>
                             <br>
                             <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
                         </p>
