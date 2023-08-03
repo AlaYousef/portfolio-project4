@@ -31,23 +31,26 @@
     </a>
 
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Dinner</a></li>
-      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Sweets</a></li>
-      <li class="nav-item"><a href="{% url 'coctailes' %}" class="nav-link">Coctailes</a></li>
+      <li class="nav-item">
+        <a href="{% url 'home' %}" class="nav-link" aria-current="page">
+          <i class="fa-solid fa-house nav-icon"></i>  Home</a>
+      </li>
+      <li class="nav-item"><a href="{% url 'dinner' %}" class="nav-link"><i class="fa-solid fa-utensils"></i>  Dinner</a></li>
+      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link"><i class="fa-solid fa-cake-candles"></i>  Sweets</a></li>
+      <li class="nav-item"><a href="{% url 'coctailes' %}" class="nav-link"><i class="fa-solid fa-apple-whole"></i>  Coctailes</a></li>
       {% if user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-image-portrait"></i> Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i>  Logout</a>
       </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i>  Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" href="#"> <i class="fa-solid fa-right-to-bracket"></i>  Login</a>
       </li>
       {% endif %}
 
