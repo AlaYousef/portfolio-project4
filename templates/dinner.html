@@ -17,9 +17,9 @@
             <div class="card mb-5 mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
                     <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074070/pexels-cottonbro-studio-6811340_d2bjoa.jpg"
-                        class="card-img-top" alt="recipe image" height="auto">
+                        class="card-img-top" alt="dinner recipe image" height="auto">
                     {% else %}
-                    <img src=" {{ recipe.featured_image.url }}" alt="recipe image" height="auto">
+                    <img src=" {{ recipe.featured_image.url }}" alt="dinner recipe image" max-height="60vh">
                     {% endif %}
                     <div class="card-body">
                         <h2 class="card-title recipe-detail-title">{{ recipe.name }}</h2>

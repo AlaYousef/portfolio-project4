@@ -24,10 +24,10 @@ class CoctailesList(generic.ListView):
     template_name = 'coctailes.html'
     paginate_by = 6
 
-class CoctailesList(generic.ListView):
+class SweetsList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status=1, category=2).order_by('-created_on')
+    queryset = Recipe.objects.filter(status=1, category=1).order_by('-created_on')
     
-    template_name = 'coctailes.html'
+    template_name = 'sweets.html'
     paginate_by = 6
 

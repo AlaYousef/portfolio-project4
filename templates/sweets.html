@@ -17,9 +17,9 @@
             <div class="card mb-5  mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
                     <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828479/pexels-valeria-boltneva-7474208_ptwt1w.jpg"
-                        class="card-img-top" alt="placeholder image">
+                        class="card-img-top" alt="sweets recipe image">
                     {% else %}
-                    <img src=" {{ recipe.featured_image.url }}" alt="recipe image" >
+                    <img src=" {{ recipe.featured_image.url }}" alt="sweets recipeimage" >
                     {% endif %}
                     <div class="card-body">
                         <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
