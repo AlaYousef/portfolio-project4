@@ -14,7 +14,7 @@
     <div class="row card-deck mb-5 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 align-items-stretch">
         {% for recipe in recipe_list %}
         <div class="col-4 mb-5">
-            <div class="card mb-5  mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
+            <div class="card mb-5 mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074071/pexels-amar-preciado-16550819_fuapb6.jpg"
                     class="card-img-top" alt="Coctaile recipe image">
@@ -22,7 +22,7 @@
                 <img src=" {{ recipe.featured_image.url }}" alt="Coctaile recipe image">
                 {% endif %}
                 <div class="card-body">
-                    <a href="{% url 'recipe_detail' recipe.slug %}">
+                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
                         <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
                     </a>
                     <p class="card-text">
