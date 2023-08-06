@@ -55,6 +55,7 @@ a{
 }
 .recipe-detail-link:hover{
     color: rgb(234, 235, 159);
+    text-decoration: underline;
 }
 
 .card img{
