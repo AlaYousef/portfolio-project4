@@ -43,14 +43,14 @@
         <a class="nav-link" href="#"><i class="fa-solid fa-image-portrait"></i> Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i>  Logout</a>
+        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-to-bracket"></i>  Logout</a>
       </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i>  Register</a>
+        <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-right-to-bracket"></i>  Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"> <i class="fa-solid fa-right-to-bracket"></i>  Login</a>
+        <a class="nav-link" href="{% url 'account_login' %}"> <i class="fa-solid fa-right-to-bracket"></i>  Login</a>
       </li>
       {% endif %}
 
