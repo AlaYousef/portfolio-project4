@@ -33,24 +33,27 @@
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a href="{% url 'home' %}" class="nav-link" aria-current="page">
-          <i class="fa-solid fa-house nav-icon"></i>  Home</a>
+          <i class="fa-solid fa-house nav-icon"></i> Home</a>
       </li>
-      <li class="nav-item"><a href="{% url 'dinner' %}" class="nav-link"><i class="fa-solid fa-utensils"></i>  Dinner</a></li>
-      <li class="nav-item"><a href="{% url 'sweets' %}" class="nav-link"><i class="fa-solid fa-cake-candles"></i>  Sweets</a></li>
-      <li class="nav-item"><a href="{% url 'coctailes' %}" class="nav-link"><i class="fa-solid fa-apple-whole"></i>  Coctailes</a></li>
+      <li class="nav-item"><a href="{% url 'dinner' %}" class="nav-link"><i class="fa-solid fa-utensils"></i> Dinner</a>
+      </li>
+      <li class="nav-item"><a href="{% url 'sweets' %}" class="nav-link"><i class="fa-solid fa-cake-candles"></i>
+          Sweets</a></li>
+      <li class="nav-item"><a href="{% url 'coctailes' %}" class="nav-link"><i class="fa-solid fa-apple-whole"></i>
+          Coctailes</a></li>
       {% if user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-link" href="#"><i class="fa-solid fa-image-portrait"></i> Profile</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_logout' %}" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="fa-solid fa-right-to-bracket"></i>  Logout</a>
+      <li class="nav-item" id="logoutNav">
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
       </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_login' %}"> <i class="fa-solid fa-right-to-bracket"></i>  Login</a>
+        <a class="nav-link" href="{% url 'account_login' %}"> <i class="fa-solid fa-right-to-bracket"></i> Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-right-to-bracket"></i>  Register</a>
+        <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-right-to-bracket"></i> Register</a>
       </li>
       {% endif %}
 
@@ -59,7 +62,8 @@
   </header>
   <div class="content-wrapper">
     <!-- Logout Modal -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -71,23 +75,26 @@
           </div>
 
           <div class="modal-body">
-            <p class="confirm_dialog fs-4" >Are you sure you want to sign out?</p> 
+            <p class="confirm_dialog fs-4">Are you sure you want to sign out?</p>
           </div>
 
           <div class="modal-footer">
             <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}
               {% if redirect_field_value %}
-              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
               {% endif %}
-              <button type="submit" class="btn btn-secondary font-weight-bold fs-5 btn-outline-primary btn-light " id="btn-submit">Yes</button>
-              <button type="button" class="btn btn-secondary font-weight-bold fs-5 btn-outline-primary btn-light" id="btn-cancel" data-bs-dismiss="modal">No</button>
+              <button type="submit" class="btn btn-secondary font-weight-bold fs-5 btn-outline-primary btn-light "
+                id="btn-submit">Yes</button>
+              <button type="button" class="btn btn-secondary font-weight-bold fs-5 btn-outline-primary btn-light"
+                id="btn-cancel" data-bs-dismiss="modal">No</button>
             </form>
-            
+
           </div>
         </div>
       </div>
     </div>
+  </div>
   {% block content %}
   <!-- Content Goes here -->
   {% endblock content %}

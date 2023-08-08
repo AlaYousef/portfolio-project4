@@ -71,20 +71,19 @@ class RecipeDetail(View):
             bookmark = True
 
         comment_form = CommentForm(data=request.POST)
-
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.name
+            comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
         else:
             comment_form = CommentForm()
         
-        jls_extract_var = "recipe_detail.html"
+        jls_extract = "recipe_detail.html"
         return render(
             request,
-            jls_extract_var,
+            jls_extract,
             {
                 "recipe": recipe,
                 "comments": comments,
