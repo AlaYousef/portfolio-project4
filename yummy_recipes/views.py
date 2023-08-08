@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from  django.views import generic, View
+from django.shortcuts import render, get_object_or_404, reverse
+from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Recipe
 from .forms import CommentForm
 
@@ -39,9 +40,10 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
+        bookmark = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        bookmark = False
+        
         if recipe.bookmarked.filter(id=self.request.user.id).exists():
             bookmark = True
 
@@ -64,9 +66,11 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
+        bookmark = False
+
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        bookmark = False
+        
         if recipe.bookmarked.filter(id=self.request.user.id).exists():
             bookmark = True
 
@@ -78,8 +82,7 @@ class RecipeDetail(View):
             comment.recipe = recipe
             comment.save()
         else:
-            comment_form = CommentForm()
-        
+            comment_form = CommentForm()   
         jls_extract = "recipe_detail.html"
         return render(
             request,
@@ -90,6 +93,18 @@ class RecipeDetail(View):
                 "commented": True,
                 "liked": liked,
                 "bookmark": bookmark,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm
             },
         )
+
+
+class RecipeLike(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        recipe = get_object_or_404(Recipe, slug=slug)
+        if recipe.likes.filter(id=request.user.id).exists():
+            recipe.likes.remove(request.user)
+        else:
+            recipe.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))

@@ -17,16 +17,33 @@
     </div>
     <div class="row mt-2 mx-auto bg-light.bg-gradient align-items-start fs-6 fw-bold mb-4" style="max-width: 65%; ">
        <div class="col-2">
-           <i class="far fa-heart"></i> {{ recipe.number_of_likes }}
+        <strong>
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="post">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                {% else %}
+                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                {% endif %}
+            </form>
+            {% else %}
+            <span><i class="far fa-heart"></i></span>
+            {% endif %}
+            <span>{{ recipe.number_of_likes }}</span> 
+       
+       
+        </strong>
+           
        </div>
        <div class="col-1">
         <i class="fa-regular fa-bookmark"></i>
        </div>
        <div class="col-3 text-center">
-        <i class="far fa-clock pr-2"></i> {{ recipe.cook_time }} 
+        <i class="far fa-clock pr-2"></i>  {{ recipe.cook_time }} 
         </div>
         <div class="col-6 text-end"><i class="fa-regular fa-user"></i>
-            {{ recipe.author }} | {{ recipe.created_on }}
+             {{ recipe.author }} | {{ recipe.created_on }}
         </div>
 
              
