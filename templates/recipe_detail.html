@@ -23,9 +23,9 @@
         <i class="fa-regular fa-bookmark"></i>
        </div>
        <div class="col-3 text-center">
-        Time: {{ recipe.cook_time }} 
+        <i class="far fa-clock pr-2"></i> {{ recipe.cook_time }} 
         </div>
-        <div class="col-6 text-end">
+        <div class="col-6 text-end"><i class="fa-regular fa-user"></i>
             {{ recipe.author }} | {{ recipe.created_on }}
         </div>
 
@@ -57,30 +57,38 @@
     </div>
    
 
-    <div class="row">
-        <div class="col-md-12 mb-4  mt-3 ">
-            <h2>Comments:</h2>
+    <div class="row g-0 mb-5">
+        <div class="col-md-12 mb-4 mt-3 card-text">
+            <h2><i class="fa-solid fa-comment"></i> Comments:</h2>
             {% for comment in comments %}
             <div class="row">
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">written by:
+                <div class="col-md-12 comments rounded fs-5 mb-4" style=" background-color: rgba(234, 235, 159, 0.32);">
+                    <p class="font-weight-bold fs-3">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ comment.name }}</p>
-                    <div class="rounded fs-4" style=" background-color: rgba(234, 235, 159, 0.32);">
+                        <i class="fa-regular fa-user"></i> {{ comment.name }} :</p>
+                 
                     <!-- The body of the comment goes before the | -->
-                    {{ comment.body | linebreaks }}
-                </div>
-                     
+                     {{ comment.body | linebreaks }} 
               
-                 <!-- Our for loop ends here -->
-                 {% endfor %}
+                </div>
             </div>
-           
+            <div class="row">
+                <div class="col-md-12">
+            {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
+
     <div class="row">
+        <div class="col">
+            <hr class="featurette-divider">
+        </div>
+    </div>
+   
+    <div class="row g-0 mb-5">
         <div class="col-md-12 mb-4 ">
-            <div class="card-body">
+            <div>
                 <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
@@ -89,7 +97,7 @@
                 {% else %}
                 {% if user.is_authenticated %}
     
-                <h3>Leave a comment:</h3>
+                <h3><i class="fa-regular fa-comments"></i> Leave a comment:</h3>
                 <p>Logged as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
