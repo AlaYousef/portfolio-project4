@@ -19,47 +19,64 @@
 
 <body class="content-wrapper">
 
-  <!-- Navigation -->
-  <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
 
-    <a href="{% url 'home' %}"
-      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <svg class="bi me-2" width="40" height="32">
-        <use xlink:href="#bootstrap"></use>
-      </svg>
-      <span class="fs-4 page-header" style="font-family:'Pacifico', cursive, sans-serif; font-size: 600px;">YUMMY</span>
-    </a>
+  <header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid ">
+        <a href="{% url 'home' %}"
+          class="d-flex align-items-start mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <span class="fs-4 page-header">YUMMY</span>
+        </a>
+        <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#navbarText" aria-controls="navbarText">
+          <span class="visually-hidden justify-content-end">Hamburger Icon</span>
+          <span class="navbar-toggler-icon justify-content-end"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" id="navbarText">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title logo" id="offcanvasNavbarLabel">
+              YUMMY
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <ul class="navbar-nav justify-content-end navigation">
+            <li class="nav-item flex a-center"><a class="nav-link" href="{% url 'home' %}">
+                <i class="fa-solid fa-house nav-icon"></i> Home</a></li>
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="{% url 'dinner' %}"><i class="fa-solid fa-utensils"></i>
+                Dinner</a></li>
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="{% url 'sweets' %}"><i class="fa-solid fa-cake-candles"></i>
+                Sweets</a></li>
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="{% url 'coctailes' %}"><i class="fa-solid fa-apple-whole"></i>
+                Coctailes</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="#"><i class="fa-solid fa-image-portrait"></i> Profile</a>
+            </li>
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                  class="fa-solid fa-right-to-bracket"></i> Logout</a></li>
+            {% else %}
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="{% url 'account_login' %}"> <i
+                  class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="{% url 'account_signup' %}"><i
+                  class="fa-solid fa-right-to-bracket"></i>
+                Register</a></li>
+            {% endif %}
 
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a href="{% url 'home' %}" class="nav-link" aria-current="page">
-          <i class="fa-solid fa-house nav-icon"></i> Home</a>
-      </li>
-      <li class="nav-item"><a href="{% url 'dinner' %}" class="nav-link"><i class="fa-solid fa-utensils"></i> Dinner</a>
-      </li>
-      <li class="nav-item"><a href="{% url 'sweets' %}" class="nav-link"><i class="fa-solid fa-cake-candles"></i>
-          Sweets</a></li>
-      <li class="nav-item"><a href="{% url 'coctailes' %}" class="nav-link"><i class="fa-solid fa-apple-whole"></i>
-          Coctailes</a></li>
-      {% if user.is_authenticated %}
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa-solid fa-image-portrait"></i> Profile</a>
-      </li>
-      <li class="nav-item" id="logoutNav">
-        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a>
-      </li>
-      {% else %}
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_login' %}"> <i class="fa-solid fa-right-to-bracket"></i> Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-right-to-bracket"></i> Register</a>
-      </li>
-      {% endif %}
 
-    </ul>
+          </ul>
+
+        </div>
+    </nav>
 
   </header>
+  <!--Log out confirmation message-->
   <div class="content-wrapper">
     <!-- Logout Modal -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
@@ -95,6 +112,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Message allert from Code Institute's I Think Therefore I Blog project -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+          {{ message | safe }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
   {% block content %}
   <!-- Content Goes here -->
   {% endblock content %}
@@ -131,6 +163,11 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
+    setTimeout(function () {
+      let messages = document.getElementById('msg');
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 4000);
   </script>
   <!-- Font Awesome script -->
   <script src="https://kit.fontawesome.com/9b10509272.js" crossorigin="anonymous"></script>

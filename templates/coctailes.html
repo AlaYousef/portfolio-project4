@@ -4,14 +4,7 @@
 
 
 <div class="container">
-    <div class="row mt-2 breadcrumb-font">
-        <nav aria-label="breadcrumb text-center mx-auto justify-content-center ">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item fs-5 breadcrumb-font"><a href="{% url 'home' %}">Home</a></li>
-              <li class="breadcrumb-item active fs-5 breadcrumb-font" aria-current="page">Coctailes</li>
-            </ol>
-        </nav>
-    </div>
+   
     <div class="row">
         <div class="col-12">
             <h1 class="text-center decorated"><span> Coctailes Recipes </span></h1>
@@ -26,7 +19,7 @@
             <div class="card mb-5 mx-auto card-detail recipe-card border border-0" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074071/pexels-amar-preciado-16550819_fuapb6.jpg"
-                    class="card-img-top" alt="Coctaile recipe image">
+                    class="card-img-top " alt="Coctaile recipe image">
                 {% else %}
                 <img src=" {{ recipe.featured_image.url }}" alt="Coctaile recipe image">
                 {% endif %}

@@ -5,22 +5,68 @@ body{
     font-family: 'Alegreya',cursive, serif;
 }
 /* ---------------Navbar Style--------------- */
-ul{
-    font-family: 'Alegreya',cursive, serif;
-    
-    font-weight: bolder;   
+.page-header{
+    font-family:'Pacifico', cursive, sans-serif;
+    font-size: 600px;
+   
+}
 
+nav{
+    font-family: 'Alegreya',cursive, serif;
+    font-weight: bold;  
+  
 }
-.nav-icon{
-    color: blue;
+.nav-link{
+    color: blue;  
 }
+
 .nav li:hover:not(.active) {
     cursor: pointer;
     transform: scale(1.2);
     overflow: hidden;
 
 }
+.navigation {
+    padding-left: 20px;
+}
 
+.navigation i {
+    color: blue;
+    margin-right: -2px;
+}
+.navbar li {
+    margin-right: 15px;
+    transition: all 0.1s ease-out;
+}
+
+
+.nav-link:focus,
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+.active {
+    transform: scale(1.1);
+}
+
+.active a {
+    color: #3a3a3a;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.offcanvas {
+    background-color: rgb(248, 248, 242);
+}
+offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+    font-family: 'Pacifico', cursive, sans-serif;;
+}
 .home-page-text{
     font-family: cursive, serif;
     font-style: italic;
@@ -50,10 +96,12 @@ header{
 }
 /* ---------------Card Style--------------- */
 .card {
-    max-height: 60vh;
-
+    
 }
-
+.card-title:hover{
+    color: rgb(234, 235, 159);
+    text-decoration: underline;
+}
 
 /* ---------------------------------------Category (Dinner, Sweets and Coctailes) Pages Style--------------------------------------- */
 /* ---------------Card Style--------------- */
@@ -154,8 +202,21 @@ a{
 }
 
 /* ---------------breadcrumb class Style--------------- */
-.breadcrumb-font{
-    color: antiquewhite;;
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: rgb(248, 248, 199);
+    font-weight: bold;
+}
+
+.breadcrumb-item a{
+    color: rgb(248, 248, 242);
+    text-decoration: underline;
+ }
+ .breadcrumb:before {
+    color: rgb(248, 248, 242);
+ }
+.breadcrumb-item.active{
+   color: rgb(248, 248, 242);
 }
 
 
@@ -182,7 +243,20 @@ a{
     text-align: center;
 }
 /* -----------------------------------Footer Style-------------------------------------- */
-.footer-section{
+footer a{
     font-weight: bolder;
     color: rgb(248, 248, 242);
 }
+
+/* -----------------------------------Media Queries------------------------------------- */
+@media (max-width: 100px) {
+    .card{
+    max-width: 75%;
+
+    }
+    .container{
+        display: block;
+    }
+    
+}
+

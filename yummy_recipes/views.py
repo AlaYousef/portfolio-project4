@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
@@ -67,6 +68,7 @@ class RecipeDetail(View):
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
         bookmark = False
+        success_message = "%(name)s was created successfully"
 
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
