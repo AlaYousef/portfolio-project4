@@ -8,4 +8,5 @@ urlpatterns = [
     path("sweets/", views.SweetsList.as_view(), name="sweets"),
     path('<slug:slug>/',  views.RecipeDetail.as_view(), name='recipe_detail'),
     path('like/<slug:slug>',  views.RecipeLike.as_view(), name='recipe_like'),
+    path('bookmarked/<slug:slug>',  views.RecipeBookmarked.as_view(), name='recipe_bookmarked'),
 ]

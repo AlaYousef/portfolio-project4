@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row h-25 mx-auto">
-        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto shadow-lg p-3 bg-body rounded" style="max-width: 65%; max-height: 70vh;"
+        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" 
             alt="sweets-recipes">
             
     </div>
@@ -37,7 +37,24 @@
            
        </div>
        <div class="col-1">
-        <i class="fa-regular fa-bookmark"></i>
+        <strong>
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'recipe_bookmarked' recipe.slug %}" method="post">
+                {% csrf_token %}
+                {% if bookmark %}
+                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="fa-solid fa-bookmark"></i></button>
+                {% else %}
+                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="fa-regular fa-bookmark"></i></button>
+                {% endif %}
+            </form>
+            {% else %}
+            <span><i class="fa-regular fa-bookmark"></i></span>
+            {% endif %}
+            
+       
+       
+        </strong>
+        
        </div>
        <div class="col-3 text-center">
         <i class="far fa-clock pr-2"></i>  {{ recipe.cook_time }} 
