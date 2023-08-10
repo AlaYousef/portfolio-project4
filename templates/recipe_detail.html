@@ -4,151 +4,143 @@
 {% load crispy_forms_tags %}
 
 
-<div class="container recipe-detail-container">
-   
+<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg">
+
     <div class="row">
         <div class="col-12">
-            <h1 id="recipe-list-title" class="text-center decorated"><span> {{ recipe.name }} Recipe </span></h1>
+            <h1 id="recipe-list-title" class="text-center decorated mt-4"><span> {{ recipe.name }} Recipe </span></h1>
         </div>
     </div>
     <div class="row h-25 mx-auto">
-        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" 
+        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"
             alt="sweets-recipes">
-            
+
     </div>
-    <div class="row mt-2 mx-auto bg-light.bg-gradient align-items-start fs-6 fw-bold mb-4" style="max-width: 65%; ">
-       <div class="col-2">
-        <strong>
-            {% if user.is_authenticated %}
-            <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="post">
-                {% csrf_token %}
-                {% if liked %}
-                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+    <div class="row mt-2 mx-auto bg-light.bg-gradient align-items-start fs-6 fw-bold mb-4" id="img-detail-items">
+        <div class="col-2">
+            <strong>
+                {% if user.is_authenticated %}
+                <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="post">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                    {% else %}
+                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                    {% endif %}
+                </form>
                 {% else %}
-                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                <span><i class="far fa-heart"></i></span>
                 {% endif %}
-            </form>
-            {% else %}
-            <span><i class="far fa-heart"></i></span>
-            {% endif %}
-            <span>{{ recipe.number_of_likes }}</span> 
-       
-       
-        </strong>
-           
-       </div>
-       <div class="col-1">
-        <strong>
-            {% if user.is_authenticated %}
-            <form class="d-inline" action="{% url 'recipe_bookmarked' recipe.slug %}" method="post">
-                {% csrf_token %}
-                {% if bookmark %}
-                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="fa-solid fa-bookmark"></i></button>
-                {% else %}
-                <button type="submit"  value="{{recipe.slug}}" class="btn-like"><i class="fa-regular fa-bookmark"></i></button>
-                {% endif %}
-            </form>
-            {% else %}
-            <span><i class="fa-regular fa-bookmark"></i></span>
-            {% endif %}
-            
-       
-       
-        </strong>
-        
-       </div>
-       <div class="col-3 text-center">
-        <i class="far fa-clock pr-2"></i>  {{ recipe.cook_time }} 
+                <span>{{ recipe.number_of_likes }}</span>
+            </strong>
+
         </div>
-        <div class="col-6 text-end"><i class="fa-regular fa-user"></i>
-             {{ recipe.author }} | {{ recipe.created_on }}
+        <div class="col-1">
+            <strong>
+                {% if user.is_authenticated %}
+                <form class="d-inline " action="{% url 'recipe_bookmarked' recipe.slug %}" method="post">
+                    {% csrf_token %}
+                    {% if bookmark %}
+                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i
+                            class="fa-solid fa-bookmark"></i></button>
+                    {% else %}
+                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i
+                            class="fa-regular fa-bookmark"></i></button>
+                    {% endif %}
+                </form>
+                {% else %}
+                <span><i class="fa-regular fa-bookmark "></i></span>
+                {% endif %}
+            </strong>
+
+        </div>
+        <div class="col-3 text-center created_on">
+            <i class="far fa-clock pr-2"></i> {{ recipe.cook_time }}
+        </div>
+        <div class="col-6 text-end created_on"><i class="fa-regular fa-user"></i>
+            {{ recipe.author }} | {{ recipe.created_on }}
         </div>
 
-             
+
     </div>
-    
-
-
 
     <div class="row g-0 mb-5">
-        <div class="col-md-12">
-           
+        <div class=" col-11 col-md-11 mx-auto">
+
             <h1 class="post-title">{{ recipe.name }}</h1>
             <!-- Post author goes before the | the post's created date goes after -->
             <p class="card-text">{{ recipe.description | safe }}</p>
+
             <h1>Ingredients: </h1>
-                <p class="card-text">{{ recipe.ingredients | safe  }}</p>            
+            <p class="card-text">{{ recipe.ingredients | safe  }}</p>
+
             <h1>Steps: </h1>
-            <p class="card-text">{{ recipe.steps | safe }}</p>            
-          
+            <p class="card-text">{{ recipe.steps | safe }}</p>
+    
+
         </div>
 
-
+       
     </div>
-    <div class="row">
-        <div class="col">
-            <hr class="featurette-divider">
-        </div>
-    </div>
-   
 
+
+</div>
+
+</div>
+
+<div class="container  recipe-detail-container rounded shadow-lg">
     <div class="row g-0 mb-5">
-        <div class="col-md-12 mb-4 mt-3 card-text">
+        <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
             <h2><i class="fa-solid fa-comment"></i> Comments:</h2>
             {% for comment in comments %}
             <div class="row">
-                <div class="col-md-12 comments rounded fs-5 mb-4" style=" background-color: rgba(234, 235, 159, 0.32);">
+                <div class="col-md-11 comments rounded fs-5 mb-4 mx-auto" style=" background-color: rgba(140, 217, 243, 0.148);">
                     <p class="font-weight-bold fs-3">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         <i class="fa-regular fa-user"></i> {{ comment.name }} :</p>
-                 
+
                     <!-- The body of the comment goes before the | -->
-                     {{ comment.body | linebreaks }} 
-              
+                    {{ comment.body | linebreaks }}
+
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-            {% endfor %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <hr class="featurette-divider">
-        </div>
-    </div>
-   
-    <div class="row g-0 mb-5">
-        <div class="col-md-12 mb-4 ">
-            <div>
-                <!-- For later -->
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-                {% else %}
-                {% if user.is_authenticated %}
-    
-                <h3><i class="fa-regular fa-comments"></i> Leave a comment:</h3>
-                <p>Logged as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <div class="col text-center font-weight-bold">
-                    <button class="fs-5 border border-3 btn btn-outline-primary btn-light mb-3  mt-3" type="submit">Submit
-                    </button>
-                     </div>
-                </form>
-                {% endif %}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-    
 </div>
+<div class="container  rounded">
+    <div class="row g-0 mb-5" style="display: block;">
+        <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
+            <!-- For later -->
+            {% if commented %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting approval
+            </div>
+            {% else %}
+            {% if user.is_authenticated %}
+
+            <h3 class="mt-3 mx-auto" style="margin-top: 1.3em;"><i class="fa-regular fa-comments"></i> Leave a comment:</h3>
+            <p>Logged as: {{ user.username }}</p>
+            <form method="post" style="margin-top: 1.3em;" class="mx-auto">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <div class="col text-center font-weight-bold">
+                    <button class="fs-5 border border-3 btn btn-outline-primary btn-light mb-3  mt-3"
+                        type="submit">Submit
+                    </button>
+                </div>
+            </form>
+            {% endif %}
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
 
 
 
