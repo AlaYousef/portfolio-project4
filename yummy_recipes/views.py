@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
@@ -106,19 +108,35 @@ class RecipeLike(View):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.likes.filter(id=request.user.id).exists():
             recipe.likes.remove(request.user)
+            
         else:
             recipe.likes.add(request.user)
-
+        
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-class RecipeBookmarked(View):
+class RecipeBookmarked(LoginRequiredMixin, View):
     
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.bookmarked.filter(id=request.user.id).exists():
             recipe.bookmarked.remove(request.user)
+            messages.success(self.request, 'Recipe removed from bookmarks page')
         else:
             recipe.bookmarked.add(request.user)
-
+            messages.success(self.request, 'Recipe added to bookmarks page')
+           
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class MyBookmarkRecipe(generic.ListView):
+    """
+    This view allows a logged in user to view their bookmarked recipes.
+    """
+    model = Recipe
+    template_name = 'mybookmarks.html'
+    paginate_by = 8
+
+    def get_queryset(self):
+        """Override get_queryset to filter by user favourites"""
+        return Recipe.objects.filter(bookmarked=self.request.user.id)
