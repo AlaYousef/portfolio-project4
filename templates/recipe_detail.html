@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 
-<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg">
+<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg border  border-info">
 
     <div class="row">
         <div class="col-12">
@@ -88,13 +88,13 @@
 
 </div>
 
-<div class="container  recipe-detail-container rounded shadow-lg">
+<div class="container  recipe-detail-container rounded shadow-lg border  border-info">
     <div class="row g-0 mb-5">
         <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
             <h2><i class="fa-solid fa-comment"></i> Comments:</h2>
             {% for comment in comments %}
             <div class="row">
-                <div class="col-md-11 comments rounded fs-5 mb-4 mx-auto" style=" background-color: rgba(140, 217, 243, 0.148);">
+                <div class="col-md-11 comments rounded fs-5 mb-4 mx-auto border  border-light" style=" background-color: rgba(140, 217, 243, 0.148);">
                     <p class="font-weight-bold fs-3">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         <i class="fa-regular fa-user"></i> {{ comment.name }} :</p>
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<div class="container  rounded">
+<div class="container  rounded border  border-info">
     <div class="row g-0 mb-5" style="display: block;">
         <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
             <!-- For later -->

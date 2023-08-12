@@ -156,7 +156,7 @@ a{
     max-width: 100%;
 }
 .recipe-detail-container{
-    max-width: 65%;
+    max-width: 70%;
     max-height: fit-content;
     background-color: rgba(234, 235, 159, 0.32);
 }

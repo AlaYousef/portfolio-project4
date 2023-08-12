@@ -36,6 +36,16 @@
 
   <div class="container">
 
+    {% if user.is_authenticated %}
+       <div class="row mb-4 gx-5">
+        <div class="col-sm-12 col-12 col-md-10 gx-5 mx-auto text-center">
+          <h2>Welcome To YUMMY Recipes, {{ user.username }} </h2> 
+          <p class="h5">Here you can find recipes for dinner, desserts and coctailes for free. <br>
+             You can add your own recipe and create your own digital cookbook by bookmark any recipe you want</p>
+        </div>
+      </div>
+    {% endif %}
+
     <hr class="featurette-divider">
 
     <div class="row mb-3 gx-5">
@@ -112,43 +122,51 @@
           </a>
         </div>
        </div>
-      
-    </div>
-   
-    <!--comments section-->
-    <hr class="featurette-divider">
-    <div class="card text-center bg-transparent border-light">
-      <div class="card-header">
-        alaa
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
+       <hr class="featurette-divider">
 
-    <hr class="featurette-divider">
-    <div class="card text-center bg-transparent border-light ">
-      <div class="card-header">
-        alaa
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
+       <div class="row mb-4 gx-5">
+        <div class="col-sm-12 col-12 col-md-10 gx-5 mx-auto text-center">
+         <h2>See Our Recent Recipes <i class="fa-solid fa-bowl-rice" style="color: #eff0f3;"></i></h2> 
+        </div>
+       </div>
 
-    <hr class="featurette-divider">
-    <div class="card text-center bg-transparent border-light ">
-      <div class="card-header">
-        alaa
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
+       <div class="row gx-5 align-items-stretch mx-auto">
+        {% for recipe in recipe_list|slice:":3" %}
+        <div class="col-sm-6 col-md-6 col-lg-4 px-1 d-flex mb-5">
+            <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent"style= "width: 18rem;">
+                {% if "placeholder" in recipe.featured_image.url %}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074071/pexels-amar-preciado-16550819_fuapb6.jpg"
+                    class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
+                </div>
+                {% else %}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <img src=" {{ recipe.featured_image.url }}" class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image" height="auto" width="auto"></div>
+                {% endif %}
+                <div class="col-12 col-sm-12 col-md-12  col-lg-12">
+                <div class="card-body">
+                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
+                        <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
+                    </a>
+                    <p class="card-text">
+                        <span><i class="far fa-clock pr-2"></i></span>
+                        <span>Preparation Time: {{ recipe.cook_time }}</span>
+                        <br>
+                        <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
+                    </p>
 
+                </div>
+                </div>
+            </div>
+          </div>
+        
+        {% endfor %}
+       </div>
+       
+       
+    
+
+    </div>
 
 </main>
 
