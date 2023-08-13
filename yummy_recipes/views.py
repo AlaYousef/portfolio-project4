@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
@@ -140,3 +140,13 @@ class MyBookmarkRecipe(generic.ListView):
     def get_queryset(self):
         """Override get_queryset to filter by user favourites"""
         return Recipe.objects.filter(bookmarked=self.request.user.id)
+
+
+class AddRecipe(generic.CreateView):
+    """allow logged in users to create a recipe"""
+    form_class = RecipeForm
+    template_name = 'add_recipe.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form) 

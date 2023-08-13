@@ -10,5 +10,6 @@ urlpatterns = [
     path('like/<slug:slug>', views.RecipeLike.as_view(), name='recipe_like'),
     path('bookmarked/<slug:slug>', views.RecipeBookmarked.as_view(), name='recipe_bookmarked'),
     path('bookmarks/', views.MyBookmarkRecipe.as_view(), name='mybookmarks'),
+    path('addrecipe/', views.AddRecipe.as_view(), name='add_recipe'),
     
 ]
