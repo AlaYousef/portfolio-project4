@@ -40,7 +40,7 @@
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <ul class="navbar-nav justify-content-end navigation">
+          <ul class="navbar-nav nav-tabs justify-content-end navigation">
             <li class="nav-item flex a-center"><a class="nav-link" href="{% url 'home' %}">
                 <i class="fa-solid fa-house nav-icon"></i> Home</a></li>
             <li class="nav-item flex a-center">
@@ -53,8 +53,12 @@
               <a class="nav-link nav-item" href="{% url 'coctailes' %}"><i class="fa-solid fa-apple-whole"></i>
                 Coctailes</a></li>
             {% if user.is_authenticated %}
-            <li class="nav-item flex a-center">
-              <a class="nav-link nav-item" href="{% url 'mybookmarks' %}"><i class="fa-solid fa-image-portrait"></i> Profile</a>
+            <li class="nav-item flex a-center dropdown">
+              <a class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-solid fa-image-portrait"></i> Profile</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'mybookmarks' %}">My Bookmarks</a></li>
+                <li><a class="dropdown-item" href="#">My Recipes</a></li>
+              </ul>
             </li>
             <li class="nav-item flex a-center">
               <a class="nav-link nav-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal"><i

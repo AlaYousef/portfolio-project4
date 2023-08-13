@@ -16,6 +16,9 @@ nav{
     font-weight: bold;  
   
 }
+.navbar{
+    padding-bottom: 1.5px;
+}
 .nav-link{
     color: blue;  
 }
@@ -43,8 +46,15 @@ nav{
 .nav-link:focus,
 .nav-link:hover {
     transform: scale(1.1);
+    color: blue;
 }
-
+ul .dropdown-menu{
+    background-color: rgb(248, 248, 242);
+}
+.dropdown-item{
+    color: blue;
+    font-weight: bold;
+}
 .active {
     transform: scale(1.1);
 }
