@@ -53,6 +53,9 @@
               <a class="nav-link nav-item" href="{% url 'coctailes' %}"><i class="fa-solid fa-apple-whole"></i>
                 Coctailes</a></li>
             {% if user.is_authenticated %}
+            <li class="nav-item flex a-center">
+              <a class="nav-link nav-item" href="{% url 'add_recipe' %}"><i class="fa-solid fa-plus"></i>
+                Add Recipe</a></li>
             <li class="nav-item flex a-center dropdown">
               <a class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-solid fa-image-portrait"></i> Profile</a>
               <ul class="dropdown-menu">
@@ -132,7 +135,7 @@
   </div>
 
   {% block content %}
-  <!-- Content Goes here -->
+  <!-- Content here -->
   {% endblock content %}
 
 

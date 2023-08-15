@@ -216,12 +216,20 @@ a{
 }
 
 /* ---------------Add Recipe Page Style--------------- */
-.add-recipe {
-    
+
+div .panel-heading{
+    width: 70%;
 }
-.add-recipe input, .add-recipe textarea, .add-recipe select{
-    max-width: 78%;
+.note-toolbar{
+    width: 70%;
 }
+iframe{
+    width: 70%;
+}
+.add-recipe{
+    max-width: 50%;
+}
+
 
 
 /* ---------------Arrow to top Style (Base page)--------------- */

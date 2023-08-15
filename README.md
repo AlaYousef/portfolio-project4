@@ -245,8 +245,7 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the Py
 ## Bugs 
 ### Resolved
 
-* Through testing, I had indentation warnings which fixed direct.
-* Infinit loop occurred after adding exception part on play again function when the user enter anything rather than 'y' or 'n'. It was fixed by adding a 'break' statement at the end of IF statement on try block.
+*Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']
 
 [Back to top](<#contents>)
 

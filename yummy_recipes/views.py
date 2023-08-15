@@ -37,7 +37,6 @@ class SweetsList(generic.ListView):
 
 
 class RecipeDetail(View):
-    
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -86,7 +85,8 @@ class RecipeDetail(View):
             comment.recipe = recipe
             comment.save()
         else:
-            comment_form = CommentForm()   
+            comment_form = CommentForm() 
+
         jls_extract = "recipe_detail.html"
         return render(
             request,
@@ -97,13 +97,12 @@ class RecipeDetail(View):
                 "commented": True,
                 "liked": liked,
                 "bookmark": bookmark,
-                "comment_form": CommentForm
+                "comment_form": CommentForm()
             },
         )
 
 
 class RecipeLike(View):
-    
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.likes.filter(id=request.user.id).exists():
@@ -115,7 +114,7 @@ class RecipeLike(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-class RecipeBookmarked(LoginRequiredMixin, View):
+class RecipeBookmarked(View):
     
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
@@ -125,7 +124,7 @@ class RecipeBookmarked(LoginRequiredMixin, View):
         else:
             recipe.bookmarked.add(request.user)
             messages.success(self.request, 'Recipe added to bookmarks page')
-           
+
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
@@ -135,7 +134,7 @@ class MyBookmarkRecipe(generic.ListView):
     """
     model = Recipe
     template_name = 'mybookmarks.html'
-    paginate_by = 8
+    paginate_by = 6
 
     def get_queryset(self):
         """Override get_queryset to filter by user favourites"""
@@ -149,4 +148,5 @@ class AddRecipe(generic.CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super().form_valid(form) 
+        return super().form_valid(form)
+

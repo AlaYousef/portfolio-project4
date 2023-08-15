@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="container text-center mx-auto justify-content-center">
+<div class="container mx-auto justify-content-center">
     <div class="row">
         <div class="col-12">
             <h1 class="text-center decorated"><span> Add Recipe </span></h1>
@@ -9,16 +9,15 @@
     </div>
     
     <br>
-    <div class="row justify-content-center mx-auto">
+    <div class="row mx-auto justify-content-center">
         {% if user.is_authenticated %}
         {% load cloudinary %}
-        <div class="col-md-12 col-lg-10 offset-md-2 mt-1 mx-auto add-recipe justify-content-center">
+        <div class="mx-auto justify-content-center col-10 col-md-10 col-lg-10 ">
             <!--  Add Recipe Form -->
-            <form method="post"  enctype="multipart/form-data">
-                <div class=" container fs-5 text justify-content-center" >
+            <form method="post"  enctype="multipart/form-data" class="add-recipe mt-3 justify-content-center">
                 {{ form | crispy }}
                 {% csrf_token %}
-                </div>
+               
                 <div class="col text-center font-weight-bold mt-4">
                     <button type="submit" class="font-weight-bold fs-5 border border-3 btn btn-outline-primary btn-light btn-signup center mb-3 shadow-lg">Submit</button>
                     <a class="font-weight-bold fs-5 border border-3 btn btn-outline-primary btn-light center mb-3 shadow-lg" href="{%  url 'home' %}">Cancel</a>

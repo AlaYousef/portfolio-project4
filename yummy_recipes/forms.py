@@ -22,15 +22,17 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = [
             'name',
-            'description',
+            'slug',
+            'category',
             'cook_time',
+            'description',
             'ingredients',
             'steps',
             'featured_image',
             'status',
+
         ]
         widgets = {
-            'description': SummernoteWidget(),
             'ingredients': SummernoteWidget(),
             'steps': SummernoteWidget(),
         }
