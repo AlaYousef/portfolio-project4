@@ -6,6 +6,8 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
 
 
 class RecipeList(generic.ListView):
@@ -142,11 +144,24 @@ class MyBookmarkRecipe(generic.ListView):
 
 
 class AddRecipe(generic.CreateView):
-    """allow logged in users to create a recipe"""
+    
     form_class = RecipeForm
     template_name = 'add_recipe.html'
+    success_message = "%(calculated_field)s was created successfully"
 
     def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        The signed in user is set as the author of the recipe.
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
+        
 
+class MyRecipes(generic.ListView):
+    model = Recipe
+    template_name = 'my_recipes.html'
+    paginate_by = 6
+
+    def get_queryset(self):
+        return Recipe.objects.filter(author=self.request.user)

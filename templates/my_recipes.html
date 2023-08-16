@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="container">
+   
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center decorated"><span> My Added Recipes </span></h1>
+            <p class="text-center decorated h3 mt-0">Welcome back, {{user.username}}</p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row gx-5 align-items-stretch mx-auto">
+        {% for recipe in recipe_list %}
+        <div class="col-sm-6 col-md-6 col-lg-4 px-1 d-flex mb-5">
+            <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent"style= "width: 18rem;">
+                {% if "placeholder" in recipe.featured_image.url %}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074071/pexels-amar-preciado-16550819_fuapb6.jpg"
+                    class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
+                </div>
+                {% else %}
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <img src=" {{ recipe.featured_image.url }}" class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image" height="auto" width="auto"></div>
+                {% endif %}
+                <div class="col-12 col-sm-12 col-md-12  col-lg-12">
+                <div class="card-body">
+                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
+                        <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
+                    </a>
+                    <p class="card-text">
+                        <span><i class="far fa-clock pr-2"></i></span>
+                        <span>Preparation Time: {{ recipe.cook_time }}</span>
+                        <br>
+                        <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
+                    </p>
+
+                </div>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row gx-5 align-items-stretch mx-auto">
+    
+        {% endif %}
+        {% endfor %}
+    
+    </div>
+</div>
+
+
+</div>
+
+
+<div class="row">
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class=" btn btn-danger page-link mb-5">&laquo; PREV
+                </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-danger page-link mb-5"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+</div>
+
+{% endif %}
+{% endblock %}
