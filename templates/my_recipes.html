@@ -36,6 +36,18 @@
                     <p class="card-text">
                         <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
                         <br>
+                        <hr>
+                        {% if user.is_authenticated and recipe.author == user %}
+                        <a href="{% url 'delete_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                            <i class="fa-regular fa-trash-can"></i></span>
+                        <span> Delete Recipe</span>
+                         </a>
+                         <br>
+                         <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                            <i class="fa-solid fa-pen-to-square"></i></span>
+                        <span> Edit Recipe</span>
+                         </a>
+                        {% endif %}
                 
                     </p>
                    

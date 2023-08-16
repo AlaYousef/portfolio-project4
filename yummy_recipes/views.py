@@ -176,8 +176,10 @@ class DeleteRecipe(generic.DeleteView):
     model = Recipe
     template_name = 'delete_recipe.html'
     success_message = "Recipe deleted successfully"
+    """
+   URL TO REDIRECT TO AFTER DELETING
+    """
     success_url = reverse_lazy('my_recipes')
-
 
     def test_func(self):
         recipe = self.get_object()
@@ -190,8 +192,38 @@ class DeleteRecipe(generic.DeleteView):
         Credit: https://stackoverflow.com/questions/24822509/
         success-message-in-deleteview-not-shown
         """
-       
+        messages.success(self.request, self.success_message)
         return super(DeleteRecipe, self).delete(request, *args, **kwargs)
 
-    def get_success_message(self, request):
-        return self.success_message
+class EditRecipe(SuccessMessageMixin, generic.UpdateView):
+
+    """
+    This view is used to allow logged in users to edit their own recipes
+    """
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'edit_recipe.html'
+    success_message = "%(calculated_field)s was edited successfully"
+
+    def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        The signed in user is set as the author of the recipe.
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        """
+        Prevent another user from updating other's recipes
+        """
+        recipe = self.get_object()
+        return recipe.author == self.request.user
+
+    def get_success_message(self, cleaned_data):
+        """
+        Override the get_success_message() method to add the recipe title
+        into the success message.
+        source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
+        """
+        return self.success_message 
