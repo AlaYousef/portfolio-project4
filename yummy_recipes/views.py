@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
 from django.db.models.signals import pre_save
-from django.utils.text import slugify
+from django.urls import reverse_lazy
 
 
 class RecipeList(generic.ListView):
@@ -168,3 +168,30 @@ class MyRecipes(generic.ListView):
 
     def get_queryset(self):
         return Recipe.objects.filter(author=self.request.user)
+
+class DeleteRecipe(generic.DeleteView):
+    """
+    Allow logged in users to delete recipes that they created
+    """
+    model = Recipe
+    template_name = 'delete_recipe.html'
+    success_message = "Recipe deleted successfully"
+    success_url = reverse_lazy('my_recipes')
+
+
+    def test_func(self):
+        recipe = self.get_object()
+        return self.request.user == recipe.author
+
+    def delete(self, request, *args, **kwargs):
+        """
+        This function is used to display sucess message given
+        SucessMessageMixin cannot be used in generic.DeleteView.
+        Credit: https://stackoverflow.com/questions/24822509/
+        success-message-in-deleteview-not-shown
+        """
+       
+        return super(DeleteRecipe, self).delete(request, *args, **kwargs)
+
+    def get_success_message(self, request):
+        return self.success_message

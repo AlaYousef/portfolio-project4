@@ -10,6 +10,22 @@
             <h1 id="recipe-list-title" class="text-center decorated mt-4"><span> {{ recipe.name }} Recipe </span></h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-center decorated mt-4">
+                {% if user.is_authenticated and recipe.author == user %}
+                        <a href="{% url 'delete_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                            <i class="fa-regular fa-trash-can"></i></span>
+                        <span>Delete Recipe</span>
+                         </a>
+                         <a href="#" class="recipe-detail-link"><span>
+                            <i class="fa-regular fa-trash-can"></i></span>
+                        <span>Update Recipe</span>
+                         </a>
+                {% endif %}
+            </h4>
+        </div>
+    </div>
     <div class="row h-25 mx-auto">
         {% if "placeholder" in recipe.featured_image.url %}
         <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172135/pexels-ready-made-3851048_amfhs5.jpg" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"

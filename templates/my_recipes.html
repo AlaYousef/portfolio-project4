@@ -32,13 +32,13 @@
                     <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
                         <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
                     </a>
+                    
                     <p class="card-text">
-                        <span><i class="far fa-clock pr-2"></i></span>
-                        <span>Preparation Time: {{ recipe.cook_time }}</span>
-                        <br>
                         <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
+                        <br>
+                
                     </p>
-
+                   
                 </div>
                 </div>
             </div>

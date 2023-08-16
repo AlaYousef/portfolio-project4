@@ -12,4 +12,5 @@ urlpatterns = [
     path('bookmarks/', views.MyBookmarkRecipe.as_view(), name='mybookmarks'),
     path('addrecipe/', views.AddRecipe.as_view(), name='add_recipe'),
     path('myrecipes/', views.MyRecipes.as_view(), name='my_recipes'),
+    path('deleterecipe/<slug:slug>', views.DeleteRecipe.as_view(), name='delete_recipe'),
 ]
