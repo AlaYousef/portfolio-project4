@@ -11,8 +11,13 @@
         </div>
     </div>
     <div class="row h-25 mx-auto">
-        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"
+        {% if "placeholder" in recipe.featured_image.url %}
+        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172135/pexels-ready-made-3851048_amfhs5.jpg" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"
             alt="sweets-recipes">
+        {% else %}
+        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"
+        alt="sweets-recipes">
+        {% endif %}
 
     </div>
     <div class="row mt-2 mx-auto bg-light.bg-gradient align-items-start fs-6 fw-bold mb-4" id="img-detail-items">

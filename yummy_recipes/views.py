@@ -143,20 +143,23 @@ class MyBookmarkRecipe(generic.ListView):
         return Recipe.objects.filter(bookmarked=self.request.user.id)
 
 
-class AddRecipe(generic.CreateView):
+class AddRecipe(SuccessMessageMixin, generic.CreateView):
     
     form_class = RecipeForm
     template_name = 'add_recipe.html'
-    success_message = "%(calculated_field)s was created successfully"
+    success_message = "recipe was created successfully"
 
     def form_valid(self, form):
         """
-        This method is called when valid form data has been posted.
-        The signed in user is set as the author of the recipe.
+        called when the form is valid,
+        and set the user as author of the recipe
         """
         form.instance.author = self.request.user
         return super().form_valid(form)
-        
+    
+    def get_success_message(self, request):
+        return self.success_message
+
 
 class MyRecipes(generic.ListView):
     model = Recipe

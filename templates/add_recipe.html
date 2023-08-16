@@ -14,7 +14,7 @@
         {% load cloudinary %}
         <div class="mx-auto justify-content-center col-10 col-md-10 col-lg-10 ">
             <!--  Add Recipe Form -->
-            <form method="post" /form-data" class="add-recipe mt-3 justify-content-center">
+            <form method="post"  enctype="multipart/form-data" class="add-recipe mt-3 justify-content-center">
                 {{ form | crispy }}
                 {% csrf_token %}
                
