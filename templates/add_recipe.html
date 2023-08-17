@@ -12,7 +12,7 @@
     <div class="row mx-auto justify-content-center">
         {% if user.is_authenticated %}
         {% load cloudinary %}
-        <div class="mx-auto justify-content-center col-10 col-md-10 col-lg-10 ">
+        <div class="mx-auto justify-content-center col-10 col-md-10 col-lg-8 ">
             <!--  Add Recipe Form -->
             <form method="post"  enctype="multipart/form-data" class="add-recipe mt-3 justify-content-center">
                 {{ form | crispy }}

@@ -198,32 +198,27 @@ class DeleteRecipe(generic.DeleteView):
 class EditRecipe(SuccessMessageMixin, generic.UpdateView):
 
     """
-    This view is used to allow logged in users to edit their own recipes
+    This view  allow logged in users to edit their own recipes
     """
     model = Recipe
     form_class = RecipeForm
     template_name = 'edit_recipe.html'
-    success_message = "%(calculated_field)s was edited successfully"
+    success_message = "Recipe was edited successfully"
 
     def form_valid(self, form):
         """
-        This method is called when valid form data has been posted.
-        The signed in user is set as the author of the recipe.
+        called when the form is valid
+        logged in user are the author of the recipe
         """
         form.instance.author = self.request.user
         return super().form_valid(form)
 
     def test_func(self):
         """
-        Prevent another user from updating other's recipes
+        allow only the recipe owner to edit it
         """
         recipe = self.get_object()
         return recipe.author == self.request.user
 
     def get_success_message(self, cleaned_data):
-        """
-        Override the get_success_message() method to add the recipe title
-        into the success message.
-        source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
-        """
         return self.success_message 

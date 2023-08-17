@@ -214,20 +214,22 @@ a{
     background: transparent;
     border: none;
 }
-
+.testpopover{
+    text-align:center;
+}
 /* ---------------Add Recipe Page Style--------------- */
 
 div .panel-heading{
-    width: 70%;
+    width: 100%;
 }
 .note-toolbar{
-    width: 70%;
+    width: 100%;
 }
 iframe{
-    width: 70%;
+    width: 100%;
 }
 .add-recipe{
-    max-width: 50%;
+    max-width: 100%;
 }
 
 

@@ -3,7 +3,7 @@
 
 {% load crispy_forms_tags %}
 
-<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg border  border-info">
+<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg border border-light">
 
     <div class="row">
         <div class="col-12">
@@ -34,7 +34,9 @@
                     {% endif %}
                 </form>
                 {% else %}
-                <span><i class="far fa-heart"></i></span>
+                <span class=" testpopover bs-popover-bottom bs-popover-auto">
+                    <i class="far fa-heart"></i>
+                </span>
                 {% endif %}
                 <span>{{ recipe.number_of_likes }}</span>
             </strong>
@@ -96,7 +98,7 @@
 
 </div>
 
-<div class="container  recipe-detail-container rounded shadow-lg border  border-info">
+<div class="container  recipe-detail-container rounded shadow-lg border  border-light">
     <div class="row g-0 mb-5">
         <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
             <h2><i class="fa-solid fa-comment"></i> Comments:</h2>
@@ -120,7 +122,7 @@
         </div>
     </div>
 </div>
-<div class="container recipe-detail-container rounded border  border-info mt-4">
+<div class="container recipe-detail-container rounded border  border-light mt-4">
     <div class="row g-0 mb-5" style="display: block;">
         <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
             <!-- For later -->

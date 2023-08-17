@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1 class="text-center decorated"><span> 400 error</span></h1>
+            <p class="text-center decorated h3 mt-0">Sorry,it seems you are unable to handle this request</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <h3><a href="{% url 'home' %}">Home page</a></h3>
+    </div>
+
+</div>
+
+{% endblock content %}
