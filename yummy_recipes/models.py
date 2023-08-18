@@ -34,6 +34,9 @@ class Recipe(models.Model):
         """Get url after user adds/edits recipe"""
         return reverse('recipe_detail', kwargs={'slug': self.slug})
 
+    def __str__(self):
+        return f"{self.name}"
+
     def number_of_likes(self):
         return self.likes.count()
 
@@ -51,6 +54,7 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["created_on"]
+
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center decorated"><span> Delete comment</span></h1>
+            <p class="text-center decorated h3 mt-0">Welcome back, {{user.username}}</p>
+        </div>
+    </div>
+    <br>
+  
+    <p class="text-center mt-3 h3">Are you sure you want to delete your comment?</p>
+    <div class="row justify-content-center">
+        <div class="col-11 col-md-6 col-lg-4 mt-3">
+            <!-- Delete Recipe Form -->
+            <form class="text-center" method="POST">
+                {%  csrf_token  %}
+                <div>
+                    <button class="font-weight-bold  btn btn-danger m-2 fs-5 border border-3 btn " type="submit">Delete</button>
+                    <a class="fs-5 border border-3 btn btn-outline-primary btn-light" href="{%  url 'recipe_detail' comment.recipe.slug %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

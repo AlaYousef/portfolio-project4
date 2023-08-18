@@ -34,9 +34,8 @@
                     {% endif %}
                 </form>
                 {% else %}
-                <span class=" testpopover bs-popover-bottom bs-popover-auto">
-                    <i class="far fa-heart"></i>
-                </span>
+                    <a href="{% url 'account_login' %}" class="btn-like"><i class="far fa-heart"></i></a>
+             
                 {% endif %}
                 <span>{{ recipe.number_of_likes }}</span>
             </strong>
@@ -56,7 +55,7 @@
                     {% endif %}
                 </form>
                 {% else %}
-                <span><i class="fa-regular fa-bookmark "></i></span>
+                <a href="{% url 'account_login' %}" class="btn-like"><i class="fa-regular fa-bookmark "></i></a>
                 {% endif %}
             </strong>
 
@@ -104,14 +103,21 @@
             <h2><i class="fa-solid fa-comment"></i> Comments:</h2>
             {% for comment in comments %}
             <div class="row">
-                <div class="col-md-11 comments rounded fs-5 mb-4 mx-auto border  border-light" style=" background-color: rgba(140, 217, 243, 0.148);">
-                    <p class="font-weight-bold fs-3">
+                <div class="col-md-11 comments rounded  mb-4 mx-auto border  border-light" >
+                    <p >
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        <i class="fa-regular fa-user"></i> {{ comment.name }} :</p>
-
+                        <span class="font-weight-bold fs-3"><i class="fa-regular fa-user"></i> {{ comment.name }} : </span>
+                        {{ comment.created_on }} 
+                        {% if user.is_authenticated and user.username == comment.name %}
+                        <a href="{% url 'delete_comment' comment.id %}" class="recipe-detail-link">
+                            <span>  <i class="fa-regular fa-trash-can"></i></span>
+                        </a>
+                        {% endif %}
+                    </p>
+                 
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
-
+                    
                 </div>
             </div>
             <div class="row">

@@ -15,7 +15,7 @@ Responsive image here
 * [Logic](#logic)
      * [Flowcharts](#flowcharts)
      * [Database Design](#database-design)
-
+* [Agile Methodology](#agile-methodology)
 * [Game Features](#Game-Features)
     * [Introduction Message](#Introroduction-Message) 
     * [Ask Player Name](#Ask-Player-Name)
@@ -85,7 +85,57 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 * hgfuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
 
 #### Wireframes
-* fxjdxjf
+
+<details>
+
+<summary>Home Page</summary>
+
+![Home Page](documentation/readme_images/pp4-Home.png)
+</details>
+
+<details>
+
+<summary>Dinner Recipes</summary>
+
+![Dinner Recipes](documentation/readme_images/pp4-Dinner.png)
+</details>
+
+<details>
+
+<summary>Sweets Recipes</summary>
+
+![Sweets Recipes](documentation/readme_images/pp4-Sweets.png)
+</details>
+
+<details>
+
+<summary>Coctailes Recipes</summary>
+
+![Coctailes Recipes](documentation/readme_images/pp4-Coctailes.png)
+</details>
+
+
+<details>
+
+<summary>Add Recipe</summary>
+
+![Add Recipe](docs/wireframes/addrecipe_wireframe.png)
+</details>
+
+<details>
+
+<summary>My Recipes</summary>
+
+![My Recipes](docs/wireframes/myrecipes_wireframe.png)
+</details>
+
+<details>
+
+<summary>My Bookmarks</summary>
+
+![My Bookmarks](docs/wireframes/mybookmarks_wireframe.png)
+</details>
+
 
 
 [Back to top](<#contents>)
@@ -101,6 +151,18 @@ This is the flowchart diagram for my website, represent how the system work step
 
 ![ER Diagram](documentation/readme_images/ER-pp4.png)<br>
 
+
+[Back to top](<#contents>)
+
+## Agile Methodology
+
+my product backlog is detailed into three levels:
+
+Epics which is a large quantities of related work broken down into features. 
+A feature, is a service that delivers value to the end user. 
+Each feature is broken down into a number simpler tasks which are user stories. 
+
+credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#what%E2%80%99s-the-difference-between-features-and-epics-in-agile?
 
 [Back to top](<#contents>)
 
@@ -246,6 +308,7 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the Py
 ### Resolved
 
 *Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']
+absolut url....
 
 [Back to top](<#contents>)
 
@@ -311,6 +374,9 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the Py
 * All quiz questions have been taken from [Britannica](https://www.britannica.com/quiz/facts-you-should-know-the-periodic-table-quiz).
 
 * Django CRUD template tutorial [Youtube] https://www.google.com/search?q=delete+recipe+sjango+app&rlz=1C1FKPE_svSE1020SE1020&oq=delete+recipe+sjango+app&aqs=chrome..69i57j33i10i160j33i10i22i29i30l2.14314j0j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:520893c7,vid:aStLddXMJrk
+
+* redirect after deleting https://stackoverflow.com/questions/31275574/
+    reverse-for-success-url-on-django-class-based-view-complain-about-circular-impor
 
 
 * The Python code functionality help is from the following: [Real Python Tutorials](https://realpython.com/python-quiz-application/#step-1-ask-questions) and from this repository [GitHub](https://github.com/KrystalCoding/plant-quiz/blob/main/README.md).

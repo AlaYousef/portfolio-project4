@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Recipe
+from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
 from django.db.models.signals import pre_save
 from django.urls import reverse_lazy
@@ -169,6 +169,7 @@ class MyRecipes(generic.ListView):
     def get_queryset(self):
         return Recipe.objects.filter(author=self.request.user)
 
+
 class DeleteRecipe(generic.DeleteView):
     """
     Allow logged in users to delete recipes that they created
@@ -177,7 +178,9 @@ class DeleteRecipe(generic.DeleteView):
     template_name = 'delete_recipe.html'
     success_message = "Recipe deleted successfully"
     """
-   URL TO REDIRECT TO AFTER DELETING
+    URL TO REDIRECT-TO AFTER DELETING
+    From: https://stackoverflow.com/questions/31275574/
+    reverse-for-success-url-on-django-class-based-view-complain-about-circular-impor
     """
     success_url = reverse_lazy('my_recipes')
 
@@ -186,14 +189,9 @@ class DeleteRecipe(generic.DeleteView):
         return self.request.user == recipe.author
 
     def delete(self, request, *args, **kwargs):
-        """
-        This function is used to display sucess message given
-        SucessMessageMixin cannot be used in generic.DeleteView.
-        Credit: https://stackoverflow.com/questions/24822509/
-        success-message-in-deleteview-not-shown
-        """
         messages.success(self.request, self.success_message)
         return super(DeleteRecipe, self).delete(request, *args, **kwargs)
+
 
 class EditRecipe(SuccessMessageMixin, generic.UpdateView):
 
@@ -222,3 +220,34 @@ class EditRecipe(SuccessMessageMixin, generic.UpdateView):
 
     def get_success_message(self, cleaned_data):
         return self.success_message 
+
+
+class DeleteComment(generic.DeleteView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'delete_comment.html'
+    success_message = "Your comment deleted successfully"
+    
+    def test_func(self):
+        """
+        allow only the comment writer to delete it
+        """
+        comment = self.get_object()
+        return comment.name == self.request.user.username
+
+    def delete(self, request, *args, **kwargs):
+        """
+        Display sucess message given
+        From: https://stackoverflow.com/questions/24822509/
+        success-message-in-deleteview-not-shown
+        """
+        messages.success(self.request, self.success_message)
+        return super(DeleteComment, self).delete(request, *args, **kwargs)
+    
+    def get_success_url(self):
+        """ Return to recipe detail after deleting comment"""
+        recipe = self.object.recipe
+        return reverse_lazy('recipe_detail', kwargs={'slug': recipe.slug})
+   
+
+  
