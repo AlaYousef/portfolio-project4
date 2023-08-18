@@ -79,10 +79,17 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 ### Design
 
 #### Colours
-* The colours in the game are supplied by the Python Colorama Model
+* The colour scheme was used based on blue colour for main background and header (logo and nav links) and light yellow for body text. It is a great light shade and suitable for the text in which for creating a good contrast. 
+
+![color-pallete](documentation/readme_images/color-pallete.png)
+
 
 #### Fonts
-* hgfuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+* The fonts I used for the site were imported from [Google Fonts](https://fonts.google.com/):<br>
+**Body:** *Alegreya, cursive, serif*<br>
+**Navbar:** *Alegreya, cursive, sans-serif*<br>
+**Logo:** *Pacifico, cursive, sans-serif*<br>
+
 
 #### Wireframes
 
@@ -117,28 +124,42 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 
 <details>
 
-<summary>Add Recipe</summary>
+<summary>Register</summary>
 
-![Add Recipe](docs/wireframes/addrecipe_wireframe.png)
+![Register](documentation/readme_images/pp4-Register.png)
 </details>
 
 <details>
 
-<summary>My Recipes</summary>
+<summary>Log In </summary>
 
-![My Recipes](docs/wireframes/myrecipes_wireframe.png)
+![Log-in](documentation/readme_images/pp4-Login.png)
 </details>
 
 <details>
 
-<summary>My Bookmarks</summary>
+<summary>Add Recipe </summary>
 
-![My Bookmarks](docs/wireframes/mybookmarks_wireframe.png)
+![Add-Recipes](documentation/readme_images/pp4-AddRecipe.png)
+</details>
+
+<details>
+<summary>My Bookmarks </summary>
+
+![My-bookmarks](documentation/readme_images/pp4-My-bookmarks.png)
+</details>
+
+<details>
+
+<summary>My Recipes </summary>
+
+![My-Recipes](documentation/readme_images/pp4-My-Recipes.png)
 </details>
 
 
 
 [Back to top](<#contents>)
+
 
 ## Logic
 
