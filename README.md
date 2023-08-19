@@ -59,16 +59,17 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 |                        | As a Site User, I can log in/ out so that I keep my account secure |
 |                        | As a Logged-in User I can view my bookmarked recipes in my profile so that I can find them easily each time I need them
 |                        | As a Site User, I can view my published recipes so that I can manage all my added recipes from my profile |
-|  USER NAVIGATION       | As a Site User, I can navigate easily around site contents so that I know if it meets my neeeds |
+|  USER NAVIGATION       | As a Site User, I can navigate easily around site contents so that I know if it meets my needs |
 |                        | As a Site User, I can view paginated list of reciepes so that I can easily select one to view |
+|                        | As a Site user, I can see navigation path of the page so that I know where I am and navigate easy  |
 |  RECIPE INTERACTION     | As a Site User, I can view a list of recipes so that I can select one to read |
 |                         | As a Site User, I can click on a recipe post so that I can read full recipe details | 
-|                         | As a Site User/Admin, I can view the number of likes on each post so that I can see which is the most popular |
+|                         | As a Site User/Admin, I can view the number of likes on each recipe so that I can see which is the most popular |
 |                          | As a Site User/Admin, I can view comments on an individual recipe so that I can read the conversation |
-|                          | As a Site User, I can like or unlike recipe so that I can interact with the content|
-|                          | As a Site User, I can leave comments on a recipe so that I can be involved in the conversation|
-|                          | As a Site User, I can bookmark recipe so that I can save it in my profile|
-|    RECIPE MANAGEMENT     | As a Site User, I can add my own recipe so that I can share it with other users|
+|                          | As a Logged-in User, I can like or unlike recipe so that I can interact with the content|
+|                          | As a Logged-in User, I can leave comments on a recipe so that I can be involved in the conversation|
+|                          | As a Logged-in User, I can bookmark recipe so that I can save it in my profile|
+|    RECIPE MANAGEMENT     | As a Logged-in User, I can add my own recipe so that I can share it with other users|
 |                          | As a Site Admin, I can create, read, update and delete recipes so that I can manage my site content and share recipes with other users|
 |                          | As a Site User, I can sort my bookmarked recipes in my profile so that I can find the most favourite one easily|
 |     SITE MANAGEMENT      | As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments|
@@ -92,6 +93,7 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 
 
 #### Wireframes
+* The wireframes for desktop and mobile were created with [Balsamiq](https://balsamiq.com/) 
 
 <details>
 
@@ -176,12 +178,37 @@ This is the flowchart diagram for my website, represent how the system work step
 [Back to top](<#contents>)
 
 ## Agile Methodology
+The project was developed using the Agile methodology. Product backlog is detailed into three levels:<br>
+* Epics which is a large quantities of related work, which were five epics for the project. Each of them has a list of features.
+* A feature, is a service that delivers value to the end user. 
+* Each feature is broken down into a number simpler tasks which are user stories. 
 
-my product backlog is detailed into three levels:
+As the user stories were achieved, they were moved from To Do list, to In-Progress, and finally Done lists. You can have a look to the project board [here](https://github.com/users/AlaYousef/projects/4/views/1?layout=board)
 
-Epics which is a large quantities of related work broken down into features. 
-A feature, is a service that delivers value to the end user. 
-Each feature is broken down into a number simpler tasks which are user stories. 
+<details>
+<summary>Sprints Details</summary>
+
+* **Sprint 1 - SETTING-UP**<br>
+    -Setup Django<br>
+    -Deploy on heroku<br><br>
+* **Sprint 2 - SITE MANAGEMENT**<br>
+    -Building The Admin Site<br><br>
+* **Sprint 3 - NAVIGATION**<br>
+    -Create a navigation menu<br>
+    -Add website logo, nav menue<br>
+    -Choose fonts, colors and background images <br><br>
+* **Sprint 4 - RECIPE INTERACTION**<br>
+    -Create recipe, comment models<br>
+    -Create Recipes list view and recipe detail view.<br>
+    -Return to Sprint 3, Implement pagenation.<br><br>
+* **Sprint 5 - USER PROFILE**<br>
+    -Implement *Register*, *Login* and *Logout* pages with forms using the django-allauth module.<br>
+    -Return to Sprint 4, Implement *Like*, *bookmark* and *comment* features.<br>
+    -Implement form for adding and updating recipes<br>
+    -Create *bookmarked* and *my recipes* pages.<br>
+    -Return to Sprint 4, Implement *delete* comment feature.<br><br>
+
+</details><br><br>
 
 credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#what%E2%80%99s-the-difference-between-features-and-epics-in-agile?
 
