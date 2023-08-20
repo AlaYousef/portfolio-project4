@@ -214,27 +214,32 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 [Back to top](<#contents>)
 
-## Game Features
+## Features
 
-### Introduction Message
+### Header and Navigation Bar
 
-* When the users open the website, introduction message with quiz details are displayed here.<br>
+* Logo with site name positioned in the top left of the header section. This logo is linked to the home page to facilitate navigation for users. <br>
+* The navigation bar displayed at the right top of header section includes all links to the various other pages.
+* When the user logged in, profile and add-recipe links added to the navigation bar.
 
-![Introduction Message](assets/documentation/introduction_msg.png)
+
+![Navigation Bar](documentation/readme_images/navigation-bar.png)<br><br>
+
+
+### Footer
+
+* The footer section includes links to social media, Facebook, Twitter, Instagram and Youtube.
+* Each of these links opens a separate tab on clicking tab to keep accessibility and stay consistent so users know what to expect when they are navigating through the website.
+
+![Footer](documentation/readme_images/footer.png)<br>
 
 [Back to top](<#contents>)
 
-### Ask Player Name
-* After the player sees the introduction message for a few seconds, the user will be asked to input his name.<br>
-
-![Ask Player Name](assets/documentation/ask_name.png)
-
-[Back to top](<#contents>)
-
-#### Empty Input for Name
+### Home Page
 * If the player does not input their name and city, this alert will appear.<br>
 
-![Empty Input for Name](assets/documentation/empty_name.png)
+<video src='documentation/readme_videos/Home_page.webm' width=100%/>
+
 
 [Back to top](<#contents>)
 
