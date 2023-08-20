@@ -215,6 +215,7 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 [Back to top](<#contents>)
 
 ## Game Features
+[Home_page.webm](https://github.com/AlaYousef/portfolio-project4/assets/76633110/dbe8a8eb-ca56-40fe-a5d3-19791504d4c8)
 
 ### Introduction Message
 
