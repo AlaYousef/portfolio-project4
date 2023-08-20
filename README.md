@@ -216,8 +216,6 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 ## Features
 
-### Header and Navigation Bar
-
 * Logo with site name positioned in the top left of the header section. This logo is linked to the home page to facilitate navigation for users. <br>
 * The navigation bar displayed at the right top of header section includes all links to the various other pages.
 * When the user logged in, profile and add-recipe links added to the navigation bar. In addnition to log-out instead of log-in/register.
