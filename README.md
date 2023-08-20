@@ -220,8 +220,8 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 * Logo with site name positioned in the top left of the header section. This logo is linked to the home page to facilitate navigation for users. <br>
 * The navigation bar displayed at the right top of header section includes all links to the various other pages.
-* When the user logged in, profile and add-recipe links added to the navigation bar.
-
+* When the user logged in, profile and add-recipe links added to the navigation bar. In addnition to log-out instead of log-in/register.
+* The navigation bar is fully responsive, collapsing into a hamburger on small screen sizes.<br>
 
 ![Navigation Bar](documentation/readme_images/navigation-bar.png)<br><br>
 
@@ -229,24 +229,28 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 ### Footer
 
 * The footer section includes links to social media, Facebook, Twitter, Instagram and Youtube.
-* Each of these links opens a separate tab on clicking tab to keep accessibility and stay consistent so users know what to expect when they are navigating through the website.
+* Each of these links opens a separate tab on clicking to keep accessibility and stay consistent, so users know what to expect when they are navigating through the website.
 
 ![Footer](documentation/readme_images/footer.png)<br>
 
 [Back to top](<#contents>)
 
 ### Home Page
-* If the player does not input their name and city, this alert will appear.<br>
+* Home page contain a welcome message for logged-in users with short description about the website will appear. 
+* Three recipes cards with three different categories will displayed. When the user click on one of it , will navigate to recipe list of the specific category.
+* Recent recipes will appear also at the end of the home page. On click the user clicked will navigate to the specific recipe details page.
+* Top arrow, an arrow appears at the end of the page to return back to the top of the home page for ease of navigation for users. 
 
-<video src='documentation/readme_videos/Home_page.webm' width=100%/>
+[Home_page.webm](https://github.com/AlaYousef/portfolio-project4/assets/76633110/dbe8a8eb-ca56-40fe-a5d3-19791504d4c8)
 
 
 [Back to top](<#contents>)
 
-#### Welcome Message
- * After the player enters their desired username, a short welcome message is displayed and the user asked to press Enter key to start the quiz.<br>
+### Dinner, Sweets, Coctailes Pages
+ * Each of these tabs are linked to a page with menue of recipes list which only contain recipes within the specific category. 
+ * Each of these pages has a pagination to divide the content into separate pages. The page contain 6 recipes cards and the rest are appears in the next page. So users can navigate to them using next button and return back using previous button.
 
-![Welcome Message](assets/documentation/welcome_msg.png)
+<video src='documentation/readme_videos/Home_page.webm' width=100%/>
 
 [Back to top](<#contents>)
 
