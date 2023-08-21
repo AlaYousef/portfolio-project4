@@ -215,6 +215,15 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 [Back to top](<#contents>)
 
 ## Features
+### Home Page
+* Home page contain a welcome message for logged-in users with short description about the website will appear. 
+* Three recipes cards with three different categories will displayed. When the user click on one of it , will navigate to recipe list of the specific category.
+* Recent recipes will appear also at the end of the home page. On click the user clicked will navigate to the specific recipe details page.
+* Top arrow, an arrow appears at the end of the page to return back to the top of the home page for ease of navigation for users. 
+
+![Home](documentation/readme_images/home-page.gif)<br>
+
+#### Header
 
 * Logo with site name positioned in the top left of the header section. This logo is linked to the home page to facilitate navigation for users. <br>
 * The navigation bar displayed at the right top of header section includes all links to the various other pages.
@@ -224,7 +233,7 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 ![Navigation Bar](documentation/readme_images/navigation-bar.png)<br><br>
 
 
-### Footer
+#### Footer
 
 * The footer section includes links to social media, Facebook, Twitter, Instagram and Youtube.
 * Each of these links opens a separate tab on clicking to keep accessibility and stay consistent, so users know what to expect when they are navigating through the website.
@@ -233,101 +242,89 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 [Back to top](<#contents>)
 
-### Home Page
-* Home page contain a welcome message for logged-in users with short description about the website will appear. 
-* Three recipes cards with three different categories will displayed. When the user click on one of it , will navigate to recipe list of the specific category.
-* Recent recipes will appear also at the end of the home page. On click the user clicked will navigate to the specific recipe details page.
-* Top arrow, an arrow appears at the end of the page to return back to the top of the home page for ease of navigation for users. 
 
-[Home_page.webm](https://github.com/AlaYousef/portfolio-project4/assets/76633110/dbe8a8eb-ca56-40fe-a5d3-19791504d4c8)
+### Account Section
+* Registration, log in and log out are implemented using Django allauth library.
 
-
-[Back to top](<#contents>)
-
-### Dinner, Sweets, Coctailes Pages
- * Each of these tabs are linked to a page with menue of recipes list which only contain recipes within the specific category. 
- * Each of these pages has a pagination to divide the content into separate pages. The page contain 6 recipes cards and the rest are appears in the next page. So users can navigate to them using next button and return back using previous button.
-
-<video src='documentation/readme_videos/Home_page.webm' width=100%/>
-
-[Back to top](<#contents>)
-
-#### Account Pages
-##### Register Page
+#### Register Page
+* To register an account, users required to enter uersname, email, password and password confirmation.
+* After all information entered correctly the user will redirect to the Home page with a confirmation message "Successfully signed in as (user name)".
 
 ![Register Page](documentation/readme_images/register.png)<br>
 
-##### Log-in Page
+![Log-in Message](documentation/readme_images/log-in-msg.png)<br><br>
 
+#### Log-in Page
+* Users is required to enter username and password to log in.
+* After the user enter the required information, the user will redirect to the home page with a confirmation message "Successfully signed in as (user name)".
+* Since the user register
 ![Log-in Page](documentation/readme_images/log-in.png)<br>
 
+* Log in confirmation message.
+![Log-in Message](documentation/readme_images/log-in-msg.png)<br><br>
 
-##### Log-out Page
+#### Log-out Page
+* The user asked "Are you sure you want to log out?".
+* User will redirect to the _Home_ page if the user click _yes_.
 
-![Log-out Page](documentation/readme_images/log-out.png)<br>
+![Log-out Page](documentation/readme_images/log-out.png)<br><br>
 
- * Each question appear with 4 possible answers. Only one is correct.
+* Log out confirmation message.
+![Log-out Message](documentation/readme_images/log-out-msg.png)<br>
+
+
+### Dinner, Sweets, Coctailes Pages
+ * Each of these tabs are linked to a page with list of recipes which only contain recipes within the specific category. 
+ * Each of these pages has a pagination to divide the content into separate pages. The page contain 6 recipes cards and the rest are appears in the next page. So users can navigate to them using next button and return back using previous button.
+
+![Recipe-Type List Page](documentation/readme_images/recipe-list.png)<br><br>
+
+### Recipe Details Page
+#### Recipe information 
+
+* If the user click on any recipe name for different categories, the user will navigate to the recipe detail page.
+* This page conatin all information that the user need for the recipe. Including recipe name, author, cooking/preparing time, Ingredients and steps to apply this recipe.
+* Logged-in users can save this recipe in his own profile by bookmark this recipe throw this icon 
+ <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/bookmark.svg" width="15" height="15">.
+* In addition, users can like or dislike the recipe throw the icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/heart.svg" width="15" height="15"> next to the number of likes for this recipe.  
+
+ ![Recipe Detail](documentation/readme_images/recipe-detail.gif)<br><br>
+
+#### Comments Section 
+* The website is interactive so logged-in users can leave comments on a specific recipe.
+* These comments must be approved by the site admin befor publishing.
+* Logged-in user can delete his own comment if needed by clicking on this icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> beside the author name.  
+
+![Comment](documentation/readme_images/comment.png)<br>
+
+* If this Icon clicked, the user will be asked _Are you sure you want to delete this comment?_. If _Yes_ is clicked the comment will deleted and the user will stay in recipe details page. 
+
+![Comment](documentation/readme_images/comment-delete.png)<br><br>
+
+[Back to top](<#contents>)
+
+
+### Add Recipe Page
+
+ ![add-recipe Page](documentation/readme_images/add-recipe.png)<br><br>
+
+* Add Recipe confirmation message
+ ![add-recipe Page](documentation/readme_images/add-recipe-msg.png)<br><br>
  
- * The questions will be randomize every time the user choose to play again.
+[Back to top](<#contents>)
+
+### Profile Dropdown Menu
+![Profil](documentation/readme_images/profile.png)<br><br>
+
+#### My Bookmarkes page
+ ![Bookmarkes Page](documentation/readme_images/bookmarks.png)<br><br>
  
- * Instructions to enter a number between 1-4 is displayed. This allows the user to answer the quiz question via choosing one of these digits: '1', '2', '3', or '4'.
+* Bookmark recipe confirmation message
+![Bookmarkes message](documentation/readme_images/bookmark-msg.png)<br><br>
 
- * This will repeate until the 15th question is answered.
+#### My Recipes page
+![My-Recipes Page](documentation/readme_images/my-recipes.png)<br><br>
 
-![Quiz Questions](assets/documentation/quiz_ques.png)<br><br>
-
-[Back to top](<#contents>)
-
-#### Correct Answer
-
- * If the player answers the quiz question correctly, a simple message with: "Good! Your answer is correct :) ⭐" and more details about this question will be displayed.
-
- * The players score will increase by 1 at the same time a correct answer is guessed. 
-
-![Correct Answer](assets/documentation/correct_answer.png)<br>
-
-[Back to top](<#contents>)
-
-#### Incorrect Answer
-
- * If the player answers the quiz question incorrectly, a simple message with: "Your answer is incorrect :(. The correct answer is {correct_answer}."
-
-![Incorrect Answer](assets/documentation/incorrect_answer.png)<br>
-
-[Back to top](<#contents>)
-
-#### Invalid Data
-
- * If the player enter any data rather than '1','2','3' and '4', a message with: "Invalid data: please try again"
-
-![Invalid data](assets/documentation/invalid_data.png)<br>
-
-[Back to top](<#contents>)
-
-#### Final Score
- * If the user finish the quiz, the final score out of 15 will be shown. And a "⭐⭐Congratulations!⭐⭐" message will be displyed if the total scores were equal or more than 13.
-
-![Final Score](assets/documentation/final_score.png)<br>
-
-![Perfect Score](assets/documentation/perfec_score.png)<br>
-
-[Back to top](<#contents>)
-
-#### Play Again
-
- * After the user answered all 15 questions and get the score, he will asked to play again by enter 'y' for yes or 'n' for no.
-
- * If the user enter anything rather than 'y' or 'n', this message will be displayed: "Invalid input: please enter 'y' to continue or 'n' to  exit.".
-
-![Play Again1](assets/documentation/paly_again1.png)<br>
-
-[Back to top](<#contents>)
-
-* If the user enter 'y', The quiz questions will start again.
-
-* If the user enter 'n', The quiz ends and a message with: "Thanks for you time:)" will be displayed.
-
-![Play Again3](assets/documentation/play_again3.png)<br>
 
 [Back to top](<#contents>)
 
