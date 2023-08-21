@@ -252,9 +252,10 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 [Back to top](<#contents>)
 
-#### Quiz Questions
+#### Account Pages
+##### Register Page
 
- * Then player is presented with the first quiz question.
+ ![Register Page](documentation/readme_images/register.png)<br>
 
  * Each question appear with 4 possible answers. Only one is correct.
  
