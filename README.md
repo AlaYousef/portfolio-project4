@@ -255,7 +255,16 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 #### Account Pages
 ##### Register Page
 
- ![Register Page](documentation/readme_images/register.png)<br>
+![Register Page](documentation/readme_images/register.png)<br>
+
+##### Log-in Page
+
+![Log-in Page](documentation/readme_images/log-in.png)<br>
+
+
+##### Log-out Page
+
+![Log-out Page](documentation/readme_images/log-out.png)<br>
 
  * Each question appear with 4 possible answers. Only one is correct.
  
