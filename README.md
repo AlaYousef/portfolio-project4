@@ -257,7 +257,7 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 #### Log-in Page
 * Users is required to enter username and password to log in.
 * After the user enter the required information, the user will redirect to the home page with a confirmation message "Successfully signed in as (user name)".
-* Since the user register
+* Once the user logged in, new links in navigation bar will appear; _Add Recipe_, _Profile_ and _Log out_.
 ![Log-in Page](documentation/readme_images/log-in.png)<br>
 
 * Log in confirmation message.
@@ -286,14 +286,14 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 * This page conatin all information that the user need for the recipe. Including recipe name, author, cooking/preparing time, Ingredients and steps to apply this recipe.
 * Logged-in users can save this recipe in his own profile by bookmark this recipe throw this icon 
  <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/bookmark.svg" width="15" height="15">.
-* In addition, users can like or dislike the recipe throw the icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/heart.svg" width="15" height="15"> next to the number of likes for this recipe.  
+* In addition, users can like or dislike the recipe throw the icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/heart.svg" width="15" height="15">. When like, the number of likes for this recipe will increases.  
 
  ![Recipe Detail](documentation/readme_images/recipe-detail.gif)<br><br>
 
 #### Comments Section 
 * The website is interactive so logged-in users can leave comments on a specific recipe.
-* These comments must be approved by the site admin befor publishing.
-* Logged-in user can delete his own comment if needed by clicking on this icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> beside the author name.  
+* These comments must be approved by the site admin to be published.
+* Logged-in user can delete his own comment if needed by clicking on this icon <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/trash-can.svg" width="15" height="15"> beside the author name, and only the comment author can do that.  
 
 ![Comment](documentation/readme_images/comment.png)<br>
 
@@ -305,10 +305,13 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 
 ### Add Recipe Page
+* Users can interact with the website by adding their own recipes and this after registrering an account.
+* User required to fill the form correctly and click _submit_ button.
+* The recipe will be published in his name, at the same time saved in _my recipes_ tab.
 
- ![add-recipe Page](documentation/readme_images/add-recipe.png)<br><br>
+ ![add-recipe Page](documentation/readme_images/add-recipe.png)<br>
 
-* Add Recipe confirmation message
+* Confirmation message will be displayed to confirm the user that the recipe is successfully added.
  ![add-recipe Page](documentation/readme_images/add-recipe-msg.png)<br><br>
  
 [Back to top](<#contents>)
@@ -317,13 +320,20 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 ![Profil](documentation/readme_images/profile.png)<br><br>
 
 #### My Bookmarkes page
+* All bookmarkes recipes that the user bookmarked will be saved in this page. So, user can return to them any time he want. It's like a digital cookbook.
  ![Bookmarkes Page](documentation/readme_images/bookmarks.png)<br><br>
  
-* Bookmark recipe confirmation message
+* Confirmation message will be displayed after the user click on bookmark button to confirm the user that recipe added successfully to bookmarkes page.
 ![Bookmarkes message](documentation/readme_images/bookmark-msg.png)<br><br>
 
 #### My Recipes page
-![My-Recipes Page](documentation/readme_images/my-recipes.png)<br><br>
+* All recipes that the user has created will be saved in this page.
+* The user can mange these recipes by _Delete_ or _Edit_ these recipes.
+ ![My-Recipes Page](documentation/readme_images/my-recipes.png)<br>
+* If the user decide to delete the recipe, the user will get delete confirmation to insure that the user want to delete the recipe, If _yes_ is clicked the recipe will deleted and removed from publishing and sure from this page.
+![My-Recipes Delete msg](documentation/readme_images/delete-recipe.png)<br>
+* If the user want to update his own recipe in some way, can doing that by click _Edit Recipe_ link. The user will redirect to the add recipe form  again, update it and click submit.
+![My-Recipes Edit recipe](documentation/readme_images/edit-recipe.png)<br><br>
 
 
 [Back to top](<#contents>)
