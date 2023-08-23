@@ -16,17 +16,13 @@ Responsive image here
      * [Flowcharts](#flowcharts)
      * [Database Design](#database-design)
 * [Agile Methodology](#agile-methodology)
-* [Game Features](#Game-Features)
-    * [Introduction Message](#Introroduction-Message) 
-    * [Ask Player Name](#Ask-Player-Name)
-    * [Empty Input for Name](#Empty-Input-for-Name)
-    * [Welcome Message](#Welcome-Message)
-    * [Quiz Questions](#Quiz-Questions) 
-    * [Correct Answer](#Correct-Answer)
-    * [Incorrect Answer](#Incorrect-Answer)
-    * [Invalid Data](#Invalid-Data)
-    * [Final Score](#Final-Score)
-    * [Play Again](#Play-Again)
+* [Features](#features)
+    * [Home Page](#home-page) 
+    * [Account Section](#account-section)
+    * [Dinner, Sweets, Coctailes Pages](#dinner-sweets-coctailes-pages)
+    * [Recipe Details Page](#recipe-details-page)
+    * [Add Recipe Page](#add-recipe-page) 
+    * [Profile Dropdown Menu](#profile-dropdown-menu)
 * [Testing](#testing)
     * [PEP 8 Online](#PEP-8-Online)
     * [Lighthouse](#Lighthouse)
@@ -339,6 +335,7 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 [Back to top](<#contents>)
 
 ## Testing
+The testing documentation can be found at [TESTING.md](TESTING.md)
 
 ### PEP 8 Online
 
@@ -360,39 +357,17 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the Py
 
 ### Full Testing 
 
-| Test     | Expected  Outcome   | Pass/Fail    | 
-| :----     |    :----   |  :---- | 
-| Run run.py | Loads run.py, username prompt appears | Pass |
-| Insert username | Welcome message with entered username will displayed | Pass |
-| Press Enter without insert name | Try again message will displayed | Pass |
-| Press Enter to start | Prepering quiz messaege will appear, Page Clear function executes and the first question will displayed | Pass |
-| Enter answer in digits (1-4) + Enter | Loads correct/incorrect Output and provides correct answer, loads next question | Pass |
-| Press Enter With No Input/ Enter any other didgits | Invalid data message will be displayed, prompts user to try again and enter digits 1-4 | pass |
-| Press Enter on Final Quiz question | Loads Final Score Output, Loads Game Over message and Try Again option | Pass |
-| User gets score >= 13 | A congratulations message will displayed with the final score result score/15 | Pass |
-| Press Enter or any enteries rather than 'y'/'n' | Loads Invalid Data message, prompts the user to try again and enter 'y' or 'n'. | Pass |
-| Press Y on Try Again prompt |  Clears the page and runs quiz again, scores counter return back to 0 | Pass |
-| Press N on Try Again Prompt | Loads Thankfull message to player, system exit command executed | Pass |
-
 [Back to top](<#contents>)
 
 ## Bugs 
 ### Resolved
 
-*Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']
+* Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']
 absolut url....
 
 [Back to top](<#contents>)
 
 ## Technologies Used
-
- * Python is the programming language used to produce this quiz game.
-  
- * [GitHub](https://www.github.com) was used to hold the game repository files.
-
- * [Gitpod](https://www.gitpod.io) and [CodeAnywere](https://app.codeanywhere.com/) were used for the coding environment.
-
- * [Heroku](https://www.heroku.com) was used for deplyment.
 
 ## Deployment
 
@@ -440,22 +415,8 @@ absolut url....
 [Back to top](<#contents>)
 
 ## Credits
-
+* Youtube tutorial full stack crud https://www.youtube.com/watch?v=cTf-Hsqq3GA
 ### Content
-
-* All quiz questions have been taken from [Britannica](https://www.britannica.com/quiz/facts-you-should-know-the-periodic-table-quiz).
-
-* Django CRUD template tutorial [Youtube] https://www.google.com/search?q=delete+recipe+sjango+app&rlz=1C1FKPE_svSE1020SE1020&oq=delete+recipe+sjango+app&aqs=chrome..69i57j33i10i160j33i10i22i29i30l2.14314j0j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:520893c7,vid:aStLddXMJrk
-
-* redirect after deleting https://stackoverflow.com/questions/31275574/
-    reverse-for-success-url-on-django-class-based-view-complain-about-circular-impor
-
-
-* The Python code functionality help is from the following: [Real Python Tutorials](https://realpython.com/python-quiz-application/#step-1-ask-questions) and from this repository [GitHub](https://github.com/KrystalCoding/plant-quiz/blob/main/README.md).
-
-* Indentation warnings were solved by helping from [Flake8rules](https://www.flake8rules.com/).
-
-* Readme file following templates from these repositories on GitHub : [plant-quiz](https://github.com/KrystalCoding/plant-quiz/blob/main/README.md) and [portfolio_project_3](https://github.com/PedroCristo/portfolio_project_3#Ask-Player-Name-and-City). 
 
 
 
@@ -468,6 +429,6 @@ absolut url....
 [Back to top](<#contents>)
 
 ## Acknowledgements
-This App was completed as a Portfolio Project 3 for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, tutor support. And all at the Code Institute for their help.
+This App was completed as a Portfolio Project  for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, tutor support. And all at the Code Institute for their help.
 
 [Back to top](<#contents>)
