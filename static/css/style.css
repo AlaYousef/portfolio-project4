@@ -97,6 +97,14 @@ header{
 /* ---------------------------------------Index Page Style--------------------------------------- */
 
 /* ---------------Confirm Dialog Style--------------- */
+.carousel-item img{
+    width: 100%;
+    height: auto;
+}
+.home-img-card img{
+    max-width: fit-content;
+    max-width: fit-content;
+}
 .confirm_dialog{
     color:  rgb(4, 96, 126);
 }
