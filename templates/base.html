@@ -1,10 +1,14 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yummy Recipes Free">
+  <meta name="keywords" content="recipes, dinner, sweets, coctailes">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,400;1,600&family=Pacifico&display=swap"
     rel="stylesheet">
@@ -13,8 +17,8 @@
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="icon" href="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690826708/favicon-32x32_u2dmq5.png"
-    type="image/x-icon">
-  <title></title>
+    >
+  <title>Ymmy Recipes</title>
 </head>
 
 <body class="content-wrapper">
@@ -178,10 +182,14 @@
     }
     /* Allert messsage */
     setTimeout(function () {
-      let messages = document.getElementById('msg');
-      let alert = new bootstrap.Alert(messages);
+      var messages = document.getElementById('msg');
+      var alert = new bootstrap.Alert(messages);
 
       if (alert.length === 0) {
+        console.log("No message to display");
+
+      }
+      else{
         alert.close();
       }
     }, 2500);

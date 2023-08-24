@@ -142,9 +142,44 @@ The website was tested on different browsers for assuring the features work acco
 
 ## Code Validation
 ### HTML
+The html code of the website was validated using [W3 Markup Validator](https://validator.w3.org/).<br>
+The validation have the following outcome:<br><br>
+
+![html-validate](documentation/readme_images/html-validate.png)<br><br>
+
+
+The pages that have been tested:
+* Base
+* Home
+* Dinner
+* Sweets
+* Coctailes
+* Add Recipe
+* My Bookmarkes
+* My Recipes
+* Login/Log out/Register
+* Recipe Detail
+* Delete Recipe
+* Edit Recipe
+* Delete Comment
+
 ### CSS
+The CSS code was validated using [W3 Jigsaw Validator](https://jigsaw.w3.org/css-validator/) with no errors.<br>
+
+![CSS-validate](documentation/readme_images/css-validator.png)<br><br>
+
 ### Javascript
+The Javascript code was validated using using [JsHint](https://jshint.com/)<br>
+I have validate two functions as the following:
+
+![Javascript-validate](documentation/readme_images/js-validator.png)<br><br>
+
+In the begening I get these warning the following warnings, and fixed using change datatype from let to var to be available througt the function.
+![Javascrit-validate](documentation/readme_images/js-error.png)<br><br>
+
 ### Python
+
+
 ## Bugs 
 
 Back to [README.MD](README.MD)<br>
