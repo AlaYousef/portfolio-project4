@@ -59,7 +59,7 @@ Back to [README.md](README.md)<br>
 
 * Also the user will see Add recipe and profile dropdown links after logged-in.
 * The user can see comment form, so can leave a comment.
-* The user can like/dislike recipes, bookmarkes recipes.
+* The user can like/dislike and bookmarke recipes.
 * If the user click on like or bookmarke buttons without logging-in, the user will be rdeirect to log-in page to log-in.
 
 
@@ -82,6 +82,8 @@ Back to [README.md](README.md)<br>
 * Logged-in users can add their own recipes and have access to them by editing or deleting.
 * The user will get confirmation message to notified that the recipe has been created,updated or deleted successfully. 
 
+![My-Recipes Page](documentation/readme_images/my-recipes.png)<br>
+
 ####  Admin Managment.
  _As a Site Admin I can create, read, update and delete recipes so that I can manage my site content and share recipes with other users._
 
@@ -91,44 +93,58 @@ Back to [README.md](README.md)<br>
 #### View Recipeslist
  _As a Site User I can view a list of recipes so that I can select one to read._
 
+* All users can view recipes lists for any category on any time.
+
 #### View Recipe
  _As a Site User I can click on a recipe post so that I can read full recipe details._
+
+* All users can show all the detailes of any recipe separately.
 
 #### View Comments
  _As a Site User/Admin I can view comments on an individual recipe so that I can read the conversation._
 
+* All users can read the comment on each recipe. So, csn get an impression of the recipe before applying it.
+
 #### Comment on a recipe
  _As a Site User I can leave comments on a recipe so that I can be involved in the conversation._
+
+* Looged in users can leave a comment on a specific recipe, so he can write his review or experience for this recipe.
 
 #### View Likes
  _As a Site User/Admin I can view the number of likes on each post so that I can see which is the most popular._
 
+* All users can see the how many likes on each recipe. Therfore, he can easily find out the most delicious recipe and try it.
+
 #### Like / Unlike Recipe
  _As a Site User I can like or unlike recipe so that I can interact with the content._
+
+* Logged in users can like/dislike a specific recipe.
 
 #### Add bookmark
  _As a Site User I can bookmark recipe so that I can save it in my profile._
 
+* Logged in users can save any recipe they liked inthe bookmark page so can return to in needed.
 
 ### EPIC | Site Management
 #### Approve Comments
  _As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments._
 
-
-
-
+* All the published comment were approved only by the site admin.
 
 ## Browser Testing
-The website was tested on different browser for assuring the features work accordingly.
+The website was tested on different browsers for assuring the features work accordingly.
 * Chrome
 * Edge
-* Safary
-* Opera
 * Firefox
+* Opera
+
+* On Firefox when hovering on the recipe name, name should be underline but on firefox the name display with double underlines.
 
 ## Code Validation
 ### HTML
-
+### CSS
+### Javascript
+### Python
 ## Bugs 
 
 Back to [README.MD](README.MD)<br>

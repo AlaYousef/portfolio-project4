@@ -4,7 +4,7 @@
 
 {% if user.is_authenticated %}
 <div class="container">
-   
+    <!-- Page Header  -->
     <div class="row">
         <div class="col-12">
             <h1 class="text-center decorated"><span> My Added Recipes </span></h1>
@@ -13,62 +13,70 @@
     </div>
 
     <br>
-
+    <!-- Display my published recipes list  -->
     <div class="row gx-5 align-items-stretch mx-auto">
         {% for recipe in recipe_list %}
         <div class="col-sm-6 col-md-6 col-lg-4 px-1 d-flex mb-5">
-            <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent"style= "width: 18rem;">
+            <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172136/pexels-ready-made-3850886_tzp8x8.jpg"
-                    class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
+                    <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172136/pexels-ready-made-3850886_tzp8x8.jpg"
+                        class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
                 </div>
                 {% else %}
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <img src=" {{ recipe.featured_image.url }}" class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image" height="auto" width="auto"></div>
+                    <img src=" {{ recipe.featured_image.url }}" class="card-img-top rounded img-fluid"
+                        alt="{{ recipe.name }} image" height="auto" width="auto"></div>
                 {% endif %}
                 <div class="col-12 col-sm-12 col-md-12  col-lg-12">
-                <div class="card-body">
-                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
-                        <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
-                    </a>
-                    
-                    <p class="card-text">
-                        <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
-                        <br>
-                        <hr>
-                        {% if user.is_authenticated and recipe.author == user %}
-                        <a href="{% url 'delete_recipe' recipe.slug %}" class="recipe-detail-link"><span>
-                            <i class="fa-regular fa-trash-can"></i></span>
-                        <span> Delete Recipe</span>
-                         </a>
-                         <br>
-                         <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-detail-link"><span>
-                            <i class="fa-solid fa-pen-to-square"></i></span>
-                        <span> Edit Recipe</span>
-                         </a>
+                    <div class="card-body">
+                        <!--  checks if recipe is draft, so it will not published -->
+                        {% if recipe.status == 0 %}
+                        <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}
+                            <span class="draft">(DRAFT)</span></h2>
+                        {% else %}
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
+                            <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
+                        </a>
                         {% endif %}
-                
-                    </p>
-                   
-                </div>
+                        <p class="card-text">
+                            <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
+                            <br>
+                            <hr>
+                            <!-- Check if the user is logging in and he is the authoe of this recipe -->
+                            {% if user.is_authenticated and recipe.author == user %}
+                            <a href="{% url 'delete_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                                    <i class="fa-regular fa-trash-can"></i></span>
+                                <span> Delete Recipe</span>
+                            </a>
+                            <br>
+                            <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                                    <i class="fa-solid fa-pen-to-square"></i></span>
+                                <span> Edit Recipe</span>
+                            </a>
+                            {% endif %}
+
+                        </p>
+
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Each row have 3 recipes after that start a new row  -->
         {% if forloop.counter|divisibleby:3 %}
     </div>
     <div class="row gx-5 align-items-stretch mx-auto">
-    
+
         {% endif %}
         {% endfor %}
-    
+
     </div>
 </div>
 
 
 </div>
 
-
+<!-- Add pagination after 6 recipes in the page  -->
 <div class="row">
     {% if is_paginated %}
     <nav aria-label="Page navigation">
@@ -78,7 +86,8 @@
                 </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-danger page-link mb-5"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-danger page-link mb-5"> NEXT &raquo;</a>
+            </li>
 
             {% endif %}
         </ul>

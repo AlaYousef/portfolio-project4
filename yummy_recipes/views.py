@@ -11,6 +11,9 @@ from django.urls import reverse_lazy
 
 
 class RecipeList(generic.ListView):
+    """
+    This view display a list of recipes.
+    """
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -18,6 +21,9 @@ class RecipeList(generic.ListView):
 
 
 class DinnerList(generic.ListView):
+    """
+    This view display a list of recipes if category value is 0, which is for dinner recipes
+    """
     model = Recipe
     queryset = Recipe.objects.filter(status=1, category=0).order_by('-created_on')
     template_name = 'dinner.html'
@@ -25,6 +31,9 @@ class DinnerList(generic.ListView):
 
 
 class CoctailesList(generic.ListView):
+    """
+    This view display a list of recipes if category value is 2, which is for dinner recipes
+    """
     model = Recipe
     queryset = Recipe.objects.filter(status=1, category=2).order_by('-created_on')
     template_name = 'coctailes.html'
@@ -32,6 +41,9 @@ class CoctailesList(generic.ListView):
 
 
 class SweetsList(generic.ListView):
+    """
+    This view display a list of recipes if category value is 1, which is for dinner recipes
+    """
     model = Recipe
     queryset = Recipe.objects.filter(status=1, category=1).order_by('-created_on')
     template_name = 'sweets.html'
@@ -39,6 +51,9 @@ class SweetsList(generic.ListView):
 
 
 class RecipeDetail(View):
+    """
+    This class based view display the all detailes of a selected recipe.
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -66,6 +81,10 @@ class RecipeDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        This method is called if the user make a POST request
+        via the like, bookmarke or comment forms.
+        """
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
@@ -105,6 +124,12 @@ class RecipeDetail(View):
 
 
 class RecipeLike(View):
+    """
+    This view allows a logged in user to like/dislike recipes
+    by checks if user id already exists in the like
+    field in the Recipe model. If is it, when the user click on like btn 
+    the user id will be removed.
+    """
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.likes.filter(id=request.user.id).exists():
@@ -117,6 +142,12 @@ class RecipeLike(View):
 
 
 class RecipeBookmarked(View):
+    """
+    This view allows a logged in user to bookmark recipes
+    by checks if user id already exists in the bookmarked
+    field in the Recipe model. If is it, when the user click on it 
+    the user id will be removed.
+    """
     
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
@@ -132,7 +163,8 @@ class RecipeBookmarked(View):
 
 class MyBookmarkRecipe(generic.ListView):
     """
-    This view allows a logged in user to view their bookmarked recipes.
+    This view allows a logged in user to display all their bookmarked 
+    recipes on mybookmarks.html page.
     """
     model = Recipe
     template_name = 'mybookmarks.html'

@@ -1,6 +1,6 @@
 # Yummy - Cooking Recipes Website
 
-Responsive image here
+![Responsive image](documentation/readme_images/responsive.png)<br>
 
 ## CONTENTS
 
@@ -23,6 +23,7 @@ Responsive image here
     * [Recipe Details Page](#recipe-details-page)
     * [Add Recipe Page](#add-recipe-page) 
     * [Profile Dropdown Menu](#profile-dropdown-menu)
+    * [Future Feature](#future-feature)
 * [Testing](#testing)
     * [PEP 8 Online](#PEP-8-Online)
     * [Lighthouse](#Lighthouse)
@@ -333,6 +334,19 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 
 [Back to top](<#contents>)
+
+### Future Feature
+These user stories are labelled as "Wont Have" in Github, due to time constraints and will be implemented later.
+
+#### Add Breadcrumb User Story
+* _As a site user I can see navigation path of the page** so that I know where I am and navigate easy_
+
+* Users can easily know which page he is on and return back easily by adding links at the top of each page in hierarchical structures.
+
+#### Sort Recipes User Story
+* _As a Site User I can sort my bookmarked recipes in my profile so that I can find the most favourite one easily._
+
+* In my bookmarkes page, recipes will sorted from the most preffered one to least.
 
 ## Testing
 The testing documentation can be found at [TESTING.md](TESTING.md)

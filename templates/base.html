@@ -34,12 +34,14 @@
           <span class="navbar-toggler-icon justify-content-end"></span>
         </button>
         <div class="offcanvas offcanvas-end" id="navbarText">
+          <!-- Site Logo -->
           <div class="offcanvas-header">
             <h5 class="offcanvas-title logo" id="offcanvasNavbarLabel">
               YUMMY
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
+          <!-- Navigation menue items-->
           <ul class="navbar-nav nav-tabs justify-content-end navigation">
             <li class="nav-item flex a-center"><a class="nav-link" href="{% url 'home' %}">
                 <i class="fa-solid fa-house nav-icon"></i> Home</a></li>
@@ -57,11 +59,12 @@
               <a class="nav-link nav-item" href="{% url 'add_recipe' %}"><i class="fa-solid fa-plus"></i>
                 Add Recipe</a></li>
             <li class="nav-item flex a-center dropdown">
-              <a class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-solid fa-image-portrait"></i> Profile</a>
+              <a class="nav-link nav-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false"><i class="fa-solid fa-image-portrait"></i> Profile</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'mybookmarks' %}">My Bookmarks</a></li>
                 <li><a class="dropdown-item" href="{% url 'my_recipes' %}">My Recipes</a></li>
-                
+
               </ul>
             </li>
             <li class="nav-item flex a-center">
@@ -121,7 +124,7 @@
     </div>
   </div>
 
-  <!-- Message allert from Code Institute's I Think Therefore I Blog project -->
+  <!-- Message allert from Code Institute's -->
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -139,7 +142,7 @@
   <!-- Content here -->
   {% endblock content %}
 
-
+  <!-- Back to top arrow button -->
   <div class="row btn-div">
     <button type="button" onclick="topFunction()" class="btn btn-floating btn-lg btn-simple" id="btn-top">
       <i class="fas fa-arrow-up" aria-hidden="true"></i>
@@ -151,26 +154,40 @@
   <div class="container footer-section">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="https://www.facebook.com/" class="nav-link px-2 text-body-secondary"  target="blank" rel="noopener"
-          aria-label="Facebook page (opens in new tab)"><i
+        <li class="nav-item"><a href="https://www.facebook.com/" class="nav-link px-2 text-body-secondary"
+            target="blank" rel="noopener" aria-label="Facebook page (opens in new tab)"><i
               class="fa-brands fa-facebook"></i></a></li>
-        <li class="nav-item"><a href="https://twitter.com/" class="nav-link px-2 text-body-secondary"  target="blank" rel="noopener"
-          aria-label="Twitter page (opens in new tab)"><i
-              class="fa-brands fa-twitter"></i></a></li>
-        <li class="nav-item"><a href="https://www.instagram.com/" class="nav-link px-2 text-body-secondary"  target="blank" rel="noopener"
-          aria-label="Instagram page (opens in new tab)"><i
+        <li class="nav-item"><a href="https://twitter.com/" class="nav-link px-2 text-body-secondary" target="blank"
+            rel="noopener" aria-label="Twitter page (opens in new tab)"><i class="fa-brands fa-twitter"></i></a></li>
+        <li class="nav-item"><a href="https://www.instagram.com/" class="nav-link px-2 text-body-secondary"
+            target="blank" rel="noopener" aria-label="Instagram page (opens in new tab)"><i
               class="fa-brands fa-instagram"></i></a></li>
-        <li class="nav-item"><a href="https://www.youtube.com/" class="nav-link px-2 text-body-secondary"  target="blank" rel="noopener"
-          aria-label="Youtube page (opens in new tab)"><i
-              class="fa-brands fa-youtube"></i></a></li>
+        <li class="nav-item"><a href="https://www.youtube.com/" class="nav-link px-2 text-body-secondary" target="blank"
+            rel="noopener" aria-label="Youtube page (opens in new tab)"><i class="fa-brands fa-youtube"></i></a></li>
       </ul>
       <p class="text-center text-body-secondary">copy right © Ala Yousef 2023</p>
     </footer>
   </div>
 
+  <!-- js code for arrow button and message allert  -->
+  <script>
+    /* Arrow button script */
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    /* Allert messsage */
+    setTimeout(function () {
+      let messages = document.getElementById('msg');
+      let alert = new bootstrap.Alert(messages);
+
+      if (alert.length === 0) {
+        alert.close();
+      }
+    }, 2500);
+  </script>
 
   <!-- Font Awesome script -->
- 
   <script src="{% static 'js/script.js' %}"></script>
   <!-- Font Awesome script -->
   <script src="https://kit.fontawesome.com/9b10509272.js" crossorigin="anonymous"></script>

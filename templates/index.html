@@ -4,19 +4,21 @@
 
 
 <main>
-
+  <!-- Home Page Background slide images -->
   <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel">
     <div class="carousel-inner" style="height: auto;">
       <div class="carousel-item active">
-        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828481/pexels-vanessa-loring-5971872_d0avah.jpg"
+        <img
+          src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828481/pexels-vanessa-loring-5971872_d0avah.jpg"
           class="d-block w-100" alt="Background-image">
       </div>
       <div class="carousel-item">
-        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828471/pexels-jane-doan-1092730_oaaf1x.jpg" class="d-block w-100"
-          alt="Background-image">
+        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828471/pexels-jane-doan-1092730_oaaf1x.jpg"
+          class="d-block w-100" alt="Background-image">
       </div>
       <div class="carousel-item">
-        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828476/pexels-valeria-boltneva-7474205_ewyb7o.jpg"
+        <img
+          src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828476/pexels-valeria-boltneva-7474205_ewyb7o.jpg"
           class="d-block w-100" alt="Background-image">
       </div>
     </div>
@@ -35,136 +37,141 @@
 
 
   <div class="container">
-
+    <!-- Check if the user is logging in -->
     {% if user.is_authenticated %}
-       <div class="row mb-4 gx-5">
-        <div class="col-sm-12 col-12 col-md-10 gx-5 mx-auto text-center">
-          <h2>Welcome To YUMMY Recipes, {{ user.username }} </h2> 
-          <p class="h5">Yummy allows you to browse beautifully and easy-to-followe recipes. <br>
-             You can add your own recipe and create your own digital cookbook by bookmark any recipe you want</p>
-        </div>
+    <div class="row mb-4 gx-5">
+      <div class="col-sm-12 col-12 col-md-10 gx-5 mx-auto text-center">
+        <h2>Welcome To YUMMY Recipes, {{ user.username }} </h2>
+        <p class="h5">Yummy allows you to browse beautifully and easy-to-followe recipes. <br>
+          You can add your own recipe and create your own digital cookbook by bookmark any recipe you want</p>
       </div>
+    </div>
     {% endif %}
 
     <hr class="featurette-divider">
-
+    <!-- Dinner Recipes Card  -->
     <div class="row mb-3 gx-5">
       <div class="row gx-5 mb-4 mx-auto">
         <div class="col-sm-12 col-12 col-md-12 gx-5  ">
           <a href="{% url 'dinner' %}" target="blank" rel="noopener">
-          <div class="card mb-3 bg-transparent shadow-lg" style="max-width: 100%">
-            <div class="row g-0">
-              <div class="col-12 col-sm-12 col-md-6  col-lg-6 home-img-card">
-      
-                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828467/pexels-engin-akyurt-1435903_rcwvfg.jpg"
-                class="card-img img-fluid rounded-start shadow-lg" alt="Dinner Recip image">
-              </div>
-              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="card-body">
-                  <h3 class="card-title">Dinner Recipes</h3>
-                  <p class="card-text">Save yourself stress in the kitchen
-                    with our
-                    easy dinner ideas, from filling pasta bakes to warming curries and simple traybakes the family will
-                    love..</p>
+            <div class="card mb-3 bg-transparent shadow-lg" style="max-width: 100%">
+              <div class="row g-0">
+                <div class="col-12 col-sm-12 col-md-6  col-lg-6 home-img-card">
+
+                  <img
+                    src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828467/pexels-engin-akyurt-1435903_rcwvfg.jpg"
+                    class="card-img img-fluid rounded-start shadow-lg" alt="Dinner Recip image">
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="card-body">
+                    <h3 class="card-title">Dinner Recipes</h3>
+                    <p class="card-text">Save yourself stress in the kitchen
+                      with our
+                      easy dinner ideas, from filling pasta bakes to warming curries and simple traybakes the family
+                      will
+                      love..</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </a>
         </div>
-       </div>
+      </div>
 
-        
+      <!-- Sweets Recipes Card  -->
       <div class="row gx-5 mb-4 mt-5 mx-auto">
         <div class="col-sm-12 col-12 col-md-12 gx-5  ">
           <a href="{% url 'sweets' %}" target="blank" rel="noopener">
-          <div class="card mb-3 bg-transparent shadow-lg" style="max-width: 100%">
-            <div class="row g-0">
-              <div class="col-12 col-sm-12 col-md-6  col-lg-6">
-      
-                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828484/pexels-diana-light-4722021_aebhmk.jpg"
-                class="card-img img-fluid shadow-lg" alt="Sweets Recipe image">
-              </div>
-              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="card-body">
-                  <h3 class="card-title">Sweets Recipes</h3>
-                  <p class="card-text">Have you ever wondered by your mood goes from drab to fab the moment you sink your
-                    teeth into a gooey chocolate cake or a chimney cake straight out of the oven?..</p>
+            <div class="card mb-3 bg-transparent shadow-lg" style="max-width: 100%">
+              <div class="row g-0">
+                <div class="col-12 col-sm-12 col-md-6  col-lg-6">
+
+                  <img
+                    src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828484/pexels-diana-light-4722021_aebhmk.jpg"
+                    class="card-img img-fluid shadow-lg" alt="Sweets Recipe image">
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="card-body">
+                    <h3 class="card-title">Sweets Recipes</h3>
+                    <p class="card-text">Have you ever wondered by your mood goes from drab to fab the moment you sink
+                      your
+                      teeth into a gooey chocolate cake or a chimney cake straight out of the oven?..</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </a>
         </div>
-       </div>
+      </div>
 
-        
+      <!-- Coctailes Recipes Card  -->
       <div class="row gx-5 mb-4 mt-5 mx-auto">
         <div class="col-sm-12 col-12 col-md-12 gx-5  ">
           <a href="{% url 'coctailes' %}" target="blank" rel="noopener">
-          <div class="card mb-3 bg-transparent shadow-lg" style="max-width: 100%">
-            <div class="row g-0">
-              <div class="col-12 col-sm-12 col-md-6  col-lg-6">
-      
-                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828460/pexels-naim-benjelloun-2110924_sgvrr3.jpg"
-                class="card-img img-fluid" alt="Coctailes Recipe image">
-              </div>
-              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="card-body">
-                  <h3 class="card-title">Coctailes Recipes</h3>
-                  <p class="card-text">People love cocktails Their colours and appearance are fun.
-                    There are no rules to making cocktails. We can put whatever we like in it. We can even name our very
-                    own cocktail mix..</p>
+            <div class="card mb-3 bg-transparent shadow-lg" style="max-width: 100%">
+              <div class="row g-0">
+                <div class="col-12 col-sm-12 col-md-6  col-lg-6">
+
+                  <img
+                    src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690828460/pexels-naim-benjelloun-2110924_sgvrr3.jpg"
+                    class="card-img img-fluid" alt="Coctailes Recipe image">
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="card-body">
+                    <h3 class="card-title">Coctailes Recipes</h3>
+                    <p class="card-text">People love cocktails Their colours and appearance are fun.
+                      There are no rules to making cocktails. We can put whatever we like in it. We can even name our
+                      very
+                      own cocktail mix..</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </a>
         </div>
-       </div>
-       <hr class="featurette-divider">
-
-       <div class="row mb-4 gx-5">
+      </div>
+      <hr class="featurette-divider">
+      <!-- Showing the most recent published recieps  -->
+      <div class="row mb-4 gx-5">
         <div class="col-sm-12 col-12 col-md-10 gx-5 mx-auto text-center">
-         <h2>See Our Recent Recipes <i class="fa-solid fa-bowl-rice" style="color: #eff0f3;"></i></h2> 
+          <h2>See Our Recent Recipes <i class="fa-solid fa-bowl-rice" style="color: #eff0f3;"></i></h2>
         </div>
-       </div>
+      </div>
 
-       <div class="row gx-5 align-items-stretch mx-auto">
+      <div class="row gx-5 align-items-stretch mx-auto">
         {% for recipe in recipe_list|slice:":3" %}
         <div class="col-sm-6 col-md-6 col-lg-4 px-1 d-flex mb-5">
-            <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent"style= "width: 18rem;">
-                {% if "placeholder" in recipe.featured_image.url %}
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074071/pexels-amar-preciado-16550819_fuapb6.jpg"
-                    class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
-                </div>
-                {% else %}
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <img src=" {{ recipe.featured_image.url }}" class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image" height="auto" width="auto"></div>
-                {% endif %}
-                <div class="col-12 col-sm-12 col-md-12  col-lg-12">
-                <div class="card-body">
-                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
-                        <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
-                    </a>
-                    <p class="card-text">
-                        <span><i class="far fa-clock pr-2"></i></span>
-                        <span>Preparation Time: {{ recipe.cook_time }}</span>
-                        <br>
-                        <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
-                    </p>
+          <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent" style="width: 18rem;">
+            {% if "placeholder" in recipe.featured_image.url %}
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <img
+                src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1691074071/pexels-amar-preciado-16550819_fuapb6.jpg"
+                class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
+            </div>
+            {% else %}
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <img src=" {{ recipe.featured_image.url }}" class="card-img-top rounded img-fluid"
+                alt="{{ recipe.name }} image" height="auto" width="auto"></div>
+            {% endif %}
+            <div class="col-12 col-sm-12 col-md-12  col-lg-12">
+              <div class="card-body">
+                <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
+                  <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
+                </a>
+                <p class="card-text">
+                  <span><i class="far fa-clock pr-2"></i></span>
+                  <span>Preparation Time: {{ recipe.cook_time }}</span>
+                  <br>
+                  <span><i class="fa-regular fa-user"></i> Author: {{ recipe.author }}</span>
+                </p>
 
-                </div>
-                </div>
+              </div>
             </div>
           </div>
-        
+        </div>
+
         {% endfor %}
-       </div>
-       
-       
-    
+      </div>
 
     </div>
 
