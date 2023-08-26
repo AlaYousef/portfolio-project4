@@ -8,7 +8,7 @@ class CommentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
         self.fields['body'].widget = forms.Textarea(attrs={'rows': 3})
-        
+
     class Meta:
         model = Comment
         fields = ('body',)
@@ -21,7 +21,8 @@ class RecipeForm(forms.ModelForm):
 
     class Meta:
         """
-        Get the recipe model, choose fields to display and add summernote widget
+        Get the recipe model, choose fields to display and
+        add summernote widget
         """
         model = Recipe
         fields = [
@@ -36,7 +37,7 @@ class RecipeForm(forms.ModelForm):
             'status',
 
         ]
-      
+
         widgets = {
             'ingredients': SummernoteWidget(),
             'steps': SummernoteWidget(),

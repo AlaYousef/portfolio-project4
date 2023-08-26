@@ -55,7 +55,7 @@ class RecipeDetail(View):
     This class based view display the all detailes of a selected recipe.
     """
     def get(self, request, slug, *args, **kwargs):
-        queryset = Recipe.objects.filter(status=1)
+        queryset = Recipe.objects.all()
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
@@ -207,7 +207,7 @@ class MyRecipes(generic.ListView):
         return Recipe.objects.filter(author=self.request.user)
 
 
-class DeleteRecipe(generic.DeleteView):
+class DeleteRecipe(SuccessMessageMixin, generic.DeleteView):
     """
     Allow logged in users to delete recipes that they have been created.
     """
@@ -264,7 +264,7 @@ class EditRecipe(SuccessMessageMixin, generic.UpdateView):
         return self.success_message 
 
 
-class DeleteComment(generic.DeleteView):
+class DeleteComment(SuccessMessageMixin, generic.DeleteView):
     """
     This View allow the comment author to delete it.
     """

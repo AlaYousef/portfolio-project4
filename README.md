@@ -430,6 +430,10 @@ absolut url....
 
 ## Credits
 * Youtube tutorial full stack crud https://www.youtube.com/watch?v=cTf-Hsqq3GA
+
+ URL TO REDIRECT-TO AFTER DELETING
+    From: https://stackoverflow.com/questions/31275574/
+    reverse-for-success-url-on-django-class-based-view-complain-about-circular-impor
 ### Content
 
 

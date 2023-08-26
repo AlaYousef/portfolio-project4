@@ -21,17 +21,17 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     steps = models.TextField()
     cook_time = models.CharField(max_length=100)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
     bookmarked = models.ManyToManyField(
         User, related_name='recipe_bookmarked', blank=True)
-    
+
     class Meta:
         ordering = ["-created_on"]
 
     def get_absolute_url(self):
-        """Get url after user adds/edits recipe"""
+        """redirect to recipe detail page after user adds/edits recipe"""
         return reverse('recipe_detail', kwargs={'slug': self.slug})
 
     def __str__(self):
@@ -39,8 +39,6 @@ class Recipe(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-
-
 
 
 class Comment(models.Model):
@@ -55,8 +53,5 @@ class Comment(models.Model):
     class Meta:
         ordering = ["created_on"]
 
-
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
