@@ -188,91 +188,133 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 ## Manual Testing
 
 ### Site Navigation
-| Element               | Action     | Expected Result                                                    | Pass/Fail |
+| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
 |-----------------------|------------|--------------------------------------------------------------------|-----------|
-| NavBar                |            |                                                                    |           |
-| Site Name (logo area) | Click      | Redirect to home                                                   | Pass      |
-| Home Link             | Click      | Redirect to home                                                   | Pass      |
-| Browse Recipes Link   | Click      | Open Browse Recipes Page                                           | Pass      |
-| Add Recipe Link       | Click      | Open Add Recipe Form                                               | Pass      |
-| Add Recipe Link       | Display    | Only visible if user in session                                    | Pass      |
-| My Meal Plan Link     | Click      | Open My Meal Plan page                                             | Pass      |
-| My Meal Plan Link     | Display    | Only visible if user in session                                    | Pass      |
-| My Account Dropdown   | Click      | Open My Account dropdown                                           | Pass      |
-| My Account Dropdown   | Display    | Text changes to username with profile icon when user is in session | Pass      |
-| Sign Up Link          | Click      | Open Sign up page                                                  | Pass      |
-| Sign Up Link          | Display    | Not visible if user in session                                     | Pass      |
-| Log In Link           | Click      | Open Login page                                                    | Pass      |
-| Log In Link           | Display    | Not visible if user in session                                     | Pass      |
-| My Recipes Link       | Click      | Open My Recipes page                                               | Pass      |
-| My Recipes Link       | Display    | Only visible if user in session                                    | Pass      |
-| My Bookmarks Link     | Click      | Open My Bookmarks page                                             | Pass      |
-| My Bookmarks Link     | Display    | Only visible if user in session                                    | Pass      |
-| Logout Link           | Click      | Open logout confirm page                                           | Pass      |
-| Logout Link           | Display    | Only visible if user in session                                    | Pass      |
-| All Nav Links         | Hover      | lighten text                                                        | Pass      
+| **NavBar**              |            |                                                                    |           |
+| Site Name (logo) | Click      | Redirect to home page                                                | Pass      |
+| Home Link             | Click      | Redirect to home page                                                | Pass      |
+| Dinner Link   | Click      | Open Dinner Recipes Page                                           | Pass      |
+| Sweets Link   | Click      | Open Sweets Recipes Page                                           | Pass      |
+| Coctailes Link   | Click      | Open Coctailes Recipes Page                                           | Pass      |
+| Add Recipe Link       | Click      | Open Add Recipe Form Page                                             | Pass      |
+| Add Recipe Link       | Unvisible    | Only Visible if User is Authenticated                                    | Pass      |
+| Profile Dropdown Menu     | Click      | Open profile dropdown menu (My Bookmarks, My Recipes)                                            | Pass      |
+| Profile Dropdown Menu | Unvisible      | Only Visible if User is Authenticated                                            | Pass      |
+| My Bookmarks Link       | Click      | Open My Bookmarks page                                               | Pass      |
+| My Recipes Link       | Click    | Open My Added Recipes page                                   | Pass      |
+| Log In Link           | Click      | Open Login Form Page                                                    | Pass      |
+| Log In Link           | Unvisible    | Unvisible if user is Authenticated                                     | Pass      |
+| Register Link          | Click      | Open Sign up Form page                                                  | Pass      |
+| Register Link          | Unvisible    | Unvisible if user is Authenticated                                     | Pass      |
+| Logout Link           | Click      | Display logout confirmation message                                            | Pass      |
+| Logout Link           | Unvisible    | Only visible if user is logging in                                    | Pass      |
+| Nav Links         | Hover      | Resize text (larger), Borderd                                                     | Pass      
+| **Mobile View**           |            |                                                                    |           |
+| Hamburger Icon        | Responsive | Display when screen size width is less than 1000px                     | Pass      |
+| Hamburger Icon        | Click | Display Offcanvas with navs menu                    | Pass      |
+| Site Name (logo) | Click      | Redirect to home page                                           | Pass      |
+| Home Link             | Click      | Redirect to home page                                                  | Pass      |
+| Dinner Link   | Click      | Open Dinner Recipes Page                                           | Pass      |
+| Sweets Link   | Click      | Open Sweets Recipes Page                                           | Pass      |
+| Coctailes Link   | Click      | Open Coctailes Recipes Page                                           | Pass      |
+| Add Recipe Link       | Click      | Open Add Recipe Form Page                                             | Pass      |
+| Add Recipe Link       | Unvisible    | Only Visible if User is Authenticated                                    | Pass      |
+| Profile Dropdown Menu     | Click      | Open profile dropdown menu (My Bookmarks, My Recipes)                                            | Pass      |
+| Profile Dropdown Menu | Unvisible      | Only Visible if User is Authenticated                                            | Pass      |
+| My Bookmarks Link       | Click      | Open My Bookmarks page                                               | Pass      |
+| My Recipes Link       | Click    | Open My Added Recipes page                                   | Pass      |
+| Log In Link           | Click      | Open Login Form Page                                                    | Pass      |
+| Log In Link           | Unvisible    | Unvisible if user is Authenticated                                     | Pass      |
+| Register Link          | Click      | Open Sign up Form page                                                  | Pass      |
+| Register Link          | Unvisible    | Unvisible if user is Authenticated                                     | Pass      |
+| Logout Link           | Click      | Display logout confirmation message                                            | Pass      |
+| Logout Link           | Unvisible    | Only visible if user is logging in                                    | Pass      |
+| Nav Links         | Hover      | Resize text (larger), Borderd                                                     | Pass      
 |                       |            |                                                                    |           |
-| Mobile View           |            |                                                                    |           |
-| Hamburger Menu        | Responsive | Display when screen size reduces to medium size                       | Pass      |
-| My Account Dropdown   | Responsive | Contents move into hamburger menu when screen size reduces to medium           | Pass      |
-| Site Name (logo area) | Click      | Redirect to home                                                   | Pass      |
-| Home Link             | Click      | Redirect to home                                                   | Pass      |
-| Browse Recipes Link   | Click      | Open Browse Recipes Page                                           | Pass      |
-| Sign Up Link          | Click      | Open Sign up page                                                  | Pass      |
-| Sign Up Link          | Display    | Not visible if user in session                                     | Pass      |
-| Log In Link           | Click      | Open Login page                                                    | Pass      |
-| Log In Link           | Display    | Not visible if user in session                                     | Pass      |
-| Add Recipe Link       | Click      | Open Add Recipe Form                                               | Pass      |
-| Add Recipe Link       | Display    | Only visible if user in session                                    | Pass      |
-| My Meal Plan Link     | Click      | Open My Meal Plan page                                             | Pass      |
-| My Recipes Link       | Click      | Open My Recipes page                                               | Pass      |
-| My Recipes Link       | Display    | Only visible if user in session                                    | Pass      |
-| My Bookmarks Link     | Click      | Open My Bookmarks page                                             | Pass      |
-| My Bookmarks Link     | Display    | Only visible if user in session                                    | Pass      |
-| Logout Link           | Click      | Open logout confirm page                                           | Pass      |
-| Logout Link           | Display    | Only visible if user in session                                    | Pass      |
-|                       |            |                                                                    |           |
-| Footer                |            |                                                                    |           |
-| All links             | Click      | Open in new tab and to correct location                            | Pass      |
+| **Footer**               |            |                                                                    |           |
+| All Social Media links             | Click      | Open in new tab and to correct location                            | Pass      |
 
 ### Home Page
-| Element               | Action  | Expected Result                 | Pass/Fail |
-|-----------------------|---------|---------------------------------|-----------|
-| Hero 'Sign Up' Button | Click   | Open Sign up page               | Pass      |
-| Hero 'Sign Up' Button | Display | Not visible if user in session  | Pass      |
-| Hero 'Create" Button  | Click   | Open Add Recipe page            | Pass      |
-| Hero 'Create" Button  | Display | Only visible if user in session | Pass      |
+| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Dinner Recipes Card | Click   | Open Dinner Recipes page               | Pass      |
+| Sweets Recipes Card | Click   | Open Sweets Recipes page               | Pass      |
+| Coctailes Recipes Card | Click   | Open Coctailes Recipes page               | Pass      |
+| **Recent Recipes** |  |   |       |
+| Recipe Card Title  | Click   | Open Recipe Details page            | Pass      |
+| Top Arrow | Click | Navigate to Home Page Top | Pass      |
+| Top Arrow | Hover | Change Background Color | Pass      |
 
-### Browse Recipes Page
-| Element     | Action                  | Expected Result                                                                         | Pass/Fail |
-|-------------|-------------------------|-----------------------------------------------------------------------------------------|-----------|
-| Recipe Card | Display correct content | Display correct image, recipe title and cooktime                                        | Pass      |
-| Recipe Card | Click                   | Clicking anywhere inside the recipe card takes you to the correct recipe's detail page. | Pass      |
-| Recipe Card | Pagination              | Site will paginate 8 recipe cards to a page                                             | Pass      |
-| Recipe Card | Order                   | Recipes are sorted by newest to oldest                                                  | Pass      |
-| Recipe Card | Hover                   | Add gold border                                                                         | Pass      |
+### Dinner Page
+| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Recipe Card | Display correct content | Display correct image, recipe title, Preperation Time and Author     | Pass      |
+| Recipe Card | Hover | Add Transparent Background     | Pass      |
+| Recipe Card Title | Hover | Underline and Change Title Color | Pass      |
+| Recipe Card Title | Click | Redirect to Correct Recipe's Detail Page. | Pass      |
+| Recipe Card | Order       | Recent Recipe Sorted First                                                 | Pass      |
+| **Pagination** |    |    |       |
+| Next Button | Visible   | Visible when each page paginate 6 recipe in each page     | Pass      |
+| Next Button | Click   | Navigate to the next page which conatin the reset of Recipes  | Pass      |
+| Prev Button | Click   | Navigate to the previouse page  | Pass      |
+
+### Sweets Page
+| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Recipe Card | Display correct content | Display correct image, recipe title, Preperation Time and Author     | Pass      |
+| Recipe Card | Hover | Add Transparent Background     | Pass      |
+| Recipe Card Title | Hover | Underline and Change Title Color | Pass      |
+| Recipe Card Title | Click | Redirect to Correct Recipe's Detail Page. | Pass      |
+| Recipe Card | Order       | Recent Recipe Sorted First                                                 | Pass      |
+| **Pagination** |    |    |       |
+| Next Button | Visible   | Visible when each page paginate 6 recipe in each page     | Pass      |
+| Next Button | Click   | Navigate to the next page which conatin the reset of Recipes  | Pass      |
+| Prev Button | Click   | Navigate to the previouse page  | Pass      |
+
+### Coctailes Page
+| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Recipe Card | Display correct content | Display correct image, recipe title, Preperation Time and Author     | Pass      |
+| Recipe Card | Hover | Add Transparent Background     | Pass      |
+| Recipe Card Title | Hover | Underline and Change Title Color | Pass      |
+| Recipe Card Title | Click | Redirect to Correct Recipe's Detail Page. | Pass      |
+| Recipe Card | Order       | Recent Recipe Sorted First                                                 | Pass      |
+| **Pagination** |    |    |       |
+| Next Button | Visible   | Visible when each page paginate 6 recipe in each page     | Pass      |
+| Next Button | Click   | Navigate to the next page which conatin the reset of Recipes  | Pass      |
+| Prev Button | Click   | Navigate to the previouse page  | Pass      |
+
 ### Recipe Detail Page
-
-| Element                        | Action              | Expected Result                                                                                                         | Pass/Fail |
-|--------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------|-----------|
-| Recipe Content                 | Display             | Display correct recipe image, title, author, prep time, cook time, description, ingredients and method                  | Pass      |
-| Add to Meal Plan button        | Click               | Meal Plan modal pops up                                                                                                 | Pass      |
-| Add to Meal Plan button        | Display             | Button only visible if user in session                                                                                  | Pass      |
-| Bookmark button (Outline)      | Click               | Clicking the outlined bookmark changes it to a solid bookmark                                                           | Pass      |
-| Bookmark button (Outline)      | Click               | Recipe is added to the user's bookmarks page                                                                            | Pass      |
-| Bookmark button (Outline)      | Click               | Success message appears informing the user that the recipe has been added to their bookmarks                            | Pass      |
-| Bookmark button (Outline)      | Click               | Success message fades after 3 seconds                                                                                   | Pass      |
+| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
+|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Recipe Content   | Display  | Display correct recipe image, title, author, prep/cook time, description, ingredients and Steps                  | Pass      |
+| Like button (Outline)      | Click               | If User is not Authenticated, Redirect to Log in Page  | Pass      |
+| Like button (Outline)      | Click               | If User is Authenticated, Clicking the outlined Like Button will change it to solid one  | Pass      |
+| Like button (Outline)      | Click               | The Likes Number increase by 1 | Pass      |
+| Bookmark button (Outline)      | Click               | If User is not Authenticated, Redirect to Log in Page  | Pass      |
+| Bookmark button (Outline)      | Click               | If User is Authenticated, Clicking the outlined Like Button will change it to solid one | Pass      |
+| Bookmark button (Outline)      | Click               | Recipe Added to My Bookmarks Page | Pass      |
+| Bookmark button (Outline)      | Click               | Success Message will Display Informing Uers that Recipe has been Added to their Bookmarks               | Pass      |
+| Bookmark button (Outline)      | Click               | Success message disappear after 3 seconds       | Pass      |
 | Bookmark button (Solid)        | Click               | Clicking the solid bookmark changes it back to an outlined bookmark                                                     | Pass      |
-| Bookmark button (Solid)        | Click               | Recipe is removed from the user's bookmarks page                                                                        | Pass      |
-| Bookmark button (Solid)        | Click               | Success message appears informing the user that the recipe has been removed from bookmarks                              | Pass      |
-| Bookmark button (Solid)        | Click               | Success message fades after 3 seconds                                                                                   | Pass      |
-| Bookmark button                | Display             | Button only visible if user in session                                                                                  | Pass      |
+| Bookmark button (Solid)        | Click               | Recipe is removed from My bookmarks Page  | Pass      |
+| Bookmark button (Solid)        | Click               | Success Message will Display Informing Uers that Recipe has been Removed from their Bookmarks                  | Pass      |
+| Bookmark button (Outline)      | Click               | Success Message Disappear after 3 seconds       | Pass      |
+| **Comments**                 |              |   |      |
+| Comments   | Display             | Displays correct name, time, author and comment content      | Pass      |
+| Comments   | Display             | Comments are ordered oldest to newest    | Pass      |
+| Leave a Comment Form  | Display   | Display If Uers is Authenticated  | Pass      |
+| Submit Button | Click   | If empty On Form will not Submit, Display Error Message | Pass      |
+| Comment Form / Submit button | Click Submit  | Update the Page, Display message "Your comment is awaiting approval" | Pass      |
+| Comment Form / Submit button | Click | If Approved, the comment will be published in Commets section | Pass  |
+| Comment Form / Submit button | Click | If Not Approved, comment will Not be published | Pass  |
+
+## My Recipes
 | Update recipe button           | Click               | Opens Update Recipe Form                                                                                                | Pass      |
 | Update recipe button           | Display             | Button only visible if user is the author                                                                               | Pass      |
 | Delete recipe button           | Click               | Opens Delete Recipe confirmation page                                                                                   | Pass      |
 | Delete recipe button           | Display             | Button only visible if user is the author                                                                               | Pass      |
-| User Comments                  | Display             | Displays correct name date time and comment body                                                                        | Pass      |
-| User Comments                  | Display             | Comments are ordered oldest to newest                                                                                   | Pass      |
+
 | Update comment button          | Display             | Button only visible if user is the comment author                                                                       | Pass      |
 | Update comment button          | Click               | Opens Update Comment Form                                                                                               | Pass      |
 | Update comment form            | Leave empty         | On submit: form won't submit                                                                                            | Pass      |
@@ -292,11 +334,7 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 | Delete comment                 | Access              | If a user tries to delete another user's comment (by changing the url) they receive a custom 403 error.                 | Pass      |
 | Delete comment                 | Access              | If a user tries to delete a comment (by changing the url) without being signed in they are redirected to the login page | Pass      |
 | Add comment Form               | Display             | Form only visible if user in session                                                                                    | Pass      |
-| Add comment Form submit button | Leave empty               | On submit: form won't submit                                                                                            | Pass      |
-| Add comment Form submit button | Leave empty               | Error message displays                                                                                                  | Pass      |
-| Add comment Form submit button | Filled in               | Form submit - page updates and comment displays in comments section with correct content                                | Pass      |
-| Add comment Form submit button | Click               | Success message appears informing the user that the comment has been added                                              | Pass      |
-| Add comment Form submit button | Click               | Success message fades after 3 seconds                                                                                   | Pass      |
+
 |                                |                     |                                                                                                                         |           |
 | Meal plan model                |                     |                                                                                                                         |           |
 | Modal cancel button            | Click               | Close modal                                                                                                             | Pass      |

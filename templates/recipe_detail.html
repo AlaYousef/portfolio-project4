@@ -14,9 +14,9 @@
     <div class="row h-25 mx-auto">
         {% if "placeholder" in recipe.featured_image.url %}
         <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172135/pexels-ready-made-3851048_amfhs5.jpg"
-            class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" alt="sweets-recipes">
+            class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" alt="sweets-recipes"   style=" object-fit: cover;" >
         {% else %}
-        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"
+        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" style=" object-fit: cover;"
             alt="sweets-recipes">
         {% endif %}
 
