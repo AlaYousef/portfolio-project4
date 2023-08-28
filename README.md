@@ -376,8 +376,20 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the Py
 ## Bugs 
 ### Resolved
 
+ 
 * Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']
 absolut url....
+
+* error: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
+sol: if(messages != null)
+
+* draft choice 404 error
+
+![Draft Error](documentation/readme_images/edit-rec-error.png)<br>
+
+### Not Resolved
+* performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
+
 
 [Back to top](<#contents>)
 
@@ -431,7 +443,7 @@ absolut url....
 ## Credits
 * Youtube tutorial full stack crud https://www.youtube.com/watch?v=cTf-Hsqq3GA
 
- URL TO REDIRECT-TO AFTER DELETING
+* URL TO REDIRECT-TO AFTER DELETING/EEDITING
     From: https://stackoverflow.com/questions/31275574/
     reverse-for-success-url-on-django-class-based-view-complain-about-circular-impor
 ### Content
@@ -440,9 +452,6 @@ absolut url....
 
 ### Information Sources / Resources
 
-* [Code Institute](https://learn.codeinstitute.net/dashboard)
-* [W3Schools - Python](https://www.w3schools.com/python/)
-* [Stack Overflow](https://stackoverflow.com/)
 
 [Back to top](<#contents>)
 
