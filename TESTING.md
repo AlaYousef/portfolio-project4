@@ -289,8 +289,8 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 | Prev Button | Click   | Navigate to the previouse page  | Pass      |
 
 ### Recipe Detail Page
-| Test               | Action     | Expected Outcome                                                    | Pass/Fail |
-|-----------------------|------------|--------------------------------------------------------------------|-----------|
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
 | Recipe Content   | Display  | Display correct recipe image, title, author, prep/cook time, description, ingredients and Steps                  | Pass      |
 | Like button (Outline)      | Click               | If User is not Authenticated, Redirect to Log in Page  | Pass      |
 | Like button (Outline)      | Click               | If User is Authenticated, Clicking the outlined Like Button will change it to solid one  | Pass      |
@@ -321,16 +321,21 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 
 
 ### My Bookmarks Page
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
 | My Bookamarks Page          | Click               | Dispaly All User's Bookkmarked Recipes   | Pass   |
 | Recipe Card       | Display | Display correct recipe image, title,author    | Pass      |
 | Recipe Card       | Click on Recipe Title  | Redirect to the recipe's detail page | Pass      |
-| Recipe Card       | Pagination           |                                                        | Pass      |
-| Recipe Card       | Order                | Recipes are sorted by newest to oldest                                                                           | Pass      |
-| Recipe Card       | Hover                | Display gold border 
+| Recipe Card       | Pagination           | Bookmarks page have 6 Recipes, after that user can paginate to next page | Pass      |
+
 
 ### My Recipes Page
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
 | My Recipes Page          | Click               | Dispaly All User's Created Recipes   | Pass      |
+| Recipe Card       | Display | Display correct recipe image, title,author    | Pass      |
 | Recipe Card          | Display  |   Dispaly User Name as Author   | Pass      |
+| Recipe Card       | Click on Recipe Title  | Redirect to the recipe's detail page | Pass      |
 | **Edit Button**         |   |      |       |
 | Edit Recipe Button      | Display     | visible only if the user is the recipe author | Pass      |
 | Edit Recipe Button      | Hover               | Text Link undelined and color changed | Pass      |
@@ -343,12 +348,85 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 | Delete Recipe Button / No Button     | Click      | Redirect to My Recipes Page| Pass      |
 
 
-
 ### Add Recipe Page
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
+| Add Recipe Link                   | Display     | Display only If User is Authenticated | Pass      |
+| Add Recipe Form (if required) | Submit         | If leave blank: Display Warning, form won't Submit  | Pass |
+| Recipe Title   | Enter exist name and click submit   | If leave blank: Display Warning, form won't submit  | Pass      |
+| Choose Image Button      | Click       | Open device storage to select image   | Pass      |
+| Choose Image Button      | Not Clicked     | Default image will be set for the recipe card | Pass      |
+| **Submit Button** | Click     | If all Fields are Valid, Redirect to this recipe details page   | Pass      |
+| Submit Button | Click   | Success message display informing the user that the recipe has been created successfully    | Pass      |
+| Success message | Disappear     | Success message disappear after 3 seconds     | Pass      |
+| **Cancel Button**  | Click                 | Redirect to Home Page        | Pass      |
 
-### Update Recipe Page
-    
+### Edit Recipe Page
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
+| Edit Recipe Button     | Display  | Display Only for the recipe's author | Pass      |
+| Edit Recipe Button     | Hover  | Underline and Change Text Color | Pass      |
+| Edit Recipe Button     | Click  | Redirect to Add Recipe Form to Edit the Recipe's Fields  | Pass      |
+| **Submit Button**    | Click  | Redirect to Recipe Details page withe edited information  | Pass      |
+| Submit Button     | Click   | Success message display informing the user that the recipe has been created successfully    | Pass      |
+| Success message | Disappear     | Success message disappear after 3 seconds     | Pass      |
+| **Cancel Button**   | Click   | User is redirected back to My Added Recipe | Pass      |
+
+### Delete Recipe Page
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
+| Delete Recipe Button     | Display  | Display Only for the recipe's author | Pass      |
+| Delete Recipe Button     | Hover  | Underline and Change Text Color | Pass      |
+| Delete Recipe Button     | Click  | Redirect to Delete Confirmation Form  | Pass      |
+| **Delete Button** | Click  | Recipe deleted and removed from user's My Recipes page    | Pass      |
+| Delete Button | Click  | Success message display informing the user that the recipe has been created successfully | Pass      |
+| Success message | Disappear     | Success message disappear after 3 seconds     | Pass      |
+| Delete Button | Click  | Redirect back to the My recipes page       | Pass      |
+| **Cancel Button** | Click  | Redirect to My Recipes page      
+
 ### Django Authentiaction Pages
+| Test               | Action     | Expected Outcome             | Pass/Fail |
+|-----------------------|------------|--------------------------------------------|-----------|
+| **Register Page**    |                                          |                                            |           |
+| Register Link              | Click                                     | Redirect to Sign Up page                     | Pass      |
+| Username field             | Leave blank                               | On submit: form won't submit             | Pass      |
+| Username field             | Insert correct format                     | On submit: form submit                     | Pass      |
+| Username field             | Insert an exist username                  | On submit: form won't submit               | Pass      |
+| Username field             | Insert an exist username                 | Error message displays                     | Pass      |
+| Email field                | Insert incorrect format                   | On submit: form won't submit               | Pass      |
+| Email field                | Insert incorrect format                   | Error message displays                     | Pass      |
+| Email field                | Insert correct format                     | On submit: form submit                     | Pass      |
+| Email field                | Leave empty                               | On submit: form submit                     | Pass      |
+| Email field                | Insert an exist email                    | On submit: form won't submit               | Pass      |
+| Email field                | Insert an exist email                    | Error message displays                     | Pass      |
+| Password field             | Insert incorrect format                   | On submit: form won't submit               | Pass      |
+| Password field             | Insert incorrect format                   | Error message displays                     | Pass      |
+| Password field             | Passwords don't match                     | On submit: form won't submit               | Pass      |
+| Password field             | Passwords don't match                     | Error message displays                     | Pass      |
+| Password field             | Insert correct format and passwords match | On submit: form submit                     | Pass      |
+| Sign Up button(form valid) | Click                                     | Form submit                                | Pass      |
+| Sign Up button(form valid) | Click                                     | Redirect to Home page                      | Pass      |
+| Sign Up button(form valid) | Click                                     | Success message confirming login appears   | Pass      |
+| Success message            | Disappear                         | Success message disappear after 3 seconds     | Pass      |
+| **Log In Link**                   |                                           |                                            |           |
+| Username field             | Leave blank                               | On submit: form won't submit               | Pass      |
+| Username field             | Leave blank                               | Error message displays                     | Pass      |
+| Username field             | Insert wrong username                     | On submit: form won't submit               | Pass      |
+| Username field             | Insert wrong username                     | Error message displays                     | Pass      |
+| Password field             | Leave blank                               | On submit: form won't submit               | Pass      |
+| Password field             | Leave blank                               | Error message displays                     | Pass      |
+| Password field             | Insert wrong password                     | On submit: form won't submit               | Pass      |
+| Password field             | Insert wrong password                     | Error message displays                     | Pass      |
+| Login button(form valid)   | Click                                     | Form submit                                | Pass      |
+| Login button(form valid)   | Click                                     | Redirect to Home page                      | Pass      |
+| Login button(form valid)   | Click                                     | Success message confirming login appears   | Pass      |
+| Success message | Disappear     | Success message disappear after 3 seconds     | Pass      |
+|  **Log Out Link**   |                                           |                                            |           |
+| Log Out Link       |     Click                  |     Display Confirmation Message                                       |           |
+| **Yes button**              | Click             | Redirect to Homepage, NavBar link Changed       | Pass      |
+| Logout button              | Click         | Success message confirming log out appears | Pass      |
+| Login button(form valid)   | Click                                     | Success message confirming login appears   | Pass      |
+| **No Button**   | Click           | Still in the current page  | Pass      |
 
 
 Back to [README.MD](README.MD)<br>
