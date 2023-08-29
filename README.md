@@ -386,6 +386,9 @@ sol: if(messages != null)
 * draft choice 404 error
 
 ![Draft Error](documentation/readme_images/edit-rec-error.png)<br>
+* Submit empty form
+
+Sol: https://stackoverflow.com/questions/19793950/how-to-check-if-django-form-data-is-none-empty-string-or-false#:~:text=You%20can%20simply%20do%3A,None%20specifically%20checks%20for%20None%20.
 
 ### Not Resolved
 * performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/

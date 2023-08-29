@@ -105,8 +105,15 @@ class RecipeDetail(View):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
+            messages.success(
+                request,
+                'Your comment is awaiting approval')
         else:
-            comment_form = CommentForm() 
+            messages.error(
+                request,
+                'Enter a valid input..' +
+                'Try again!')
+            comment_form = CommentForm()
 
         jls_extract = "recipe_detail.html"
         return render(

@@ -1,10 +1,13 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 STATUS = ((0, "Draft"), (1, "Published"))
 CATEGORY = ((0, "Dinner"), (1, "Sweets"), (2, "Coctailes"))
+MIN_HOUR = ((0, "Min"), (1, "Hour"))
 
 
 class Recipe(models.Model):
@@ -20,7 +23,8 @@ class Recipe(models.Model):
     description = models.TextField()
     ingredients = models.TextField()
     steps = models.TextField()
-    cook_time = models.CharField(max_length=100)
+    time = models.PositiveIntegerField(default=5)
+    min_hour = models.IntegerField(choices=MIN_HOUR, default=0)
     status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
@@ -39,7 +43,7 @@ class Recipe(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-
+    
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
