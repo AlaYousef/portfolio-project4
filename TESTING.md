@@ -321,8 +321,12 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 
 
 ### My Bookmarks Page
-| My Bookmarks Page          | Click        | Dispaly All User's Created Recipes   | Pass      |
-
+| My Bookamarks Page          | Click               | Dispaly All User's Bookkmarked Recipes   | Pass   |
+| Recipe Card       | Display | Display correct recipe image, title,author    | Pass      |
+| Recipe Card       | Click on Recipe Title  | Redirect to the recipe's detail page | Pass      |
+| Recipe Card       | Pagination           |                                                        | Pass      |
+| Recipe Card       | Order                | Recipes are sorted by newest to oldest                                                                           | Pass      |
+| Recipe Card       | Hover                | Display gold border 
 
 ### My Recipes Page
 | My Recipes Page          | Click               | Dispaly All User's Created Recipes   | Pass      |

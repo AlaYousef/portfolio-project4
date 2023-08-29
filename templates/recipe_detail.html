@@ -66,11 +66,11 @@
 
         </div>
         <div class="col-3 text-center created_on">
-          <i class="far fa-clock pr-2"></i>
+          <i class="far fa-clock pr-2"></i>Time: {{ recipe.time }}
          
         </div>
         <div class="col-6 text-end created_on"><i class="fa-regular fa-user"></i>
-            
+            {{ recipe.author }} | {{ recipe.created_on }}
         </div>
 
 
@@ -79,9 +79,9 @@
     <div class="row g-0 mb-5">
         <div class=" col-11 col-md-11 mx-auto">
 
-            <h1 class="post-title"></h1>
+            <h1 class="post-title">{{ recipe.name }}</h1>
             <!-- Display Recipe description -->
-            <p class="card-text"></p>
+            <p class="card-text">{{ recipe.description | safe }}</p>
         </div>
     </div>
     <div class="row g-0 mb-5">
