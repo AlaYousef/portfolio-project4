@@ -139,6 +139,7 @@ The website was tested on different browsers for assuring the features work acco
 * Opera
 
 * On Firefox when hovering on the recipe name, name should be underline but on firefox the name display with double underlines.
+
 ### LightHouse 
 PAD Performance....
 ![Lighthouse](documentation/readme_images/lighthouse.png)<br>
@@ -187,7 +188,27 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 ![python-validate](documentation/readme_images/python-validator.png)<br><br>
 
 ## Responsiveness Test
-- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone SE, iPhoneXR, iPhone 12 Pro iPad, and iPad Air to ensure responsiveness on different screen sizes.
+- The website was tested on a variety of devices such as Desktop, Laptop, iPhone SE, iPhoneXR, iPhone 12 Pro iPad, and iPad Air to ensure responsiveness on different screen sizes on [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
+
+
+| Desktop    | Display <1280px       | Display >1280px    |
+|------------|-----------------------|--------------------|
+| Render     | pass                  | pass               |
+| Images     | pass                  | pass               |
+| Links      | pass                  | pass               |
+
+| Tablet     | iPad                  |iPad Air            | iPad Pro  | Surface Pro 7 |
+|------------|-----------------------|--------------------|-----------|----------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+| Phone      | iPhone SE/XR       |   iPhone 12pro     |  Samsung Galaxy S8+       |
+|------------|-----------------------|--------------------|----------------------|
+| Render     | pass                  | pass               | pass      | 
+| Images     | pass                  | pass               | pass      | 
+| Links      | pass                  | pass               | pass      | 
+
 
 ## Manuall Test
 
