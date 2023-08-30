@@ -454,6 +454,8 @@ PAD Performance....
  
 * Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error diplay after adding delete recipe view and fixed by adding get absolut url() method.
 
+* Bug: Message after deleting or editing does not display. This was fixed by adding success_url = reverse_lazy(..).
+
 * Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
 sol: if(messages != null). This error display after setting time for alert messages using javscript and fixed by adding if statement checking if the message is not null.
 

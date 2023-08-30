@@ -35,8 +35,8 @@
     * [Cloning this Project](#cloning-this-project)
 * [Credits](#credits)
     * [Contents](#contents)
-    * [Information Sources / Resources](#Information-Sources-Resources)
-* [Acknowledgements](#Acknowledgements)
+    * [Resources](#resources)
+* [Acknowledgements](#acknowledgements)
 
 ## Introduction
 
@@ -403,30 +403,17 @@ All libraries used for this project are listed in the requirements.txt file and 
 * [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
 * [urllib3](https://pypi.org/project/urllib3/) a powerful, user-friendly HTTP client for Python brings many critical features that are missing from the Python standard libraries:
 
-## Deployment To Heroku
+## Deployment
 
 The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
 
 1. To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
 
-<details><summary><b>Heroku Deployment - Step 1</b></summary>
-
-![Heroku Deployment Step 1](readme/assets/images/heroku_01.png)
-</details><br />
 
 2. Fill in the needed details as stated in the screenshot below and then click 'Create Repository From Template'.
 
-<details><summary><b>Heroku Deployment - Step 2</b></summary>
-
-![Heroku Deployment Step 2](readme/assets/images/heroku_02.png)
-</details><br />
-
 3. When the repository creation is done click 'Gitpod' as stated in the screenshot below.
 
-<details><summary><b>Heroku Deployment - Step 3</b></summary>
-
-![Heroku Deployment Step 3](readme/assets/images/heroku_03.png)
-</details><br />
 
 4. Now it's time to install Django and the supporting libraries that are needed. Type the commands below to do this.
 
@@ -434,44 +421,21 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 * ```pip3 install 'dj_database_url psycopg2```
 * ```pip3 install 'dj3-cloudinary-storage```
 
-<details><summary><b>Heroku Deployment - Step 4</b></summary>
-
-![Heroku Deployment Step 4](readme/assets/images/heroku_04.png)
-</details><br />
-
 5. When Django and the libraries are installed we need to create a requirements file.
 
 * ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
 
-<details><summary><b>Heroku Deployment - Step 5</b></summary>
-
-![Heroku Deployment Step 5](readme/assets/images/heroku_05.png)
-</details><br />
 
 6. Now it's time to create the project.
 
 * ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create your project
 
-<details><summary><b>Heroku Deployment - Step 6</b></summary>
-
-![Heroku Deployment Step 6](readme/assets/images/heroku_06.png)
-</details><br />
-
 7. When the project is created we can now create the application.
 
 * ```python3 manage.py startapp APP_NAME``` - This will create your application
 
-<details><summary><b>Heroku Deployment - Step 7</b></summary>
-
-![Heroku Deployment Step 7](readme/assets/images/heroku_07.png)
-</details><br />
 
 8. We now need to add the application to settings.py
-
-<details><summary><b>Heroku Deployment - Step 8</b></summary>
-
-![Heroku Deployment Step 8](readme/assets/images/heroku_08.png)
-</details><br />
 
 8. Now it is time to do our first migration and run the server to test that everything works as expected. This is done by writing the commands below.
 
@@ -484,32 +448,11 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 * In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
 
-<details><summary><b>Heroku Step 09</b></summary>
-
-![Heroku Step 9](readme/assets/images/heroku_09.png)
-</details><br />
-
 10. Now it's time to enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
-
-<details><summary><b>Heroku Step 10</b></summary>
-
-![Heroku Step 10](readme/assets/images/heroku_10.png)
-</details><br />
 
 11. To add a database to the app you need to go to the resources tab ->> add-ons, search for 'Heroku Postgres' and add it.
 
-<details><summary><b>Heroku Step 11</b></summary>
-
-![Heroku Step 11](readme/assets/images/heroku_11_1.png)
-![Heroku Step 11](readme/assets/images/heroku_11_2.png)
-</details><br />
-
 12. Go to the settings tab and click on the reveal Config Vars button. Copy the text from DATABASE_URL (because we are going to need it in the next step).
-
-<details><summary><b>Heroku Step 12</b></summary>
-
-![Heroku Step 12](readme/assets/images/heroku_12.png)
-</details><br />
 
 13. Go back to GitPod and create a new env.py in the top level directory. Then add these rows.
 
@@ -517,17 +460,9 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 * ```os.environ["DATABASE_URL_FROM HEROKU"]``` - This sets the environment variables.
 * ```os.environ["SECRET_KEY"]``` - Here you can choose whatever secret key you want.
 
-<details><summary><b>Heroku Step 13</b></summary>
-
-![Heroku Step 13](readme/assets/images/heroku_13.png)
-</details><br />
 
 14. Now we are going to head back to Heroku to add our secret key to config vars. See screenshot below.
 
-<details><summary><b>Heroku Step 14</b></summary>
-
-![Heroku Step 14](readme/assets/images/heroku_14.png)
-</details><br />
 
 15. Now we have some preparations to do connected to our environment and settings.py file. In the settings.py, add the following code:
 
@@ -539,32 +474,14 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 ```import env```
 
-<details><summary><b>Heroku Step 15</b></summary>
-
-![Heroku Step 15](readme/assets/images/heroku_15.png)
-</details><br />
 
 16. In the settings file, remove the insecure secret key and replace it with:
 ```SECRET_KEY = os.environ.get('SECRET_KEY')```
 
-<details><summary><b>Heroku Step 16</b></summary>
-
-![Heroku Step 16](readme/assets/images/heroku_16.png)
-</details><br />
-
 17. Now we need to comment out the old database setting in the settings.py file (this is because we are going to use the postgres database instead of the sqlite3 database).
 
-<details><summary><b>Heroku Step 17 1/2</b></summary>
-
-![Heroku Step 17](readme/assets/images/heroku_17_1.png)
-</details><br />
 
 Now, add the link to the DATABASE_URL that we added to the environment file earlier.
-
-<details><summary><b>Heroku Step 17 2/2</b></summary>
-
-![Heroku Step 17](readme/assets/images/heroku_17_2.png)
-</details><br />
 
 18. Save all your fields and migrate the changes.
 
@@ -578,45 +495,18 @@ Now, add the link to the DATABASE_URL that we added to the environment file earl
 
 21. Let's head back to Heroku and add the Cloudinary url in Config Vars. We also need to add a disable collectstatic variable to get our first deployment to Heroku to work.
 
-<details><summary><b>Heroku Step 21</b></summary>
-
-![Heroku Step 21](readme/assets/images/heroku_21.png)
-</details><br />
-
 22. Let's head back to our settings.py file on Gitpod. We now need to add our Cloudinary Libraries we installed earlier to the installed apps. Here it is important to get the order correct.
 
-<details><summary><b>Heroku Step 22</b></summary>
-
-![Heroku Step 22](readme/assets/images/heroku_22.png)
-</details><br />
 
 23. For Django to be able to understand how to use and where to store static files we need to add some extra rows to the settings.py file.
 
-<details><summary><b>Heroku Step 23</b></summary>
-
-![Heroku Step 23](readme/assets/images/heroku_23.png)
-</details><br />
-
 24. Hang in there, we have just a couple of steps left. Now it's time to link the file to the Heroku templates directory.
-
-<details><summary><b>Heroku Step 24</b></summary>
-
-![Heroku Step 24](readme/assets/images/heroku_24.png)
-</details><br />
 
 25. Let's change the templates directory to TEMPLATES_DIR in the teamplates array.
 
-<details><summary><b>Heroku Step 25</b></summary>
-
-![Heroku Step 25](readme/assets/images/heroku_25.png)
-</details><br />
 
 26. To be able to get the application to work through Heroku we also need to add our Heroku app and localhost to which hosts that are allowed.
 
-<details><summary><b>Heroku Step 26</b></summary>
-
-![Heroku Step 26](readme/assets/images/heroku_26.png)
-</details><br />
 
 27. Now we just need to add some files to Gitpod.
 
@@ -635,41 +525,31 @@ Now, add the link to the DATABASE_URL that we added to the environment file earl
 
 31. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
 
-<details><summary><b>Heroku Step 31</b></summary>
-
-![Heroku Step 31](readme/assets/images/heroku_31.png)
-</details><br />
-
-The live link to the 'Review | Alliance' site on Heroku an be found [here](https://project-portfolio-4.herokuapp.com/). And the Github repository can be found [here](https://github.com/worldofmarcus/project-portfolio-4).
+The live link to the 'Yummy' site on Heroku an be found [here](https://pp4-yummy-d1fe3ffd7115.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project4).
 
 [Back to top](<#table-of-content>)
 
-## How To Fork The Repository On GitHub
+### How To Fork 
 
 It is possible to do a independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
 
 1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
-
-<details><summary><b>Github Fork</b></summary>
-
-![Fork](readme/assets/images/github_fork.png)
-</details><br />
+![Fork the Project](documentation/readme_images/fork.jpg)<br><br>
 
 [Back to top](<#table-of-content>)
 
-## Cloning And Setting Up This Project
+### Cloning this Project.
 
-To clone and set up this project you need to follow the steps below.
+To clone and set up this project follow these steps:
 
 1. When you are in the repository, find the code tab and click it.
 2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
 3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
-4. Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
+4. Enter the command git clone followed by the copied URL
+5. Your clone was created.
 
-<details><summary><b>Github Create Local Clone</b></summary>
+![Clone The Project](documentation/readme_images/clone.jpg)
 
-![Clone](readme/assets/images/github_clone_01.png)
-</details><br />
 
 5. To be able to get the project to work you need to install the requirements. This can be done by using the command below:
 
@@ -680,31 +560,38 @@ To clone and set up this project you need to follow the steps below.
 * ```python3 manage.py migrate``` - This will do the necessary migrations.
 * ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
 
-<details><summary><b>Setup env.py</b></summary>
-
-![Clone](readme/assets/images/github_clone_02.png)
-</details><br />
-
-[Back to top](<#table-of-content>)
 
 [Back to top](<#contents>)
 
-## Credits
-* Youtube tutorial full stack crud https://www.youtube.com/watch?v=cTf-Hsqq3GA
+### Credits
 
-* URL TO REDIRECT-TO AFTER DELETING/EEDITING
-    From: https://stackoverflow.com/questions/31275574/
-    reverse-for-success-url-on-django-class-based-view-complain-about-circular-impor
-### Content
+#### Content
+* All recipes content and details was taken from this recipes website [Delish](https://www.delish.com/)
 
+#### Resources
+* Bugs on delete/edit recipes was fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/14170473/get-absolute-url-in-django-when-using-class-based-views)
 
+* Bugs for messages does not display after editing or deleting fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown).
 
-### Information Sources / Resources
+* Design inspired from this [project](https://italianissimo-booking-website.herokuapp.com/).
+
+* Readme documentation deployment section was taken from this [repository](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md).
+
+* Readme documentation template is from this [repository](https://github.com/useriasminna/italianissimo-booking-website/tree/main)
+
+* User stories inspired from [Code Institute: I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/?child=last) and from this [repository](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main).
+
+#### Code
+
+* Code of creating models, views and forms was inspired from [Code Institute: I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/09e0a94c7dbd4b969b8358a0cf5660b2/).
+
+* Code help for deleting/adding recipes is from this youtube tutorials [Learn Django Class Based Views](https://www.youtube.com/watch?v=nW-srV0kKKk).
+
 
 
 [Back to top](<#contents>)
 
 ## Acknowledgements
-This App was completed as a Portfolio Project  for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community, tutor support. And all at the Code Institute for their help.
+This App was completed as a Portfolio Project 4 for the Full Stack Software Developer Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/), the Slack community and specially tutor support. And all at the Code Institute for their help.
 
 [Back to top](<#contents>)
