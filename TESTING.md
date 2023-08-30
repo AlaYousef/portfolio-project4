@@ -4,8 +4,12 @@ Back to [README.md](README.md)<br>
 
 ## Table of contents
 * [User Story and Feature Testing](#user-story-and-feature-testing)
-* [Browser Testing](#browser-testing)
+* [Manuall Test](#manuall-test)
 * [Code Validation](#code-validation)
+* [Browser Testing](#browser-testing)
+* [Responsiveness Tes](#responsiveness-test)
+* [LightHouse](#lighthouse)
+* [A11y Color Contrast Accessibility Validator](#a11y-color-contrast-accessibility-validator)
 * [Bugs](#bugs)
 
 
@@ -130,85 +134,6 @@ Back to [README.md](README.md)<br>
  _As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments._
 
 * All the published comment were approved only by the site admin.
-
-## Browser Testing
-The website was tested on different browsers for assuring the features work accordingly.
-* Chrome
-* Edge
-* Firefox
-* Opera
-
-* On Firefox when hovering on the recipe name, name should be underline but on firefox the name display with double underlines.
-
-### LightHouse 
-PAD Performance....
-![Lighthouse](documentation/readme_images/lighthouse.png)<br>
-
-
-## Code Validation
-### HTML
-The html code of the website was validated using [W3 Markup Validator](https://validator.w3.org/).<br>
-The validation have the following outcome:<br><br>
-
-![html-validate](documentation/readme_images/html-validate.png)<br><br>
-
-
-The pages that have been tested:
-* Base
-* Home
-* Dinner
-* Sweets
-* Coctailes
-* Add Recipe
-* My Bookmarkes
-* My Recipes
-* Login/Log out/Register
-* Recipe Detail
-* Delete Recipe
-* Edit Recipe
-* Delete Comment
-
-### CSS
-The CSS code was validated using [W3 Jigsaw Validator](https://jigsaw.w3.org/css-validator/) with no errors.<br>
-
-![CSS-validate](documentation/readme_images/css-validator.png)<br><br>
-
-### Javascript
-The Javascript code was validated using using [JsHint](https://jshint.com/)<br>
-I have validate two functions as the following:
-
-![Javascript-validate](documentation/readme_images/js-validator.png)<br><br>
-
-In the begening I get these warning the following warnings, and fixed using change datatype from let to var to be available througt the function.
-![Javascrit-validate](documentation/readme_images/js-error.png)<br><br>
-
-### Python
-The [PEP8](http://pep8online.com/) Validator Service was used to validate the following Python files in the project to ensure there is no syntax errors in the project.
-
-![python-validate](documentation/readme_images/python-validator.png)<br><br>
-
-## Responsiveness Test
-- The website was tested on a variety of devices such as Desktop, Laptop, iPhone SE, iPhoneXR, iPhone 12 Pro iPad, and iPad Air to ensure responsiveness on different screen sizes on [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
-
-
-| Desktop    | Display <1280px       | Display >1280px    |
-|------------|-----------------------|--------------------|
-| Render     | pass                  | pass               |
-| Images     | pass                  | pass               |
-| Links      | pass                  | pass               |
-
-| Tablet     | iPad                  |iPad Air            | iPad Pro  | Surface Pro 7 |
-|------------|-----------------------|--------------------|-----------|----------|
-| Render     | pass                  | pass               | pass      | pass     |
-| Images     | pass                  | pass               | pass      | pass     |
-| Links      | pass                  | pass               | pass      | pass     |
-
-| Phone      | iPhone SE/XR       |   iPhone 12pro     |  Samsung Galaxy S8+       |
-|------------|-----------------------|--------------------|----------------------|
-| Render     | pass                  | pass               | pass      | 
-| Images     | pass                  | pass               | pass      | 
-| Links      | pass                  | pass               | pass      | 
-
 
 ## Manuall Test
 
@@ -450,5 +375,100 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 | **No Button**   | Click           | Still in the current page  | Pass      |
 
 
-Back to [README.MD](README.MD)<br>
+
+## Code Validation
+### HTML
+The html code of the website was checked by address using [W3 Markup Validator](https://validator.w3.org/).<br>
+The validation have the following outcome at the begining:<br><br>
+
+![html-validate](documentation/readme_images/html-bugs.png)<br><br>
+
+After Resolved:
+
+![html-validate](documentation/readme_images/html-validation.png)<br><br>
+
+
+### CSS
+The CSS code was tested by direct input using [W3 Jigsaw Validator](https://jigsaw.w3.org/css-validator/) with no errors.<br>
+
+![CSS-validate](documentation/readme_images/css-validator.png)<br><br>
+
+### Javascript
+The Javascript code was validated using using [JsHint](https://jshint.com/)<br>
+I have validate two functions as the following:
+
+![Javascript-validate](documentation/readme_images/js-validator.png)<br><br>
+
+In the begening I get these warning the following warnings, and fixed using change datatype from let to var to be available througt the function.
+
+![Javascrit-validate](documentation/readme_images/js-error.png)<br><br>
+
+### Python
+The [PEP8](http://pep8online.com/) Validator Service was used to validate the following Python files in the project to ensure there is no syntax errors in the project.
+![python-validate](documentation/readme_images/python-validator.png)<br><br>
+
+## Browser Testing
+The website was tested on different browsers for assuring the features work accordingly.
+* Chrome
+* Edge
+* Firefox
+* Opera
+
+* On Firefox when hovering on the recipe name, name should be underline but on firefox the name display with double underlines.
+
+
+## Responsiveness Test
+- The website was tested on a variety of devices such as Desktop, Laptop, iPhone SE, iPhoneXR, iPhone 12 Pro iPad, and iPad Air to ensure responsiveness on different screen sizes on [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
+
+
+| Desktop    | Display <1280px       | Display >1280px    |
+|------------|-----------------------|--------------------|
+| Render     | pass                  | pass               |
+| Images     | pass                  | pass               |
+| Links      | pass                  | pass               |
+
+| Tablet     | iPad                  |iPad Air            | iPad Pro  | Surface Pro 7 |
+|------------|-----------------------|--------------------|-----------|----------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+
+| Phone      | iPhone SE/XR       |   iPhone 12pro     |  Samsung Galaxy S8+       |
+|------------|-----------------------|--------------------|----------------------|
+| Render     | pass                  | pass               | pass      | 
+| Images     | pass                  | pass               | pass      | 
+| Links      | pass                  | pass               | pass      | 
+
+
+## LightHouse 
+PAD Performance....
+![Lighthouse](documentation/readme_images/lighthouse.png)<br>
+
+## A11y Color Contrast Accessibility Validator
+![Lighthouse](documentation/readme_images/contrast-tests.png)<br>
+
+
+
+## Bugs 
+### Resolved
  
+* Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error diplay after adding delete recipe view and fixed by adding get absolut url() method.
+
+* Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
+sol: if(messages != null). This error display after setting time for alert messages using javscript and fixed by adding if statement checking if the message is not null.
+
+* Bug: 404 error when choose Draft in add recipe form. Resolved by adding if statement to check recipe status value.
+
+* Bug: Submit empty comment form, Resolved by adding an error message and reload the form.
+
+* Bug: Accept negatine value for time on add recipe form. Fixed by alter time field data type to positiveInteger and adding a new field to choose time unit; minute or hour.
+
+* Bug: Programming error at /. Fixed by reset the database and make new migrations.
+
+### Not Resolved
+* performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
+
+[Back to top](<#contents>)
+
+
+Back to [README.MD](README.md)

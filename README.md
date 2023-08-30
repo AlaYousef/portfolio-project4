@@ -348,98 +348,344 @@ These user stories are labelled as "Wont Have" in Github, due to time constraint
 
 * In my bookmarkes page, recipes will sorted from the most preffered one to least.
 
-## Testing
+## Full Testing
 The testing documentation can be found at [TESTING.md](TESTING.md)
 
-### PEP 8 Online
-
-The [PEP8](http://pep8online.com/) Validator Service was used to validate the Python file in the project to ensure there is no syntax errors in the project.
-
-* No errors or warnings were found during the testing of the code in PEP8
-
-![PEP8](assets/documentation/PEP8.png)<br>
-
 [Back to top](<#contents>)
 
-### Lighthouse 
-
-* Lighthouse was used to test Performance, Best Practices, Accessibility and SEO on the Desktop.
-
-![Lighthouse Result](assets/documentation/lighthouse.png)<br>
-
-[Back to top](<#contents>)
-
-### Full Testing 
-
-[Back to top](<#contents>)
-
-## Bugs 
-### Resolved
-
- 
-* Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']
-absolut url....
-
-* error: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
-sol: if(messages != null)
-
-* draft choice 404 error
-
-![Draft Error](documentation/readme_images/edit-rec-error.png)<br>
-* Submit empty form
-
-Sol: https://stackoverflow.com/questions/19793950/how-to-check-if-django-form-data-is-none-empty-string-or-false#:~:text=You%20can%20simply%20do%3A,None%20specifically%20checks%20for%20None%20.
-
-### Not Resolved
-* performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
-
-
-[Back to top](<#contents>)
 
 ## Technologies Used
+### Languages
 
-## Deployment
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides The site functionality.
+* [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides site content and structure.
+* [CSS3](https://en.wikipedia.org/wiki/CSS) - Provide the website styling.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactivity with site elements.
 
-* This site was deployed by completing the following steps:
+### Frameworks & Software
+* [Bootstrap](https://getbootstrap.com/) - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
+* [Django](https://www.djangoproject.com/) - A model-view-template framework used to Yummy Recipes website.
+* [Balsamiq](https://balsamiq.com/) - The Tool that used to create the wireframes.
+* [Github](https://github.com/) - Used to host and edit the website.
+* [Gitpod](https://www.gitpod.io) - The  development environment that used for the wesite development.
+* [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that that used to deploy the application.
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance, accessibility  of site.
+* [a11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - Used to test color contrast on the website.
+* [Lucidchart](https://www.lucidchart.com/) - Used to create logical chart for the project.
+* [Favicon](https://favicon.io/) - Used to create the favicon.
+* [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to test responsiveness.
+* [Cloudinary](https://cloudinary.com/) - A service that hosts all images in the project.
+* [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+* [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+* [PEP8 Validation](http://pep8online.com/) - At the time for deploying this project the PEP8 Online Validaton service was offline, therefore not used.
+* [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 
-1. Log in to [Heroku](https://id.heroku.com) or create an account
-2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App
-3. You must enter a unique app name
-4. Next select your region
-5. Click on the Create App button
-6. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
-7. Click Reveal Config Vars and enter POSRT into the Key box and 8000 into the Value box and click the Add button
-8. If there are credentiels click Reveal Config Vars again and enter CREDS into the Key box and the Google credentials into the Value box
-9. Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
-10. Repeat step 8 to add node.js. o Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order
-11. Scroll to the top of the page and choose the Deploy tab
-12. Select Github as the deployment method
-13. Confirm you want to connect to GitHub
-14. Search for the repository name and click the connect button
-15. Scroll to the bottom of the deploy page and select the preferred deployment type
-16. Click Enable Automatic Deploys for automatic deployment when you push updates to Github
+### Libraries
 
-## Forking This Project
+[Back to top](<#table-of-content>)
 
-* Fork this project by following the steps:
+All libraries used for this project are listed in the requirements.txt file and have been documented below:
 
-1. Open [GitHub](https://github.com/)
-2. Click on the project to be forked
-3. Find the Fork button at the top right of the page
-4. Once you click the button the fork will be in your repository
+* [asgiref](https://pypi.org/project/asgiref/) - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
+* [cloudinary](https://pypi.org/project/cloudinary/) - The Cloudinary Python SDK allows you to quickly and easily integrate your application with Cloudinary. Effortlessly optimize, transform, upload and manage your cloud's assets.
+* [dj-database-url](https://pypi.org/project/dj-database-url/) - Django database connection dictionary, populated with all the data specified in your URL.
+* [dj3-cloudinary-storage](https://pypi.org/project/dj3-cloudinary-storage/) - Django Cloudinary Storage is a Django package that facilitates integration with Cloudinary by implementing Django Storage API.
+* [Django](https://pypi.org/project/Django/) - Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+* [django-allauth](https://pypi.org/project/django-allauth/) - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+* [django-crispy-forms](https://pypi.org/project/django-crispy-forms/) - Used to integrate Django DRY forms in the project.
+* [django-summernote](https://pypi.org/project/django-summernote/) - Summernote is a simple WYSIWYG editor. django-summernote allows you to embed Summernote into Django very handy. Support admin mixins and widgets
+* [gunicorn](https://pypi.org/project/gunicorn/) - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
+* [oauthlib](https://pypi.org/project/oauthlib/) - OAuthLib is a framework which implements the logic of OAuth1 or OAuth2 without assuming a specific HTTP request object or web framework.
+* [psycopg2](https://pypi.org/project/psycopg2/) - Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
+* [PyJWT](https://pypi.org/project/PyJWT/) - A Python implementation of RFC 7519.
+* [python3-openid](https://pypi.org/project/python3-openid/) - OpenID support for modern servers and consumers.
+* [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - P    rovides first-class OAuth library support for Requests.
+* [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
+* [urllib3](https://pypi.org/project/urllib3/) a powerful, user-friendly HTTP client for Python brings many critical features that are missing from the Python standard libraries:
 
-## Cloning This Project
+## Deployment To Heroku
 
-* Clone this project by following the steps:
-  
-1. Open [GitHub](https://github.com/)
-2. Click on the project to be cloned
-3. You will be provided with three options to choose from, HTTPS, SSH, or GitHub CLI, click the clipboard icon in order to copy the URL
-4. Once you click the button the fork will be in your repository
-5. Open a new terminal
-6. Change the current working directory to the location that you want the cloned directory
-7. Type git clone and paste the URL copied in step 3
-8. Press Enter and the project is cloned
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+
+1. To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+
+<details><summary><b>Heroku Deployment - Step 1</b></summary>
+
+![Heroku Deployment Step 1](readme/assets/images/heroku_01.png)
+</details><br />
+
+2. Fill in the needed details as stated in the screenshot below and then click 'Create Repository From Template'.
+
+<details><summary><b>Heroku Deployment - Step 2</b></summary>
+
+![Heroku Deployment Step 2](readme/assets/images/heroku_02.png)
+</details><br />
+
+3. When the repository creation is done click 'Gitpod' as stated in the screenshot below.
+
+<details><summary><b>Heroku Deployment - Step 3</b></summary>
+
+![Heroku Deployment Step 3](readme/assets/images/heroku_03.png)
+</details><br />
+
+4. Now it's time to install Django and the supporting libraries that are needed. Type the commands below to do this.
+
+* ```pip3 install 'django<4' gunicorn```
+* ```pip3 install 'dj_database_url psycopg2```
+* ```pip3 install 'dj3-cloudinary-storage```
+
+<details><summary><b>Heroku Deployment - Step 4</b></summary>
+
+![Heroku Deployment Step 4](readme/assets/images/heroku_04.png)
+</details><br />
+
+5. When Django and the libraries are installed we need to create a requirements file.
+
+* ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
+
+<details><summary><b>Heroku Deployment - Step 5</b></summary>
+
+![Heroku Deployment Step 5](readme/assets/images/heroku_05.png)
+</details><br />
+
+6. Now it's time to create the project.
+
+* ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create your project
+
+<details><summary><b>Heroku Deployment - Step 6</b></summary>
+
+![Heroku Deployment Step 6](readme/assets/images/heroku_06.png)
+</details><br />
+
+7. When the project is created we can now create the application.
+
+* ```python3 manage.py startapp APP_NAME``` - This will create your application
+
+<details><summary><b>Heroku Deployment - Step 7</b></summary>
+
+![Heroku Deployment Step 7](readme/assets/images/heroku_07.png)
+</details><br />
+
+8. We now need to add the application to settings.py
+
+<details><summary><b>Heroku Deployment - Step 8</b></summary>
+
+![Heroku Deployment Step 8](readme/assets/images/heroku_08.png)
+</details><br />
+
+8. Now it is time to do our first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+
+* ```python3 manage.py migrate``` - This will migrate the changes
+* ```python3 manage.py runserver``` - This runs the server. To test it, click the open browser button that will be visible after the command is run.
+
+9. Now it is time to create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+
+* Head on to [Heroku](https://www.heroku.com/) and sign in (or create an account if needed).
+
+* In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
+
+<details><summary><b>Heroku Step 09</b></summary>
+
+![Heroku Step 9](readme/assets/images/heroku_09.png)
+</details><br />
+
+10. Now it's time to enter an application name that needs to be unique. When you have chosen the name, choose your region and click 'Create app".
+
+<details><summary><b>Heroku Step 10</b></summary>
+
+![Heroku Step 10](readme/assets/images/heroku_10.png)
+</details><br />
+
+11. To add a database to the app you need to go to the resources tab ->> add-ons, search for 'Heroku Postgres' and add it.
+
+<details><summary><b>Heroku Step 11</b></summary>
+
+![Heroku Step 11](readme/assets/images/heroku_11_1.png)
+![Heroku Step 11](readme/assets/images/heroku_11_2.png)
+</details><br />
+
+12. Go to the settings tab and click on the reveal Config Vars button. Copy the text from DATABASE_URL (because we are going to need it in the next step).
+
+<details><summary><b>Heroku Step 12</b></summary>
+
+![Heroku Step 12](readme/assets/images/heroku_12.png)
+</details><br />
+
+13. Go back to GitPod and create a new env.py in the top level directory. Then add these rows.
+
+* ```import os``` - This imports the os library
+* ```os.environ["DATABASE_URL_FROM HEROKU"]``` - This sets the environment variables.
+* ```os.environ["SECRET_KEY"]``` - Here you can choose whatever secret key you want.
+
+<details><summary><b>Heroku Step 13</b></summary>
+
+![Heroku Step 13](readme/assets/images/heroku_13.png)
+</details><br />
+
+14. Now we are going to head back to Heroku to add our secret key to config vars. See screenshot below.
+
+<details><summary><b>Heroku Step 14</b></summary>
+
+![Heroku Step 14](readme/assets/images/heroku_14.png)
+</details><br />
+
+15. Now we have some preparations to do connected to our environment and settings.py file. In the settings.py, add the following code:
+
+```import os```
+
+```import dj_database_url```
+
+```if os.path.isfile("env.py"):```
+
+```import env```
+
+<details><summary><b>Heroku Step 15</b></summary>
+
+![Heroku Step 15](readme/assets/images/heroku_15.png)
+</details><br />
+
+16. In the settings file, remove the insecure secret key and replace it with:
+```SECRET_KEY = os.environ.get('SECRET_KEY')```
+
+<details><summary><b>Heroku Step 16</b></summary>
+
+![Heroku Step 16](readme/assets/images/heroku_16.png)
+</details><br />
+
+17. Now we need to comment out the old database setting in the settings.py file (this is because we are going to use the postgres database instead of the sqlite3 database).
+
+<details><summary><b>Heroku Step 17 1/2</b></summary>
+
+![Heroku Step 17](readme/assets/images/heroku_17_1.png)
+</details><br />
+
+Now, add the link to the DATABASE_URL that we added to the environment file earlier.
+
+<details><summary><b>Heroku Step 17 2/2</b></summary>
+
+![Heroku Step 17](readme/assets/images/heroku_17_2.png)
+</details><br />
+
+18. Save all your fields and migrate the changes.
+
+```python3 manage.py migrate```
+
+19. Now we are going to get our connection to Cloudinary connection working (this is were we will store our static files). First you need to create a Cloudinary account and from the Cloudinary dashboard copy the API Environment Variable.
+
+20. Go back to the env.py file in Gitpod and add the Cloudinary url (it's very important that the url is correct):
+
+```os.environ["CLOUDINARY_URL"] = "cloudinary://************************"```
+
+21. Let's head back to Heroku and add the Cloudinary url in Config Vars. We also need to add a disable collectstatic variable to get our first deployment to Heroku to work.
+
+<details><summary><b>Heroku Step 21</b></summary>
+
+![Heroku Step 21](readme/assets/images/heroku_21.png)
+</details><br />
+
+22. Let's head back to our settings.py file on Gitpod. We now need to add our Cloudinary Libraries we installed earlier to the installed apps. Here it is important to get the order correct.
+
+<details><summary><b>Heroku Step 22</b></summary>
+
+![Heroku Step 22](readme/assets/images/heroku_22.png)
+</details><br />
+
+23. For Django to be able to understand how to use and where to store static files we need to add some extra rows to the settings.py file.
+
+<details><summary><b>Heroku Step 23</b></summary>
+
+![Heroku Step 23](readme/assets/images/heroku_23.png)
+</details><br />
+
+24. Hang in there, we have just a couple of steps left. Now it's time to link the file to the Heroku templates directory.
+
+<details><summary><b>Heroku Step 24</b></summary>
+
+![Heroku Step 24](readme/assets/images/heroku_24.png)
+</details><br />
+
+25. Let's change the templates directory to TEMPLATES_DIR in the teamplates array.
+
+<details><summary><b>Heroku Step 25</b></summary>
+
+![Heroku Step 25](readme/assets/images/heroku_25.png)
+</details><br />
+
+26. To be able to get the application to work through Heroku we also need to add our Heroku app and localhost to which hosts that are allowed.
+
+<details><summary><b>Heroku Step 26</b></summary>
+
+![Heroku Step 26](readme/assets/images/heroku_26.png)
+</details><br />
+
+27. Now we just need to add some files to Gitpod.
+
+* Create 3 folders in the top level directory: **media**, **static**, **templates**
+* Create a file called **Procfile* and add the line ```web: gunicorn PROJ_NAME.wsgi?``` to it.d
+
+28. Now you can save all the files and prepare for the first commit and push to Github by writing the lines below.
+
+* ```git add .```
+* ```git commit -m "Deployment Commit```
+* ```git push```
+
+29. Before moving on to the Heroku deployment we just need to add one more thing in the config vars. We need to add "PORT" in the KEY input field and "8000" in the VALUE field. If we don't add this there might be problems with the deployment.
+
+30. Now it's time for deployment. Scroll to the top of the settings page in Heroku and click the 'Deploy' tab. For deployment method, select 'Github'. Search for the repository name you want to deploy and then click connect.
+
+31. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
+
+<details><summary><b>Heroku Step 31</b></summary>
+
+![Heroku Step 31](readme/assets/images/heroku_31.png)
+</details><br />
+
+The live link to the 'Review | Alliance' site on Heroku an be found [here](https://project-portfolio-4.herokuapp.com/). And the Github repository can be found [here](https://github.com/worldofmarcus/project-portfolio-4).
+
+[Back to top](<#table-of-content>)
+
+## How To Fork The Repository On GitHub
+
+It is possible to do a independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
+
+1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+<details><summary><b>Github Fork</b></summary>
+
+![Fork](readme/assets/images/github_fork.png)
+</details><br />
+
+[Back to top](<#table-of-content>)
+
+## Cloning And Setting Up This Project
+
+To clone and set up this project you need to follow the steps below.
+
+1. When you are in the repository, find the code tab and click it.
+2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
+3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
+4. Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
+
+<details><summary><b>Github Create Local Clone</b></summary>
+
+![Clone](readme/assets/images/github_clone_01.png)
+</details><br />
+
+5. To be able to get the project to work you need to install the requirements. This can be done by using the command below:
+
+* ```pip3 install -r requirements.txt``` - This command downloads and install all required dependencies that is stated in the requirements file.
+
+6. The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
+
+* ```python3 manage.py migrate``` - This will do the necessary migrations.
+* ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
+
+<details><summary><b>Setup env.py</b></summary>
+
+![Clone](readme/assets/images/github_clone_02.png)
+</details><br />
+
+[Back to top](<#table-of-content>)
 
 [Back to top](<#contents>)
 
