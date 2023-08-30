@@ -17,25 +17,22 @@
   <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dko5fxoa0/image/upload/v1690826708/favicon-32x32_u2dmq5.png"
     >
    <!-- Bootsrap CDN-->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
- 
-
+  <!--Style Sheet-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   
   <title>Ymmy Recipes</title>
 </head>
 
 <body class="content-wrapper">
-
-
   <header>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg ">
       <div class="container-fluid ">
         <a href="{% url 'home' %}"
           class="d-flex align-items-start mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <span class="fs-4 page-header">YUMMY</span>
+          <span class="page-header"><h1 class="fs-3" >YUMMY</h1></span>
         </a>
         <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#navbarText" aria-controls="navbarText">
@@ -45,13 +42,13 @@
         <div class="offcanvas offcanvas-end" id="navbarText">
           <!-- Site Logo -->
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title logo" id="offcanvasNavbarLabel">
+            <h2 class="offcanvas-title logo fs-5" id="offcanvasNavbarLabel">
               <a href="{% url 'home' %}">YUMMY</a>
-            </h5>
+            </h2>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <!-- Navigation menue items-->
-          <ul class="navbar-nav nav-tabs justify-content-end navigation">
+          <ul class="navbar-nav nav-tabs justify-content-end navigation fs-5">
             <li class="nav-item flex a-center"><a class="nav-link" href="{% url 'home' %}">
                 <i class="fa-solid fa-house nav-icon"></i> Home</a></li>
             <li class="nav-item flex a-center">
@@ -93,6 +90,7 @@
           </ul>
 
         </div>
+      </div>
     </nav>
 
   </header>
@@ -187,7 +185,7 @@
   <!-- Bootstrap scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-  async</script>
+  </script>
   <script src="{% static 'js/script.js' %}"></script>
 </body>
 

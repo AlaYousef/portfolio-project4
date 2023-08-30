@@ -186,10 +186,10 @@ The [PEP8](http://pep8online.com/) Validator Service was used to validate the fo
 
 ![python-validate](documentation/readme_images/python-validator.png)<br><br>
 
-## Device Testing
+## Responsiveness Test
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone SE, iPhoneXR, iPhone 12 Pro iPad, and iPad Air to ensure responsiveness on different screen sizes.
 
-## Responsiveness Test
+## Manuall Test
 
 ### Site Navigation
 | Test               | Action     | Expected Outcome                                                    | Pass/Fail |
