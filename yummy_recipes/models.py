@@ -36,7 +36,7 @@ class Recipe(models.Model):
 
     def get_absolute_url(self):
         """redirect to recipe detail page after user adds/edits recipe"""
-        return reverse('recipe_detail', kwargs={'slug': self.slug})
+        return reverse('recipe_detail', kwargs={"pk": self.pk})
 
     def __str__(self):
         return f"{self.name}"
@@ -59,3 +59,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+

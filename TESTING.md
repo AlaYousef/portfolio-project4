@@ -454,18 +454,20 @@ PAD Performance....
  
 * Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error diplay after adding delete recipe view and fixed by adding get absolut url() method.
 
-* Bug: Message after deleting or editing does not display. This was fixed by adding success_url = reverse_lazy(..).
+* 1. Bug: Message after deleting or editing does not display. This was fixed by adding success_url = reverse_lazy(..).
 
-* Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
+* 2. Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
 sol: if(messages != null). This error display after setting time for alert messages using javscript and fixed by adding if statement checking if the message is not null.
 
-* Bug: 404 error when choose Draft in add recipe form. Resolved by adding if statement to check recipe status value.
+* 3. Bug: 404 error when choose Draft in add recipe form. Resolved by adding if statement to check recipe status value.
 
-* Bug: Submit empty comment form, Resolved by adding an error message and reload the form.
+* 4. Bug: Submit empty comment form, Resolved by adding an error message and reload the form.
 
-* Bug: Accept negatine value for time on add recipe form. Fixed by alter time field data type to positiveInteger and adding a new field to choose time unit; minute or hour.
+* 5. Bug: Accept negatine value for time on add recipe form. Fixed by alter time field data type to positiveInteger and adding a new field to choose time unit; minute or hour.
 
-* Bug: Programming error at /. Fixed by reset the database and make new migrations.
+* 6. Bug: Programming error at /. Fixed by reset the database and make new migrations.
+
+* 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to making the slug generated automatically as in the admin panel, and that using AutoSlugField() method.
 
 ### Not Resolved
 * performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/

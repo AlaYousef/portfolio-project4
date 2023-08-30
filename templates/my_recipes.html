@@ -35,7 +35,7 @@
                         <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}
                             <span class="draft">(DRAFT)</span></h2>
                         {% else %}
-                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-detail-link">
+                        <a href="{% url 'recipe_detail' recipe.id %}" class="recipe-detail-link">
                             <h2 class="card-title recipe-detail-title text-truncate">{{ recipe.name }}</h2>
                         </a>
                         {% endif %}
@@ -45,12 +45,12 @@
                             <hr>
                             <!-- Check if the user is logging in and he is the authoe of this recipe -->
                             {% if user.is_authenticated and recipe.author == user %}
-                            <a href="{% url 'delete_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                            <a href="{% url 'delete_recipe' recipe.id %}" class="recipe-detail-link"><span>
                                     <i class="fa-regular fa-trash-can"></i></span>
                                 <span> Delete Recipe</span>
                             </a>
                             <br>
-                            <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-detail-link"><span>
+                            <a href="{% url 'edit_recipe' recipe.id %}" class="recipe-detail-link"><span>
                                     <i class="fa-solid fa-pen-to-square"></i></span>
                                 <span> Edit Recipe</span>
                             </a>

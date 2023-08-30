@@ -27,12 +27,12 @@
             <strong>
                 <!-- If the user is logging in, has the access to add likes-->
                 {% if user.is_authenticated %}
-                <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="post">
+                <form class="d-inline" action="{% url 'recipe_like' recipe.id %}" method="post">
                     {% csrf_token %}
                     {% if liked %}
-                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                    <button type="submit" value="{{recipe.id}}" class="btn-like"><i class="fas fa-heart"></i></button>
                     {% else %}
-                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                    <button type="submit" value="{{recipe.id}}" class="btn-like"><i class="far fa-heart"></i></button>
                     {% endif %}
                 </form>
                 {% else %}
@@ -48,13 +48,13 @@
             <strong>
                 <!-- If the user is logging in, has the access to add bookmarkes-->
                 {% if user.is_authenticated %}
-                <form class="d-inline " action="{% url 'recipe_bookmarked' recipe.slug %}" method="post">
+                <form class="d-inline " action="{% url 'recipe_bookmarked' recipe.id %}" method="post">
                     {% csrf_token %}
                     {% if bookmark %}
-                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i
+                    <button type="submit" value="{{recipe.id}}" class="btn-like"><i
                             class="fa-solid fa-bookmark"></i></button>
                     {% else %}
-                    <button type="submit" value="{{recipe.slug}}" class="btn-like"><i
+                    <button type="submit" value="{{recipe.id}}" class="btn-like"><i
                             class="fa-regular fa-bookmark"></i></button>
                     {% endif %}
                 </form>

@@ -54,9 +54,9 @@ class RecipeDetail(View):
     """
     This class based view display the all detailes of a selected recipe.
     """
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, id, *args, **kwargs):
         queryset = Recipe.objects.all()
-        recipe = get_object_or_404(queryset, slug=slug)
+        recipe = get_object_or_404(queryset, pk=id)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
         bookmark = False
@@ -80,13 +80,13 @@ class RecipeDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, id, *args, **kwargs):
         """
         This method is called if the user make a POST request
         via the like, bookmarke or comment forms.
         """
         queryset = Recipe.objects.filter(status=1)
-        recipe = get_object_or_404(queryset, slug=slug)
+        recipe = get_object_or_404(queryset, pk=id)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
         bookmark = False
@@ -137,15 +137,15 @@ class RecipeLike(View):
     field in the Recipe model. If is it, when the user click on like btn 
     the user id will be removed.
     """
-    def post(self, request, slug, *args, **kwargs):
-        recipe = get_object_or_404(Recipe, slug=slug)
+    def post(self, request, id, *args, **kwargs):
+        recipe = get_object_or_404(Recipe, pk=id)
         if recipe.likes.filter(id=request.user.id).exists():
             recipe.likes.remove(request.user)
             
         else:
             recipe.likes.add(request.user)
         
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('recipe_detail', args=[id]))
 
 
 class RecipeBookmarked(View):
@@ -156,8 +156,8 @@ class RecipeBookmarked(View):
     the user id will be removed.
     """
     
-    def post(self, request, slug, *args, **kwargs):
-        recipe = get_object_or_404(Recipe, slug=slug)
+    def post(self, request, id, *args, **kwargs):
+        recipe = get_object_or_404(Recipe, pk=id)
         if recipe.bookmarked.filter(id=request.user.id).exists():
             recipe.bookmarked.remove(request.user)
             messages.success(self.request, 'Recipe removed from bookmarks page')
@@ -165,7 +165,7 @@ class RecipeBookmarked(View):
             recipe.bookmarked.add(request.user)
             messages.success(self.request, 'Recipe added to bookmarks page')
 
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('recipe_detail', args=[id]))
 
 
 class MyBookmarkRecipe(generic.ListView):
@@ -184,7 +184,7 @@ class MyBookmarkRecipe(generic.ListView):
 
 class AddRecipe(SuccessMessageMixin, generic.CreateView):
     """This class based view allow logged in users to create their own recipes 
-    recipe using the from in add_recipe.html page.
+    using the from in add_recipe.html page.
     """
     form_class = RecipeForm
     template_name = 'add_recipe.html'
@@ -298,7 +298,7 @@ class DeleteComment(SuccessMessageMixin, generic.DeleteView):
     def get_success_url(self):
         """ Return to recipe detail after deleting the comment"""
         recipe = self.object.recipe
-        return reverse_lazy('recipe_detail', kwargs={'slug': recipe.slug})
+        return reverse_lazy('recipe_detail', kwargs={'pk': recipe.pk})
    
 
   
