@@ -302,7 +302,7 @@ Back to [README.md](README.md)<br>
 | Recipe Title   | Enter exist name and click submit   | If leave blank: Display Warning, form won't submit  | Pass      |
 | Choose Image Button      | Click       | Open device storage to select image   | Pass      |
 | Choose Image Button      | Not Clicked     | Default image will be set for the recipe card | Pass      |
-| **Submit Button** | Click     | If all Fields are Valid, Redirect to this recipe details page   | Pass      |
+| **Submit Button** | Click     | If all Fields are Valid, Redirect to this My Recipes page   | Pass      |
 | Submit Button | Click   | Success message display informing the user that the recipe has been created successfully    | Pass      |
 | Success message | Disappear     | Success message disappear after 3 seconds     | Pass      |
 | **Cancel Button**  | Click                 | Redirect to Home Page        | Pass      |
@@ -313,7 +313,7 @@ Back to [README.md](README.md)<br>
 | Edit Recipe Button     | Display  | Display Only for the recipe's author | Pass      |
 | Edit Recipe Button     | Hover  | Underline and Change Text Color | Pass      |
 | Edit Recipe Button     | Click  | Redirect to Add Recipe Form to Edit the Recipe's Fields  | Pass      |
-| **Submit Button**    | Click  | Redirect to Recipe Details page withe edited information  | Pass      |
+| **Submit Button**    | Click  | Redirect to My Recipes page withe edited information  | Pass      |
 | Submit Button     | Click   | Success message display informing the user that the recipe has been created successfully    | Pass      |
 | Success message | Disappear     | Success message disappear after 3 seconds     | Pass      |
 | **Cancel Button**   | Click   | User is redirected back to My Added Recipe | Pass      |
@@ -399,10 +399,6 @@ I have validate two functions as the following:
 
 ![Javascript-validate](documentation/readme_images/js-validator.png)<br><br>
 
-In the begening I get these warning the following warnings, and fixed using change datatype from let to var to be available througt the function.
-
-![Javascrit-validate](documentation/readme_images/js-error.png)<br><br>
-
 ### Python
 The [PEP8](http://pep8online.com/) Validator Service was used to validate the following Python files in the project to ensure there is no syntax errors in the project.
 ![python-validate](documentation/readme_images/python-validator.png)<br><br>
@@ -445,16 +441,14 @@ PAD Performance....
 ![Lighthouse](documentation/readme_images/lighthouse.png)<br>
 
 ## A11y Color Contrast Accessibility Validator
-![Lighthouse](documentation/readme_images/contrast-tests.png)<br>
+![Lighthouse](documentation/readme_images/contrast-test.png)<br>
 
 
 
 ## Bugs 
 ### Resolved
- 
-* Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error diplay after adding delete recipe view and fixed by adding get absolut url() method.
 
-* 1. Bug: Message after deleting or editing does not display. This was fixed by adding success_url = reverse_lazy(..).
+* 1. Bug: Message after deleting or editing does not display. This was fixed by adding get_success_message() method .
 
 * 2. Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
 sol: if(messages != null). This error display after setting time for alert messages using javscript and fixed by adding if statement checking if the message is not null.
@@ -468,6 +462,8 @@ sol: if(messages != null). This error display after setting time for alert messa
 * 6. Bug: Programming error at /. Fixed by reset the database and make new migrations.
 
 * 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to use the id unique value.
+
+* 8. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<id>[-a-zA-Z0-9_]+)/\\Z']. This error display on click on submit button when adding or editing recipes and solved by adding success_url = reverse_lazy(..) .
 
 ### Not Resolved
 * performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
