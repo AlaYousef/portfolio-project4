@@ -467,7 +467,7 @@ sol: if(messages != null). This error display after setting time for alert messa
 
 * 6. Bug: Programming error at /. Fixed by reset the database and make new migrations.
 
-* 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to making the slug generated automatically as in the admin panel, and that using AutoSlugField() method.
+* 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to use the id unique value.
 
 ### Not Resolved
 * performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/

@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-
 {% load crispy_forms_tags %}
 
-<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg border border-light">
+<div class="container recipe-detail-container g-0 mb-5 rounded shadow-lg border border-light" id="recipe-content">
     <!-- Page Header -->
     <div class="row">
         <div class="col-12">
@@ -13,11 +13,12 @@
     <!-- Display Recipe image  -->
     <div class="row h-25 mx-auto">
         {% if "placeholder" in recipe.featured_image.url %}
-        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172135/pexels-ready-made-3851048_amfhs5.jpg"
-            class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" alt="sweets-recipes"   style=" object-fit: cover;" >
+        <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1693470190/pexels-wagner-soares-1126975_tkamct_y5fgu6.webp"
+            class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" alt="sweets-recipes"
+            style=" object-fit: cover;">
         {% else %}
-        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img" style=" object-fit: cover;"
-            alt="sweets-recipes">
+        <img src=" {{ recipe.featured_image.url }}" class="img-fluid mx-auto p-3 bg-body rounded recipe-detail-bk-img"
+            style=" object-fit: cover;" alt="sweets-recipes">
         {% endif %}
 
     </div>
@@ -66,8 +67,12 @@
 
         </div>
         <div class="col-3 text-center created_on">
-          <i class="far fa-clock pr-2"></i>Time: {{ recipe.time }}
-         
+            {% if recipe.min_hour == 0 %}
+            <i class="far fa-clock pr-2"></i> {{ recipe.time }} min
+            {% else %}
+            <i class="far fa-clock pr-2"></i> {{ recipe.time }} hour
+            {% endif %}
+
         </div>
         <div class="col-6 text-end created_on"><i class="fa-regular fa-user"></i>
             {{ recipe.author }} | {{ recipe.created_on }}
@@ -81,21 +86,21 @@
 
             <h1 class="post-title">{{ recipe.name }}</h1>
             <!-- Display Recipe description -->
-            <p class="card-text">{{ recipe.description | safe }}</p>
+            <p class="card-text" style="color: aliceblue;">{{ recipe.description | safe }}</p>
         </div>
     </div>
     <div class="row g-0 mb-5">
         <div class=" col-11 col-md-11 mx-auto">
             <!-- Display Recipe description -->
             <h1>Ingredients: </h1>
-            <p class="card-text">{{ recipe.ingredients | safe  }}</p>
+            <p class="card-text" style="color: aliceblue;">{{ recipe.ingredients | safe  }}</p>
         </div>
     </div>
     <div class="row g-0 mb-5">
         <div class=" col-11 col-md-11 mx-auto">
             <!-- Display Recipe description -->
             <h1>Steps: </h1>
-            <p class="card-text">{{ recipe.steps | safe }}</p>
+            <p class="card-text" style="color: aliceblue;">{{ recipe.steps | safe }}</p>
 
         </div>
     </div>

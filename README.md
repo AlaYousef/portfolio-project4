@@ -575,13 +575,14 @@ To clone and set up this project follow these steps:
 
 * Design inspired from this [project](https://italianissimo-booking-website.herokuapp.com/).
 
-* Readme documentation deployment section was taken from this [repository](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md).
+* Deployment section in Readme file was taken from this [repository](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md). It was so clear and easy to follow so I take it as is.
 
-* Readme documentation template is from this [repository](https://github.com/useriasminna/italianissimo-booking-website/tree/main)
+* Readme documentation template inspired from these repositories [repository1](https://github.com/useriasminna/italianissimo-booking-website/tree/main) and [repository2](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md).
 
 * User stories inspired from [Code Institute: I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/?child=last) and from this [repository](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main).
 
 * Bug number 7 in testing; resolved and inspired from [django-autoslug](https://pythonhosted.org/django-autoslug/fields.html).
+
 
 #### Code
 

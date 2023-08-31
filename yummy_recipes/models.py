@@ -5,15 +5,16 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
+MIN = 0
+HOUR = 1
 STATUS = ((0, "Draft"), (1, "Published"))
 CATEGORY = ((0, "Dinner"), (1, "Sweets"), (2, "Coctailes"))
-MIN_HOUR = ((0, "Min"), (1, "Hour"))
+MIN_HOUR = ((MIN, "Min"), (HOUR, "Hour"))
 
 
 class Recipe(models.Model):
     category = models.IntegerField(choices=CATEGORY, default=0)
     name = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, null=False)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_posts"
     )
@@ -24,7 +25,7 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     steps = models.TextField()
     time = models.PositiveIntegerField(default=5)
-    min_hour = models.IntegerField(choices=MIN_HOUR, default=0)
+    min_hour = models.IntegerField(choices=MIN_HOUR, default=MIN)
     status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
@@ -33,10 +34,6 @@ class Recipe(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
-
-    def get_absolute_url(self):
-        """redirect to recipe detail page after user adds/edits recipe"""
-        return reverse('recipe_detail', kwargs={"pk": self.pk})
 
     def __str__(self):
         return f"{self.name}"

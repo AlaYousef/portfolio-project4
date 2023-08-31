@@ -189,7 +189,8 @@ class AddRecipe(SuccessMessageMixin, generic.CreateView):
     form_class = RecipeForm
     template_name = 'add_recipe.html'
     success_message = "recipe was created successfully"
-
+    success_url = reverse_lazy('my_recipes')
+   
     def form_valid(self, form):
         """
         called when the form is valid,
@@ -200,6 +201,7 @@ class AddRecipe(SuccessMessageMixin, generic.CreateView):
     
     def get_success_message(self, request):
         return self.success_message
+
 
 
 class MyRecipes(generic.ListView):
@@ -251,6 +253,7 @@ class EditRecipe(SuccessMessageMixin, generic.UpdateView):
     form_class = RecipeForm
     template_name = 'edit_recipe.html'
     success_message = "Recipe was edited successfully"
+    success_url = reverse_lazy('my_recipes')
 
     def form_valid(self, form):
         """

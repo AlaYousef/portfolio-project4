@@ -20,7 +20,7 @@
             <div class="card mb-5 mx-auto card-detail recipe-card border-light bg-transparent" style="width: 18rem;">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                    <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1692172136/pexels-ready-made-3850886_tzp8x8.jpg"
+                    <img src="https://res.cloudinary.com/dko5fxoa0/image/upload/v1693470190/pexels-wagner-soares-1126975_tkamct_y5fgu6.webp"
                         class="card-img-top rounded img-fluid" alt="{{ recipe.name }} image">
                 </div>
                 {% else %}
@@ -45,12 +45,12 @@
                             <hr>
                             <!-- Check if the user is logging in and he is the authoe of this recipe -->
                             {% if user.is_authenticated and recipe.author == user %}
-                            <a href="{% url 'delete_recipe' recipe.id %}" class="recipe-detail-link"><span>
+                            <a href="{% url 'delete_recipe' recipe.pk %}" class="recipe-detail-link"><span>
                                     <i class="fa-regular fa-trash-can"></i></span>
                                 <span> Delete Recipe</span>
                             </a>
                             <br>
-                            <a href="{% url 'edit_recipe' recipe.id %}" class="recipe-detail-link"><span>
+                            <a href="{% url 'edit_recipe' recipe.pk %}" class="recipe-detail-link"><span>
                                     <i class="fa-solid fa-pen-to-square"></i></span>
                                 <span> Edit Recipe</span>
                             </a>
