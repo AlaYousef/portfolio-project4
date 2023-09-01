@@ -86,21 +86,21 @@
 
             <h1 class="post-title">{{ recipe.name }}</h1>
             <!-- Display Recipe description -->
-            <p class="card-text" style="color: aliceblue;">{{ recipe.description | safe }}</p>
+            <p class="card-text">{{ recipe.description | safe }}</p>
         </div>
     </div>
     <div class="row g-0 mb-5">
         <div class=" col-11 col-md-11 mx-auto">
             <!-- Display Recipe description -->
             <h1>Ingredients: </h1>
-            <p class="card-text" style="color: aliceblue;">{{ recipe.ingredients | safe  }}</p>
+            <p class="card-text">{{ recipe.ingredients | safe  }}</p>
         </div>
     </div>
     <div class="row g-0 mb-5">
         <div class=" col-11 col-md-11 mx-auto">
             <!-- Display Recipe description -->
             <h1>Steps: </h1>
-            <p class="card-text" style="color: aliceblue;">{{ recipe.steps | safe }}</p>
+            <p class="card-text">{{ recipe.steps | safe }}</p>
 
         </div>
     </div>
@@ -148,7 +148,6 @@
     <div class="row g-0 mb-5" style="display: block;">
         <div class="col-md-12  mb-4 mt-3 card-text mx-auto">
             <!-- Comment from -->
-            {% if commented %}
             {% if user.is_authenticated %}
             <h3 class="mt-3 mx-auto" style="margin-top: 1.3em;"><i class="fa-regular fa-comments"></i> Leave a comment:
             </h3>
@@ -162,7 +161,6 @@
                     </button>
                 </div>
             </form>
-            {% endif %}
             {% endif %}
         </div>
 

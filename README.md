@@ -569,8 +569,6 @@ To clone and set up this project follow these steps:
 * All recipes content and details was taken from this recipes website [Delish](https://www.delish.com/)
 
 #### Resources
-* Bugs on delete/edit recipes was fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/14170473/get-absolute-url-in-django-when-using-class-based-views)
-
 * Bug number 1 in testing; for messages does not display after editing or deleting fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown).
 
 * Design inspired from this [project](https://italianissimo-booking-website.herokuapp.com/).
@@ -581,8 +579,8 @@ To clone and set up this project follow these steps:
 
 * User stories inspired from [Code Institute: I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/?child=last) and from this [repository](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main).
 
-* Bug number 7 in testing; resolved and inspired from [django-autoslug](https://pythonhosted.org/django-autoslug/fields.html).
 
+* Bugs number 9; delete commeent recipes was fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/14170473/get-absolute-url-in-django-when-using-class-based-views)
 
 #### Code
 

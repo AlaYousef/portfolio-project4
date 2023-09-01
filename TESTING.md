@@ -135,6 +135,8 @@ Back to [README.md](README.md)<br>
 
 * All the published comment were approved only by the site admin.
 
+[Back to top](<#contents>)
+
 ## Manuall Test
 
 ### Site Navigation
@@ -374,7 +376,7 @@ Back to [README.md](README.md)<br>
 | Login button(form valid)   | Click                                     | Success message confirming login appears   | Pass      |
 | **No Button**   | Click           | Still in the current page  | Pass      |
 
-
+[Back to top](<#contents>)
 
 ## Code Validation
 ### HTML
@@ -386,7 +388,6 @@ The validation have the following outcome at the begining:<br><br>
 After Resolved:
 
 ![html-validate](documentation/readme_images/html-validation.png)<br><br>
-
 
 ### CSS
 The CSS code was tested by direct input using [W3 Jigsaw Validator](https://jigsaw.w3.org/css-validator/) with no errors.<br>
@@ -403,6 +404,8 @@ I have validate two functions as the following:
 The [PEP8](http://pep8online.com/) Validator Service was used to validate the following Python files in the project to ensure there is no syntax errors in the project.
 ![python-validate](documentation/readme_images/python-validator.png)<br><br>
 
+[Back to top](<#contents>)
+
 ## Browser Testing
 The website was tested on different browsers for assuring the features work accordingly.
 * Chrome
@@ -412,6 +415,7 @@ The website was tested on different browsers for assuring the features work acco
 
 * On Firefox when hovering on the recipe name, name should be underline but on firefox the name display with double underlines.
 
+[Back to top](<#contents>)
 
 ## Responsiveness Test
 - The website was tested on a variety of devices such as Desktop, Laptop, iPhone SE, iPhoneXR, iPhone 12 Pro iPad, and iPad Air to ensure responsiveness on different screen sizes on [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/).
@@ -435,15 +439,67 @@ The website was tested on different browsers for assuring the features work acco
 | Images     | pass                  | pass               | pass      | 
 | Links      | pass                  | pass               | pass      | 
 
+[Back to top](<#contents>)
 
 ## LightHouse 
-PAD Performance....
-![Lighthouse](documentation/readme_images/lighthouse.png)<br>
+Th application was tested using Google Lighthouse in Chrome Developer Tools. All project's pages was tested and get the following results:
 
+<details><summary><b>Lighthouse Home Page Result</b></summary>
+
+![Lighthouse Home](documentation/readme_images/lighthouse-home.png)<br>
+</details><br/>
+
+<details><summary><b>Lighthouse Dinner Page Result</b></summary>
+
+
+![Lighthouse Dinner](documentation/readme_images/lighthouse-dinner.png)
+</details><br/>
+
+<details><summary><b>Lighthouse Sweets Page Result</b></summary>
+
+![Lighthouse Sweets](documentation/readme_images/lighthouse-sweets.png)
+</details><br/>
+
+
+<details><summary><b>Lighthouse Coctailes Page Result</b></summary>
+
+![Lighthouse Coctailes](documentation/readme_images/lighthouse-coctailes.png)
+</details><br/>
+
+
+<details><summary><b>Lighthouse Log in Page Result</b></summary>
+
+![Lighthouse Log-in](documentation/readme_images/lighthouse-login.png)
+</details><br/>
+
+
+<details><summary><b>Lighthouse Register Page Result</b></summary>
+
+![Lighthouse Sweets](documentation/readme_images/lighthouse-register.png)
+</details><br/>
+
+
+<details><summary><b>Lighthouse My Recipes Page Result</b></summary>
+
+![Lighthouse Sweets](documentation/readme_images/lighthouse-myrecipes.png)
+</details><br/>
+
+
+<details><summary><b>Lighthouse My Bookmarkes Page Result</b></summary>
+
+![Lighthouse Sweets](documentation/readme_images/lighthouse-mybookmarkes.png)
+</details><br/>
+
+
+<details><summary><b>Lighthouse Add Recipe PageResult</b></summary>
+
+![Lighthouse Sweets](documentation/readme_images/lighthouse-addrecipe.png)
+</details><br/>
 ## A11y Color Contrast Accessibility Validator
-![Lighthouse](documentation/readme_images/contrast-test.png)<br>
+![Accessibility Validator](documentation/readme_images/contrast-test.png)<br>
 
 
+[Back to top](<#contents>)
 
 ## Bugs 
 ### Resolved
@@ -463,10 +519,13 @@ sol: if(messages != null). This error display after setting time for alert messa
 
 * 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to use the id unique value.
 
-* 8. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<id>[-a-zA-Z0-9_]+)/\\Z']. This error display on click on submit button when adding or editing recipes and solved by adding success_url = reverse_lazy(..) .
+* 8. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<id>[-a-zA-Z0-9_]+)/\\Z']. This error display on click on submit button when adding or editing recipes and solved by adding success_url = reverse_lazy(..).
 
-### Not Resolved
-* performance https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/
+* 9. Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<id>[-a-zA-Z0-9_]+)/\\Z']. This error displayed on clicking delete button in comment section. Solved by adding get_success_url()
+to redirect to after deleting.
+
+* 10. Pad Performance. The Project was tested in Chrome Developer and get 36% for home page performance and the reasone was the large size for images used. The soluation was is to convert all images to .webp instead pf jpg.
+
 
 [Back to top](<#contents>)
 

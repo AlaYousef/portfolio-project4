@@ -282,7 +282,8 @@ class DeleteComment(SuccessMessageMixin, generic.DeleteView):
     form_class = CommentForm
     template_name = 'delete_comment.html'
     success_message = "Your comment deleted successfully"
-    
+
+
     def test_func(self):
         """
         allow only the comment writer to delete it
@@ -297,11 +298,8 @@ class DeleteComment(SuccessMessageMixin, generic.DeleteView):
         """
         messages.success(self.request, self.success_message)
         return super(DeleteComment, self).delete(request, *args, **kwargs)
-    
-    def get_success_url(self):
-        """ Return to recipe detail after deleting the comment"""
-        recipe = self.object.recipe
-        return reverse_lazy('recipe_detail', kwargs={'pk': recipe.pk})
-   
 
-  
+    def get_success_url(self):
+        """ Return to recipe detail view when comment deleted sucessfully"""
+        recipe = self.object.recipe
+        return reverse_lazy('recipe_detail', kwargs={'id': recipe.id})
