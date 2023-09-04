@@ -94,14 +94,9 @@ header{
 }
 
 /* ---------------------------------------Index Page Style--------------------------------------- */
-.carousel-item{
-    height: 88vh;
-}
-
 .carousel-item img{
-   
     width: 100%;
-    height: fit-content;
+    height: auto;
 }
 .home-img-card img{
     max-width: fit-content;
