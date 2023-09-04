@@ -24,12 +24,11 @@
     * [Add Recipe Page](#add-recipe-page) 
     * [Profile Dropdown Menu](#profile-dropdown-menu)
     * [Future Feature](#future-feature)
-* [Testing](#testing)
-    * [PEP 8 Online](#PEP-8-Online)
-    * [Lighthouse](#Lighthouse)
-    * [Full Testing](#full-festing)
-    * [Bugs](#Bugs)
+* [Full Testing](#full-testing)
 * [Technologies Used](#technologies-used)
+    * [Languages](#languages)
+    * [Frameworks and Software](#frameworks-and-software)
+    * [Libraries](#libraries)
 * [Deployment](#deployment)
     * [Forking this Project](#forking-this-project)
     * [Cloning this Project](#cloning-this-project)
@@ -40,12 +39,12 @@
 
 ## Introduction
 
-Yummy website is a website which designed and developed to offer free cooking recipes for different categories (dinner, sweets and coctailes). The website targets users who are interested in cooking and others who want to apply a specific recipe with clear and understandable steps. Users are givin the ability also to publish their own recipes, saving recipes on their own profile page as well as like and comments on others recipes. 
+Yummy website is a website which designed and developed to offer free cooking recipes for different categories (dinner, sweets and coctailes). The website targets users who are interested in cooking and others who want to apply a specific recipe with clear and understandable steps. Users are given the ability also to publish their own recipes, saving recipes on their own profile page as well as like and comments on other's recipes. 
 
-The fully deployed project can be accessed at [Here](https://portfolio-proj3.herokuapp.com/)
+The fully deployed project can be accessed at [Here](https://pp4-yummy-d1fe3ffd7115.herokuapp.com/)
 
 
-## User Experience - UX
+## User Experience UX
 
 ### User Stories
 
@@ -55,7 +54,7 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 |                        | As a Site user I can see my status if I logged in or out so that I can interact with contents by leaving comments , like and bookmark recipes|
 |                        | As a Site User, I can log in/ out so that I keep my account secure |
 |                        | As a Logged-in User I can view my bookmarked recipes in my profile so that I can find them easily each time I need them
-|                        | As a Site User, I can view my published recipes so that I can manage all my added recipes from my profile |
+|                        | As a Logged-in User, I can view my published recipes so that I can manage all my added recipes from my profile |
 |  USER NAVIGATION       | As a Site User, I can navigate easily around site contents so that I know if it meets my needs |
 |                        | As a Site User, I can view paginated list of reciepes so that I can easily select one to view |
 |                        | As a Site user, I can see navigation path of the page so that I know where I am and navigate easy  |
@@ -66,8 +65,8 @@ The fully deployed project can be accessed at [Here](https://portfolio-proj3.her
 |                          | As a Logged-in User, I can like or unlike recipe so that I can interact with the content|
 |                          | As a Logged-in User, I can leave comments on a recipe so that I can be involved in the conversation|
 |                          | As a Logged-in User, I can bookmark recipe so that I can save it in my profile|
-|    RECIPE MANAGEMENT     | As a Logged-in User, I can add my own recipe so that I can share it with other users|
-|                          | As a Site Admin, I can create, read, update and delete recipes so that I can manage my site content and share recipes with other users|
+|    RECIPE MANAGEMENT     | As a Logged-in User, I can add,edit and delete my own recipe so that I can share it with other users|
+|                          | As a Site Admin, I can create, read, update and delete all recipes so that I can manage my site content and share recipes with other users|
 |                          | As a Site User, I can sort my bookmarked recipes in my profile so that I can find the most favourite one easily|
 |     SITE MANAGEMENT      | As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments|
 
@@ -207,8 +206,6 @@ As the user stories were achieved, they were moved from To Do list, to In-Progre
 
 </details><br><br>
 
-credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#what%E2%80%99s-the-difference-between-features-and-epics-in-agile?
-
 [Back to top](<#contents>)
 
 ## Features
@@ -272,7 +269,7 @@ credits: https://www.knowledgehut.com/blog/agile/features-in-agile-methodology#w
 
 ### Dinner, Sweets, Coctailes Pages
  * Each of these tabs are linked to a page with list of recipes which only contain recipes within the specific category. 
- * Each of these pages has a pagination to divide the content into separate pages. The page contain 6 recipes cards and the rest are appears in the next page. So users can navigate to them using next button and return back using previous button.
+ * Each of these pages has a pagination to divide the content into separate pages. The page contain max 6 recipes cards and the rest are appears in the next page. So users can navigate to them using next button and return back using previous button.
 
 ![Recipe-Type List Page](documentation/readme_images/recipe-list.png)<br><br>
 
@@ -381,9 +378,6 @@ The testing documentation can be found at [TESTING.md](TESTING.md)
 * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 
 ### Libraries
-
-[Back to top](<#table-of-content>)
-
 All libraries used for this project are listed in the requirements.txt file and have been documented below:
 
 * [asgiref](https://pypi.org/project/asgiref/) - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
@@ -403,9 +397,12 @@ All libraries used for this project are listed in the requirements.txt file and 
 * [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
 * [urllib3](https://pypi.org/project/urllib3/) a powerful, user-friendly HTTP client for Python brings many critical features that are missing from the Python standard libraries:
 
+
+[Back to top](<#contents>)
+
 ## Deployment
 
-The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow these steps:
 
 1. To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
 
@@ -511,7 +508,7 @@ Now, add the link to the DATABASE_URL that we added to the environment file earl
 27. Now we just need to add some files to Gitpod.
 
 * Create 3 folders in the top level directory: **media**, **static**, **templates**
-* Create a file called **Procfile* and add the line ```web: gunicorn PROJ_NAME.wsgi?``` to it.d
+* Create a file called **Procfile* and add the line ```web: gunicorn PROJ_NAME.wsgi?``` to it.
 
 28. Now you can save all the files and prepare for the first commit and push to Github by writing the lines below.
 
@@ -525,7 +522,7 @@ Now, add the link to the DATABASE_URL that we added to the environment file earl
 
 31. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
 
-The live link to the 'Yummy' site on Heroku an be found [here](https://pp4-yummy-d1fe3ffd7115.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project4).
+The live link to the 'Yummy' site on Heroku can be found [here](https://pp4-yummy-d1fe3ffd7115.herokuapp.com/). And the Github repository can be found [here](https://github.com/AlaYousef/portfolio-project4).
 
 [Back to top](<#table-of-content>)
 
@@ -563,15 +560,17 @@ To clone and set up this project follow these steps:
 
 [Back to top](<#contents>)
 
-### Credits
+## Credits
 
-#### Content
+### Content
 * All recipes content and details was taken from this recipes website [Delish](https://www.delish.com/)
 
-#### Resources
+### Resources
+* Agile methodology inspired from [Knowledgehut](https://www.knowledgehut.com/blog/agile/features-in-agile-methodology).
+
 * Bug number 1 in testing; for messages does not display after editing or deleting fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown).
 
-* Design inspired from this [project](https://italianissimo-booking-website.herokuapp.com/).
+* Website design inspired from this [project](https://italianissimo-booking-website.herokuapp.com/).
 
 * Deployment section in Readme file was taken from this [repository](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md). It was so clear and easy to follow so I take it as is.
 
@@ -580,9 +579,9 @@ To clone and set up this project follow these steps:
 * User stories inspired from [Code Institute: I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/?child=last) and from this [repository](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/tree/main).
 
 
-* Bugs number 9; delete commeent recipes was fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/14170473/get-absolute-url-in-django-when-using-class-based-views)
+* Bugs number 9; delete comment recipes was fixed by inspiration from [stackoverflow](https://stackoverflow.com/questions/14170473/get-absolute-url-in-django-when-using-class-based-views)
 
-#### Code
+### Code
 
 * Code of creating models, views and forms was inspired from [Code Institute: I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/09e0a94c7dbd4b969b8358a0cf5660b2/).
 

@@ -495,6 +495,7 @@ Th application was tested using Google Lighthouse in Chrome Developer Tools. All
 
 ![Lighthouse Sweets](documentation/readme_images/lighthouse-addrecipe.png)
 </details><br/>
+
 ## A11y Color Contrast Accessibility Validator
 ![Accessibility Validator](documentation/readme_images/contrast-test.png)<br>
 
@@ -506,25 +507,24 @@ Th application was tested using Google Lighthouse in Chrome Developer Tools. All
 
 * 1. Bug: Message after deleting or editing does not display. This was fixed by adding get_success_message() method .
 
-* 2. Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
-sol: if(messages != null). This error display after setting time for alert messages using javscript and fixed by adding if statement checking if the message is not null.
+* 2. Bug: Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented'). This error display after setting time for alert messages using javscript and fixed by adding if statement checking if the message is not null.
 
 * 3. Bug: 404 error when choose Draft in add recipe form. Resolved by adding if statement to check recipe status value.
 
-* 4. Bug: Submit empty comment form, Resolved by adding an error message and reload the form.
+* 4. Bug: Submit empty comment form, Resolved by adding an error message if the comment form is not validand reload the form.
 
-* 5. Bug: Accept negatine value for time on add recipe form. Fixed by alter time field data type to positiveInteger and adding a new field to choose time unit; minute or hour.
+* 5. Bug: Accept negative value for time field on add recipe form. Fixed by alter time field data type to positiveInteger and adding a new field to choose time unit; minute or hour.
 
 * 6. Bug: Programming error at /. Fixed by reset the database and make new migrations.
 
-* 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to use the id unique value.
+* 7. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<slug>[-a-zA-Z0-9_]+)/\\Z']. This error displayed after deleteing slug input field from add recipe form because it is incomprehensible or unclear for the user. So the solution is to use the id unique value instead to send slug field.
 
 * 8. Bug: Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<id>[-a-zA-Z0-9_]+)/\\Z']. This error display on click on submit button when adding or editing recipes and solved by adding success_url = reverse_lazy(..).
 
 * 9. Reverse for 'recipe_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<id>[-a-zA-Z0-9_]+)/\\Z']. This error displayed on clicking delete button in comment section. Solved by adding get_success_url()
 to redirect to after deleting.
 
-* 10. Pad Performance. The Project was tested in Chrome Developer and get 36% for home page performance and the reasone was the large size for images used. The soluation was is to convert all images to .webp instead pf jpg.
+* 10. Pad Performance. The Project was tested in Chrome Developer and get 36% for home page performance and the reasone was the large size for images used. The soluation was is to convert all images to .webp instead of .jpg.
 
 
 [Back to top](<#contents>)
