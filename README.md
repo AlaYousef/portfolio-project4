@@ -300,10 +300,11 @@ As the user stories were achieved, they were moved from To Do list, to In-Progre
 
 ### Add Recipe Page
 * Users can interact with the website by adding their own recipes and this after registrering an account.
-* User required to fill the form correctly and click _submit_ button.
+* User required to fill the form correctly and click _submit_ button. If the user enter incorrect valid the user will be required to fill the correct values.
+* Each of time, min/hour fields are drop down so the user can select the time and click to choose if it in minutes or hours. 
 * The recipe will be published in his name, at the same time saved in _my recipes_ tab.
 
- ![add-recipe Page](documentation/readme_images/add-recipe.png)<br>
+ ![add-recipe Page](documentation/readme_images/addrecipe.png)<br>
 
 * Confirmation message will be displayed to confirm the user that the recipe is successfully added.
  ![add-recipe Page](documentation/readme_images/add-recipe-msg.png)<br><br>
@@ -552,7 +553,7 @@ To clone and set up this project follow these steps:
 
 * ```pip3 install -r requirements.txt``` - This command downloads and install all required dependencies that is stated in the requirements file.
 
-6. The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
+6. The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars which are ```os.environ["DATABASE_URL"]```, ```os.environ["CLOUDINARY_URL"]```, ```os.environ["SECRET_KEY"]``` . Don't forget to do necessary migrations before trying to run the server.
 
 * ```python3 manage.py migrate``` - This will do the necessary migrations.
 * ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
